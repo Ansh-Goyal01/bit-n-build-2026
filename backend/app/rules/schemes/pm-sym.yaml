@@ -1,0 +1,108 @@
+scheme_id: pm-sym
+version: '2026-07-13'
+rules:
+- id: age-between-18-and-40
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+    any: null
+    all: null
+  clause: The applicant must have an entry age between 18 and 40 years.
+  source_url: https://www.myscheme.gov.in/schemes/pm-sym
+  ask: What is your age?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: age-not-above-40
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 40
+    any: null
+    all: null
+  clause: The applicant must have an entry age between 18 and 40 years.
+  source_url: https://www.myscheme.gov.in/schemes/pm-sym
+  ask: What is your age?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: monthly-income-not-above-15000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 180000
+    any: null
+    all: null
+  clause: The applicant must have a monthly income of ₹15,000/- or less.
+  source_url: https://www.myscheme.gov.in/schemes/pm-sym
+  ask: What is your family's annual income?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: has-bank-account
+  kind: require
+  when:
+    field: has_bank_account
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant must possess a Savings Bank Account or Jan Dhan account number with
+    an Indian Financial System Code.
+  source_url: https://www.myscheme.gov.in/schemes/pm-sym
+  ask: Do you have a bank account?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: exclude-income-tax-payer
+  kind: exclude
+  when:
+    field: pays_income_tax
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant must not be - An income tax payer.
+  source_url: https://www.myscheme.gov.in/schemes/pm-sym
+  ask: Do you or any family member pay income tax?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: exclude-engaged-in-organized-sector
+  kind: exclude
+  when:
+    field: null
+    op: null
+    value: null
+    any:
+    - field: family_member_in_govt_service
+      op: eq
+      value: true
+      any: null
+      all: null
+    - field: is_practicing_registered_professional
+      op: eq
+      value: true
+      any: null
+      all: null
+    all: null
+  clause: The applicant must not be - Engaged in the organized sector.
+  source_url: https://www.myscheme.gov.in/schemes/pm-sym
+  ask: Are you or any family member engaged in the organized sector?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The scheme is implemented by the Life Insurance Corporation of India and Common Services
+  Centres.
+- The applicant must make regular age-specific monthly contributions.
+- 'Not modeled: unorganised worker'
+- 'Not modeled: mobile phone ownership'
+- 'Not modeled: EPFO membership'
+- 'Not modeled: NPS membership'
+- 'Not modeled: ESIC membership'
+- 'Not modeled: The applicant must possess a mobile phone.'

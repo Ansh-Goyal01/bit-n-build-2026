@@ -1,0 +1,882 @@
+{
+  "audited_at": "2026-07-14T08:06:28+00:00",
+  "auditor_model": "openai/gpt-oss-20b",
+  "schemes": {
+    "ab-pmjay": [
+      {
+        "rule_id": "secc-priority-category",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause specifies SECC 2011 deprivation and occupational criteria, not a BPL card; using has_bpl_card expands eligibility beyond the intended scope."
+      },
+      {
+        "rule_id": "exclude-monthly-income-over-10k",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Annual income >120,000 correctly represents monthly income >10,000."
+      },
+      {
+        "rule_id": "exclude-government-employee",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "family_member_in_govt_service correctly captures the exclusion."
+      },
+      {
+        "rule_id": "exclude-motorized-vehicle",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "owns_motorized_vehicle correctly captures the exclusion."
+      }
+    ],
+    "apy": [
+      {
+        "rule_id": "age-at-least-18",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded age \u226518 correctly captures the minimum age requirement."
+      },
+      {
+        "rule_id": "age-at-most-40",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded age \u226440 correctly captures the maximum age requirement."
+      },
+      {
+        "rule_id": "savings-bank-account",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The has_bank_account field correctly represents the requirement for a savings bank account."
+      },
+      {
+        "rule_id": "exclude-income-tax-payer",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The exclude kind with pays_income_tax correctly implements the disqualification for income\u2011tax payers."
+      }
+    ],
+    "bhmnsp": [
+      {
+        "rule_id": "gender-female",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires both female gender and minority status, but the encoded condition only checks gender."
+      },
+      {
+        "rule_id": "social-category-minority",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires both female gender and minority status, but the encoded condition only checks minority status."
+      },
+      {
+        "rule_id": "annual-family-income-lte-200000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly captures the income threshold clause."
+      }
+    ],
+    "cmhtp-crwtp-smile": [
+      {
+        "rule_id": "is-transgender",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires gender to be 'other', matching the clause."
+      }
+    ],
+    "csspremsobcsi": [
+      {
+        "rule_id": "annual-family-income-at-most-250000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly uses the annual_family_income_inr field with a <= 250000 threshold, matching the clause that parents/guardians' income must not exceed \u20b92,50,000 per annum."
+      },
+      {
+        "rule_id": "social-category-obc",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The social_category field directly measures the applicant's social category, and the equality check to 'obc' faithfully captures the scheme\u2019s focus on Other Backward Classes."
+      },
+      {
+        "rule_id": "is-student",
+        "verdict": "mismatch",
+        "mismatch_type": "flattened-conditional",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires enrollment in specific pre\u2011matric classes (day scholars: class 1st or above; hostlers: class 3rd or above). The encoded condition only checks is_student, thus it would grant eligibility to all students regardless of class level, leading to false entitlement."
+      }
+    ],
+    "csss-cus": [
+      {
+        "rule_id": "annual-family-income-at-most-450000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The field annual_family_income_inr correctly measures gross family income and the lte 450000 operator matches the clause\u2019s \u201cnot exceed \u20b94,50,000\u201d requirement."
+      },
+      {
+        "rule_id": "is-student",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "The field is_student merely indicates that the person is studying, not that they are pursuing a regular degree course as required by the clause."
+      },
+      {
+        "rule_id": "has-aadhaar-seeded-bank-account",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "The field has_bank_account only records possession of any bank account, not specifically an Aadhaar\u2011seeded account in the applicant\u2019s name."
+      }
+    ],
+    "dacssiselosobcebc": [
+      {
+        "rule_id": "is-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly requires the applicant to be a student."
+      },
+      {
+        "rule_id": "annual-family-income-inr",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly limits income to \u20b98,00,000 per annum."
+      },
+      {
+        "rule_id": "social-category",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_denial",
+        "reason": "The clause covers OBCs and EBCs, but the encoding only allows OBCs, excluding EBCs."
+      }
+    ],
+    "gispw": [
+      {
+        "rule_id": "age-at-least-18",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Age >=18 correctly captures the lower bound of the age range."
+      },
+      {
+        "rule_id": "age-at-most-59",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Age <=59 correctly captures the upper bound of the age range."
+      },
+      {
+        "rule_id": "occupation-powerloom-weaver",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Occupation equality to 'powerloom weaver' correctly captures the occupation requirement."
+      }
+    ],
+    "igndps": [
+      {
+        "rule_id": "age-at-least-18",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "Only lower age bound encoded; upper bound 79 missing."
+      },
+      {
+        "rule_id": "age-at-most-79",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "Only upper age bound encoded; lower bound 18 missing."
+      },
+      {
+        "rule_id": "disability-at-least-80",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Condition allows 80% but clause requires >80%."
+      },
+      {
+        "rule_id": "bpl-household",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Field matches clause."
+      }
+    ],
+    "ignwps": [
+      {
+        "rule_id": "widowed",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Matches the clause exactly."
+      },
+      {
+        "rule_id": "woman",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "Encodes gender instead of marital status, misrepresenting the clause."
+      },
+      {
+        "rule_id": "age-at-least-40",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "Only the lower age bound is encoded; the upper bound is missing."
+      },
+      {
+        "rule_id": "age-at-most-79",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "Only the upper age bound is encoded; the lower bound is missing."
+      },
+      {
+        "rule_id": "bpl-household",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Matches the clause exactly."
+      }
+    ],
+    "mssc": [
+      {
+        "rule_id": "female-gender",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly restricts eligibility to female gender, covering both women and girl children as stated in the clause."
+      }
+    ],
+    "nfbs": [
+      {
+        "rule_id": "primary-breadwinner-deceased",
+        "verdict": "mismatch",
+        "mismatch_type": "and-or-composition",
+        "failure_direction": "false_entitlement",
+        "reason": "The encoded condition only checks bereavement_event, omitting the required BPL status, so it would grant benefits to non-BPL families."
+      },
+      {
+        "rule_id": "bpl-household",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly requires has_bpl_card to be true, matching the clause."
+      }
+    ],
+    "nmmss": [
+      {
+        "rule_id": "is-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The field is_student directly measures the applicant\u2019s student status, matching the clause."
+      },
+      {
+        "rule_id": "annual-family-income-inr-at-most-350000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "annual_family_income_inr captures the parental income from all sources, and the lte 350000 operator correctly implements the \"not more than\" threshold."
+      },
+      {
+        "rule_id": "has-bank-account",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "has_bank_account indicates possession of a bank account, satisfying the clause\u2019s requirement to open one (the preference for certain banks is not a strict constraint)."
+      }
+    ],
+    "nsap-ignoaps": [
+      {
+        "rule_id": "age-60-or-above",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The age field correctly captures the applicant\u2019s age, and the condition age\u202f\u2265\u202f60 matches the clause \u201c60 years of age or above.\u201d"
+      },
+      {
+        "rule_id": "bpl-household",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The boolean has_bpl_card indicates membership in the government\u2011prescribed Below Poverty Line list, which is precisely what the clause requires."
+      }
+    ],
+    "pm-kisan": [
+      {
+        "rule_id": "landholding-farmer-family",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The field is_farmer_with_land correctly captures the clause about families owning cultivable land in their names, and the requirement is encoded as a simple equality to true."
+      },
+      {
+        "rule_id": "exclude-income-tax-payer",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "pays_income_tax indicates whether a person or family member paid income tax, matching the clause that disqualifies those who paid income tax in the last assessment year."
+      },
+      {
+        "rule_id": "exclude-government-employee-family",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "family_member_in_govt_service correctly represents the presence of any family member in a government job, aligning with the disqualification clause."
+      },
+      {
+        "rule_id": "exclude-pensioner-over-10k",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "receives_govt_pension_over_10k captures the condition of a family member drawing a monthly pension of Rs.10,000 or more, matching the clause."
+      },
+      {
+        "rule_id": "exclude-constitutional-or-political-post",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "holds_constitutional_or_political_post accurately reflects the presence of any family member holding a constitutional or elected post, as required by the clause."
+      },
+      {
+        "rule_id": "exclude-practicing-registered-professional",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "is_practicing_registered_professional represents a family member who is a registered practicing professional, matching the disqualification clause."
+      }
+    ],
+    "pm-svanidhi": [
+      {
+        "rule_id": "street-vendor",
+        "verdict": "mismatch",
+        "mismatch_type": "and-or-composition",
+        "failure_direction": "false_entitlement",
+        "reason": "Encoded condition omits the requirement that the vendor must be in an urban area, so it would grant eligibility to street vendors in rural areas."
+      },
+      {
+        "rule_id": "vending-certificate-survey-or-lor",
+        "verdict": "mismatch",
+        "mismatch_type": "and-or-composition",
+        "failure_direction": "false_entitlement",
+        "reason": "Encoded condition only checks for a vending certificate or LoR, but does not enforce that the applicant is a street vendor, nor does it capture vendors identified in the survey but not yet issued a certificate. This would incorrectly grant eligibility to non\u2011street vendors with a certificate/LoR and incorrectly deny street vendors identified in the survey without a certificate."
+      }
+    ],
+    "pm-sym": [
+      {
+        "rule_id": "age-between-18-and-40",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Only lower bound 18 is enforced; upper bound 40 is missing."
+      },
+      {
+        "rule_id": "age-not-above-40",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Only upper bound 40 is enforced; lower bound 18 is missing."
+      },
+      {
+        "rule_id": "monthly-income-not-above-15000",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_denial",
+        "reason": "Annual family income is used instead of applicant's monthly income, leading to incorrect denials."
+      },
+      {
+        "rule_id": "has-bank-account",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Field correctly captures requirement."
+      },
+      {
+        "rule_id": "exclude-income-tax-payer",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Exclude clause correctly matches official clause."
+      },
+      {
+        "rule_id": "exclude-engaged-in-organized-sector",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_denial",
+        "reason": "Condition uses family member status, not applicant's engagement in organized sector."
+      }
+    ],
+    "pmay-g": [
+      {
+        "rule_id": "rural-household",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "The clause requires households to be either houseless or living in kutcha houses in rural areas, but the encoded condition only checks for rural area, missing the houseless or kutcha house requirement."
+      },
+      {
+        "rule_id": "kutcha-house",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause excludes households with pucca roofs/walls and those with more than two rooms; the encoded condition only requires kutcha houses, omitting the >2 rooms restriction, potentially granting eligibility to ineligible kutcha houses with many rooms."
+      },
+      {
+        "rule_id": "exclude-motorized-vehicle",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded exclusion matches the clause exactly."
+      },
+      {
+        "rule_id": "exclude-income-tax-payer",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded exclusion matches the clause exactly."
+      },
+      {
+        "rule_id": "exclude-government-employee",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded exclusion matches the clause exactly."
+      }
+    ],
+    "pmegp": [
+      {
+        "rule_id": "age-at-least-18",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Age field and gte 18 correctly capture the clause."
+      },
+      {
+        "rule_id": "meat-industry-exclusion",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause disqualifies many industry types, but the encoding only checks occupation eq 'meat industry', missing other categories."
+      },
+      {
+        "rule_id": "crop-cultivation-exclusion",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause covers multiple crop-related industries, but the encoding only checks occupation eq 'crop cultivation', missing others."
+      }
+    ],
+    "pmfby": [
+      {
+        "rule_id": "cultivating-farmer",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The field cultivates_crops only indicates active cultivation, but the clause requires cultivation of notified crops on insured land within notified areas, which the field does not capture."
+      },
+      {
+        "rule_id": "land-ownership-or-tenure-documents",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The boolean has_land_ownership_or_tenure_docs accurately represents possession of a valid land ownership certificate or tenancy agreement as required."
+      }
+    ],
+    "pmjdy": [
+      {
+        "rule_id": "age-at-least-10",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires guardian support for minors above ten, but the encoded condition only checks age, missing the guardian requirement."
+      }
+    ],
+    "pmjjby": [
+      {
+        "rule_id": "age-at-least-18",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Only lower bound enforced, upper bound missing."
+      },
+      {
+        "rule_id": "age-at-most-50",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Only upper bound enforced, lower bound missing."
+      },
+      {
+        "rule_id": "bank-or-post-office-account",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Condition correctly requires bank account."
+      }
+    ],
+    "pmmvy": [
+      {
+        "rule_id": "age-at-least-19",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Accurately captures the age requirement of at least 19 years."
+      },
+      {
+        "rule_id": "is-female",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_denial",
+        "reason": "The official clause does not mention gender; requiring female incorrectly disqualifies eligible male applicants."
+      },
+      {
+        "rule_id": "is-pregnant",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Accurately captures the pregnancy requirement."
+      }
+    ],
+    "pms-sc": [
+      {
+        "rule_id": "scheduled-caste",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The social_category field correctly captures the clause\u2019s requirement for belonging to Scheduled Castes."
+      },
+      {
+        "rule_id": "post-matric-student",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "The is_post_matric_student field indicates current study beyond class 10, not whether the candidate has passed matriculation or higher secondary, so eligible candidates who are not currently studying would be wrongly denied."
+      },
+      {
+        "rule_id": "family-income-cap-250k",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The annual_family_income_inr field and the lte 250000 comparison correctly represent the income cap clause."
+      }
+    ],
+    "pmsby": [
+      {
+        "rule_id": "age-at-least-18",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires both a lower and upper age bound and a bank account; the encoding only enforces age \u226518, missing the upper bound and bank\u2011account check."
+      },
+      {
+        "rule_id": "age-at-most-70",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires a lower age bound and a bank account; the encoding only enforces age \u226470, missing the lower bound and bank\u2011account check."
+      },
+      {
+        "rule_id": "bank-account",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause requires a bank account plus consent to auto\u2011debit; the encoding only checks for a bank account, ignoring the consent requirement."
+      }
+    ],
+    "pmuy": [
+      {
+        "rule_id": "woman-applicant",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Gender requirement matches clause."
+      },
+      {
+        "rule_id": "adult",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Age >=18 matches adult requirement."
+      },
+      {
+        "rule_id": "poor-household",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "Encoded condition only checks BPL card or PMAY priority, missing SC/ST, AAY, forest dweller, tea-garden worker, etc."
+      },
+      {
+        "rule_id": "no-existing-lpg-connection",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "LPG connection absence matches clause."
+      }
+    ],
+    "pmv": [
+      {
+        "rule_id": "vishwakarma-trade-artisan",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The boolean field is_vishwakarma_trade_artisan directly represents the requirement."
+      },
+      {
+        "rule_id": "minimum-age-18",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Age >= 18 matches the minimum age clause."
+      },
+      {
+        "rule_id": "exclude-government-service-family",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The clause disqualifies both the applicant and family members, but the encoded condition only checks family members."
+      }
+    ],
+    "post-dis": [
+      {
+        "rule_id": "is-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The is_student field correctly represents the applicant\u2019s current student status, matching the clause."
+      },
+      {
+        "rule_id": "is-post-matric-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The is_post_matric_student field captures the applicant\u2019s pursuit of post\u2011matric qualifications as described."
+      },
+      {
+        "rule_id": "disability-percent-at-least-40",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The disability_percent field and gte 40 operator correctly encode the 40% or above disability requirement."
+      },
+      {
+        "rule_id": "annual-family-income-inr-lte-250000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The annual_family_income_inr field and lte 250000 operator accurately reflect the income cap of \u20b92.50\u202fLakh."
+      }
+    ],
+    "post-st": [
+      {
+        "rule_id": "social-category-st",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "The encoded condition only checks for ST status, omitting the requirement that the applicant has passed matriculation or higher secondary and the state\u2011specific ST specification."
+      },
+      {
+        "rule_id": "annual-family-income-inr",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires annual family income to be less than or equal to \u20b92,00,000, matching the clause."
+      },
+      {
+        "rule_id": "is-post-matric-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires the applicant to be a post\u2011matric student, aligning with the clause."
+      }
+    ],
+    "pre-dis": [
+      {
+        "rule_id": "family-income-lte-250000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The field annual_family_income_inr correctly measures the parents/guardian\u2019s income and the lte operator matches the clause\u2019s \u201cshould not exceed\u201d requirement."
+      },
+      {
+        "rule_id": "is-student",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_entitlement",
+        "reason": "The field is_student only indicates that the person is a student, but the clause requires a regular, full\u2011time student in Classes IX and X, which is not captured."
+      },
+      {
+        "rule_id": "benchmark-disability",
+        "verdict": "mismatch",
+        "mismatch_type": "clause-scope",
+        "failure_direction": "false_entitlement",
+        "reason": "The encoded condition checks only for a disability percent \u226540, but the clause also requires a valid disability certificate, which is not represented."
+      }
+    ],
+    "pre-sc": [
+      {
+        "rule_id": "pursue-studies",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires the applicant to be a student, matching the clause\u2019s intent to pursue studies."
+      },
+      {
+        "rule_id": "social-category-sc",
+        "verdict": "mismatch",
+        "mismatch_type": "field-binding",
+        "failure_direction": "false_denial",
+        "reason": "The clause targets parents of SC children, but the condition checks the applicant\u2019s own social category."
+      },
+      {
+        "rule_id": "exclude-post-matric-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly excludes post\u2011matric students, aligning with the clause\u2019s pre\u2011matric focus."
+      }
+    ],
+    "psgs-dip": [
+      {
+        "rule_id": "is-girl-student",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires gender to be female and the person to be a student, matching the clause."
+      },
+      {
+        "rule_id": "family-income-less-than-8-lakh",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded income threshold (<= 800000) matches the clause\u2019s limit of \u20b98,00,000 per annum."
+      },
+      {
+        "rule_id": "residence-in-specified-states-uts",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The OR list of 13 states/UTs correctly captures the clause\u2019s requirement for residence in those regions."
+      }
+    ],
+    "rkvyshfshc": [
+      {
+        "rule_id": "is-farmer",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The field cultivates_crops correctly represents being a farmer."
+      }
+    ],
+    "sag": [
+      {
+        "rule_id": "age-between-14-and-18",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Only checks age >= 14, missing the upper bound of 18."
+      },
+      {
+        "rule_id": "age-not-above-18",
+        "verdict": "mismatch",
+        "mismatch_type": "operator-or-threshold",
+        "failure_direction": "false_entitlement",
+        "reason": "Only checks age <= 18, missing the lower bound of 14."
+      },
+      {
+        "rule_id": "gender-female",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "Correctly requires gender to be female."
+      }
+    ],
+    "sak-deg": [
+      {
+        "rule_id": "disability-at-least-40-percent",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly uses the disability_percent field with a >=40% threshold, matching the clause."
+      },
+      {
+        "rule_id": "family-income-not-more-than-8-lakh",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly uses annual_family_income_inr with <=800000, matching the clause."
+      }
+    ],
+    "sukanya-samriddhi": [
+      {
+        "rule_id": "girl-child-under-10",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition correctly uses daughter_age lt 10 to capture the clause that the girl child must be under ten years old."
+      }
+    ],
+    "tce-sc": [
+      {
+        "rule_id": "social-category-sc",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires the applicant's social_category to be 'sc', matching the clause."
+      },
+      {
+        "rule_id": "annual-family-income-lte-800000",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The condition correctly requires annual_family_income_inr to be less than or equal to 800000, matching the clause."
+      }
+    ],
+    "tce-swd": [
+      {
+        "rule_id": "disability-percent-gte-40",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition directly matches the clause."
+      },
+      {
+        "rule_id": "annual-family-income-lte-6-lakh",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The encoded condition directly matches the clause."
+      }
+    ],
+    "vdcspds": [
+      {
+        "rule_id": "age-at-least-10",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The age field correctly captures the clause, and the gte 10 operator matches the requirement of 10 years or more."
+      },
+      {
+        "rule_id": "national-trust-act-disability",
+        "verdict": "faithful",
+        "mismatch_type": null,
+        "failure_direction": null,
+        "reason": "The disability_type field and OR composition correctly encode the four specified disabilities from the National Trust Act."
+      }
+    ]
+  }
+}

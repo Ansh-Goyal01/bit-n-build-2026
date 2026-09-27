@@ -1,0 +1,20 @@
+scheme_id: cmhtp-crwtp-smile
+version: '2026-07-13'
+rules:
+- id: is-transgender
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: other
+    any: null
+    all: null
+  clause: The applicant should be Transgender.
+  source_url: https://www.myscheme.gov.in/schemes/cmhtp-crwtp-smile
+  ask: Are you transgender?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- 'Not modeled: The applicant should not be availing similar benefits from any other schemes
+  of the Central Government or State Government.'

@@ -1,0 +1,51 @@
+scheme_id: sag
+version: '2026-07-13'
+rules:
+- id: age-between-14-and-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 14
+    any: null
+    all: null
+  clause: The applicant should be an adolescent girl in the age group of 14-18 years.
+  source_url: https://www.myscheme.gov.in/schemes/sag
+  ask: How old are you?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: age-not-above-18
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 18
+    any: null
+    all: null
+  clause: The applicant should be an adolescent girl in the age group of 14-18 years.
+  source_url: https://www.myscheme.gov.in/schemes/sag
+  ask: How old are you?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: gender-female
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+    any: null
+    all: null
+  clause: The applicant should be an adolescent girl in the age group of 14-18 years.
+  source_url: https://www.myscheme.gov.in/schemes/sag
+  ask: What is your gender?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- State-specific implementation details
+- Enrollment and document formalities
+- 'Not modeled: identified by the concerned State Government'
+- 'Not modeled: belong to the covered areas under the scheme'
+- 'Not modeled: The applicant should have an Aadhaar number to avail benefits under the scheme.'

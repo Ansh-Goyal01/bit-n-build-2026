@@ -1,0 +1,363 @@
+{
+ "summary": {
+  "phase": "llm",
+  "dataset": "heldout.jsonl",
+  "run_at": "2026-07-12T19:06:31+00:00",
+  "cases": 15,
+  "errored_cases": [],
+  "judge_unavailable_cases": [],
+  "eligibility": {
+   "pairs": 15,
+   "accuracy": 0.5333,
+   "false_positives": 3,
+   "false_negatives": 0,
+   "abstained": 4
+  },
+  "retrieval": {
+   "precision": 0.1097,
+   "recall": 0.8571
+  },
+  "faithfulness": {
+   "pre_verifier": 0.2789,
+   "post_verifier": 0.3223,
+   "pre_claims": 147,
+   "post_claims": 121
+  }
+ },
+ "per_case": [
+  {
+   "case_id": "ho-kisan-clean-eligible",
+   "status": "ok",
+   "predicted": {
+    "pm-kisan": "likely_eligible",
+    "pmfby": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmay-g": "need_more_info",
+    "pmuy": "need_more_info",
+    "pmv": "need_more_info"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-kisan-clean-eligible",
+     "scheme_id": "pm-kisan",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-kisan-professional",
+   "status": "ok",
+   "predicted": {
+    "pmfby": "likely_eligible",
+    "pmv": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmay-g": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-kisan-professional",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-kisan-govt-clerk-family",
+   "status": "ok",
+   "predicted": {
+    "pm-kisan": "likely_eligible",
+    "pmfby": "likely_eligible",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmuy": "need_more_info",
+    "ab-pmjay": "not_eligible",
+    "pmay-g": "not_eligible",
+    "pmv": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-kisan-govt-clerk-family",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-kisan-tenant-no-land",
+   "status": "need_info",
+   "predicted": {},
+   "outcomes": [
+    {
+     "case_id": "ho-kisan-tenant-no-land",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-kisan-pension-10k-boundary",
+   "status": "ok",
+   "predicted": {
+    "pm-kisan": "eligible",
+    "pmfby": "eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "pmay-g": "need_more_info",
+    "pmuy": "need_more_info",
+    "pmv": "need_more_info"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-kisan-pension-10k-boundary",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmuy-clean-eligible",
+   "status": "ok",
+   "predicted": {
+    "pmuy": "eligible",
+    "igndps": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "apy": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmuy-clean-eligible",
+     "scheme_id": "pmuy",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmuy-male-applicant",
+   "status": "ok",
+   "predicted": {
+    "igndps": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "apy": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "pmuy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmuy-male-applicant",
+     "scheme_id": "pmuy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmuy-existing-lpg",
+   "status": "ok",
+   "predicted": {
+    "ignwps": "likely_eligible",
+    "pmsby": "likely_eligible",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmuy-existing-lpg",
+     "scheme_id": "pmuy",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmuy-minor",
+   "status": "ok",
+   "predicted": {
+    "igndps": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "pms-sc": "likely_eligible",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "ignwps": "not_eligible",
+    "pmuy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmuy-minor",
+     "scheme_id": "pmuy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmuy-poverty-unknown",
+   "status": "ok",
+   "predicted": {
+    "pmv": "likely_eligible",
+    "apy": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmjjby": "need_more_info",
+    "ab-pmjay": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmuy-poverty-unknown",
+     "scheme_id": "pmuy",
+     "gold": "need_info",
+     "pred": "absent",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmssc-clean-eligible",
+   "status": "ok",
+   "predicted": {
+    "pmay-g": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pms-sc": "need_more_info",
+    "pmv": "need_more_info",
+    "ignwps": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmssc-clean-eligible",
+     "scheme_id": "pms-sc",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmssc-income-over-cap",
+   "status": "ok",
+   "predicted": {
+    "pmay-g": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pms-sc": "need_more_info",
+    "pmv": "need_more_info",
+    "ab-pmjay": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmssc-income-over-cap",
+     "scheme_id": "pms-sc",
+     "gold": "not_eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmssc-obc-student",
+   "status": "ok",
+   "predicted": {
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pms-sc": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmssc-obc-student",
+     "scheme_id": "pms-sc",
+     "gold": "not_eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmssc-pre-matric",
+   "status": "ok",
+   "predicted": {
+    "pms-sc": "eligible",
+    "pmay-g": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmuy": "need_more_info",
+    "pmv": "need_more_info",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmssc-pre-matric",
+     "scheme_id": "pms-sc",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "ho-pmssc-income-boundary",
+   "status": "ok",
+   "predicted": {
+    "pms-sc": "eligible",
+    "pmay-g": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "ab-pmjay": "not_eligible",
+    "apy": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "ho-pmssc-income-boundary",
+     "scheme_id": "pms-sc",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  }
+ ]
+}

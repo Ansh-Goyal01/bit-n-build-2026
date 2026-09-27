@@ -1,0 +1,85 @@
+scheme_id: pm-kisan
+version: '2026-07-13'
+rules:
+- id: landholding-farmer-family
+  kind: require
+  when:
+    field: is_farmer_with_land
+    op: eq
+    value: true
+  clause: All landholding farmers' families, which have cultivable land holding in their names
+    are eligible to get benefit under the scheme.
+  source_url: https://www.myscheme.gov.in/schemes/pm-kisan
+  ask: Does your family own cultivable land in its own name?
+  review_status: verified
+- id: exclude-income-tax-payer
+  kind: exclude
+  when:
+    field: pays_income_tax
+    op: eq
+    value: true
+  clause: 'The following categories of beneficiaries of higher economic status shall not be
+    eligible: ... All Persons who paid Income Tax in last assessment year.'
+  source_url: https://www.myscheme.gov.in/schemes/pm-kisan
+  ask: Did anyone in your family pay income tax in the last assessment year?
+  review_status: verified
+- id: exclude-government-employee-family
+  kind: exclude
+  when:
+    field: family_member_in_govt_service
+    op: eq
+    value: true
+  clause: Farmer families in which one or more of its members are serving or retired officers
+    and employees of Central/State Government Ministries/Offices/Departments shall not be
+    eligible.
+  source_url: https://www.myscheme.gov.in/schemes/pm-kisan
+  ask: Is anyone in your family a serving government employee?
+  review_status: verified
+- id: exclude-pensioner-over-10k
+  kind: exclude
+  when:
+    field: receives_govt_pension_over_10k
+    op: eq
+    value: true
+  clause: All superannuated/retired pensioners whose monthly pension is Rs.10,000/- or more
+    shall not be eligible.
+  source_url: https://www.myscheme.gov.in/schemes/pm-kisan
+  ask: Does anyone in your family receive a government pension of ₹10,000 or more per month?
+  review_status: verified
+- id: exclude-constitutional-or-political-post
+  kind: exclude
+  when:
+    field: holds_constitutional_or_political_post
+    op: eq
+    value: true
+  clause: 'Farmer families in which one or more of its members belong to following categories
+    shall not be eligible: Former and present holders of constitutional posts; Former and
+    present Ministers/State Ministers and former/present Members of LokSabha/ RajyaSabha/State
+    Legislative Assemblies/State Legislative Councils, former and present Mayors of Municipal
+    Corporations, former and present Chairpersons of District Panchayats.'
+  source_url: https://www.myscheme.gov.in/schemes/pm-kisan
+  ask: Does anyone in your family hold, or formerly hold, a constitutional post or elected
+    office (minister, MP, MLA/MLC, mayor, district panchayat chairperson)?
+  review_status: verified
+- id: exclude-practicing-registered-professional
+  kind: exclude
+  when:
+    field: is_practicing_registered_professional
+    op: eq
+    value: true
+  clause: 'The following categories of beneficiaries of higher economic status shall not be
+    eligible: ... Professionals like Doctors, Engineers, Lawyers, Chartered Accountants, and
+    Architects registered with Professional bodies and carrying out profession by undertaking
+    practice.'
+  source_url: https://www.myscheme.gov.in/schemes/pm-kisan
+  ask: Is anyone in your family a registered, practicing professional (doctor, engineer, lawyer,
+    chartered accountant, architect)?
+  review_status: verified
+simplifications:
+- The exclusion of institutional landholders is not modeled — institutions are not individual
+  applicants this tool serves.
+- The government-employee exclusion is encoded broader than the official text, which exempts
+  Multi-Tasking Staff / Class IV / Group D employees.
+- The pensioner exclusion applies at "Rs.10,000/- or more" officially, but the extraction
+  fact (receives_govt_pension_over_10k) is phrased "above Rs 10,000" — a pension of exactly
+  ₹10,000 slips through.

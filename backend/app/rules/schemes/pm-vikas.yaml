@@ -1,0 +1,57 @@
+scheme_id: pm-vikas
+version: '2026-07-13'
+rules:
+- id: is-minority
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: minority
+  clause: 'Indian nationals belonging to the six notified minority communities: Muslims, Christians,
+    Sikhs, Buddhists, Jains, and Parsis with following:'
+  source_url: https://www.myscheme.gov.in/schemes/pm-vikas
+  ask: Do you belong to a notified minority community?
+  self_declared: true
+  verify_hint: Your minority community status is confirmed during application — check
+    the required community certificate or self-declaration with the implementing
+    agency listed on the scheme page.
+  review_status: verified
+- id: age-at-least-14
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 14
+  clause: The Age of the applicant should be 14 to 45 years for skilling and education component
+    and 18 to 45 years for Women Leadership and Entrepreneurship Component
+  source_url: https://www.myscheme.gov.in/schemes/pm-vikas
+  ask: What is your age?
+  review_status: verified
+- id: age-at-most-45
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 45
+  clause: The Age of the applicant should be 14 to 45 years for skilling and education component
+    and 18 to 45 years for Women Leadership and Entrepreneurship Component
+  source_url: https://www.myscheme.gov.in/schemes/pm-vikas
+  ask: What is your age?
+  review_status: verified
+simplifications:
+- 'Not modeled: The applicant must be an Indian national — nationality is not tracked.'
+- 'Not modeled: The specific minority community (Muslim, Christian, Sikh, Buddhist,
+  Jain, or Parsi) — recorded only as a single ''minority'' category.'
+- The Women Leadership and Entrepreneurship component requires age 18 to 45; the
+  check uses the broader 14 to 45 window that covers the skilling and education
+  components.
+- 33% of total seats in Skilling and Training component, 50% of total seats in Education component
+  and 100% of total seats in Women Leadership and Entrepreneurship component are earmarked
+  for women.
+- The education qualification for Skilling and Training component would be as per NSQF norms
+  and Education component would be as per NIOS norms.
+- Candidates with aptitude and leadership qualities will be selected for Women Leadership
+  and Entrepreneurship component.
+- 'Persons with Disabilities (PwDs): 3% reservation across all components.'
+- Up to 25% non-minority (EWS) candidates may be included in Traditional Skilling and 15%
+  in other components to promote inter-community solidarity.

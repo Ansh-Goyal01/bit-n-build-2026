@@ -1,0 +1,59 @@
+scheme_id: pre-dis
+version: '2026-07-13'
+rules:
+- id: family-income-lte-250000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 250000
+  clause: The applicant’s parents/guardian’s income from all sources should not exceed ₹2,50,000/-
+    per annum.
+  source_url: https://www.myscheme.gov.in/schemes/pre-dis
+  ask: What is your parents'/guardian's annual income from all sources?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-student
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+  clause: The applicant should be a regular, full-time student studying in Classes IX and
+    X.
+  source_url: https://www.myscheme.gov.in/schemes/pre-dis
+  ask: Are you currently a student?
+  self_declared: false
+  review_status: verified
+- id: benchmark-disability
+  kind: require
+  when:
+    field: disability_percent
+    op: gte
+    value: 40
+  clause: The applicant should be a student with a benchmark disability and should have a
+    valid disability certificate.
+  source_url: https://www.myscheme.gov.in/schemes/pre-dis
+  ask: What percentage is on your disability certificate? (Benchmark disability under the
+    RPWD Act is 40% or more.)
+  self_declared: false
+  review_status: verified
+simplifications:
+- 'Not modeled: The applicant should be an Indian national.'
+- 'Not modeled: The applicant should be a student with a benchmark disability and should have
+  a valid disability certificate issued by the competent authority.'
+- 'Not modeled: The applicant should be a regular, full-time student studying in Classes IX
+  and X in: A Government school; or A school recognised by the Government; or A school recognised
+  by the Central/State Board of Secondary Education.'
+- 'Not modeled: Not more than 2 children with disabilities of the same parents will be eligible
+  for benefits under the scheme. In case the second child is a twin, the scholarship will
+  be admissible to both twins.'
+- 'Not modeled: 50% of the total scholarships available each year are reserved for female
+  candidates. If adequate eligible female candidates are not available, remaining slots may
+  be utilised for suitable male candidates.'
+- 'Not modeled: The applicant will not be eligible if he/she is already receiving another
+  scholarship/stipend. The applicant may choose the more beneficial scholarship and inform
+  the concerned authority.'
+- 'Not modeled: Scholarship will not be available for the same class for a second or subsequent
+  year if the student repeats the class.'

@@ -1,0 +1,56 @@
+scheme_id: gispw
+version: '2026-07-13'
+rules:
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+    any: null
+    all: null
+  clause: The Powerloom weavers who are between 18 to 59 years of age.
+  source_url: https://www.myscheme.gov.in/schemes/gispw
+  ask: How old are you?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: age-at-most-59
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 59
+    any: null
+    all: null
+  clause: The Powerloom weavers who are between 18 to 59 years of age.
+  source_url: https://www.myscheme.gov.in/schemes/gispw
+  ask: How old are you?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: occupation-powerloom-weaver
+  kind: require
+  when:
+    field: occupation
+    op: eq
+    value: powerloom weaver
+    any: null
+    all: null
+  clause: The Powerloom weavers who are between 18 to 59 years of age.
+  source_url: https://www.myscheme.gov.in/schemes/gispw
+  ask: What is your occupation?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The scheme will be universally applicable for powerloom workers/weavers irrespective of
+  their status with reference to BPL/APL categories.
+- The scheme is operational on yearly basis i.e. the premium paid will cover the applicant
+  under this insurance scheme for one year.
+- 'Not modeled: The scheme is applicable to the families of powerloom workers engaged in the
+  activity of weaving on powerlooms and in allied pre-weaving/preparatory activities like
+  twisting, winding, warping and sizing.'
+- 'Not modeled: Self-employed weaver families owning not more than 4 looms will also be eligible.'
+- 'Not modeled: Family for the purpose of the scheme shall be the beneficiary and his/her
+  spouse and only one of them shall be eligible for coverage.'

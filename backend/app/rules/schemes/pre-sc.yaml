@@ -1,0 +1,75 @@
+scheme_id: pre-sc
+version: '2026-07-13'
+rules:
+- id: pursue-studies
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+  clause: The applicant should pursue studies in India.
+  source_url: https://www.myscheme.gov.in/schemes/pre-sc
+  ask: Are you currently pursuing studies?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: social-category-sc
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: sc
+  clause: 'The scheme "Pre-Matric Scholarships to the Students Belonging to Scheduled Castes
+    & Others with Component 1: Pre-Matric Scholarship for Scheduled Caste Students" has been
+    launched by the Department of Social Justice & Empowerment, Ministry of Social Justice
+    & Empowerment, Government of India, and aims to support parents of Scheduled Caste children
+    through financial assistance for education at the pre-matric stage, improve participation
+    in education, minimise dropouts, particularly during transition stages, and enhance opportunities
+    for progression to post-matric education.'
+  source_url: https://www.myscheme.gov.in/schemes/pre-sc
+  ask: Do you belong to the Scheduled Caste category?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: exclude-post-matric-student
+  kind: exclude
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: true
+  clause: 'The scheme "Pre-Matric Scholarships to the Students Belonging to Scheduled Castes
+    & Others with Component 1: Pre-Matric Scholarship for Scheduled Caste Students" has been
+    launched by the Department of Social Justice & Empowerment, Ministry of Social Justice
+    & Empowerment, Government of India, and aims to support parents of Scheduled Caste children
+    through financial assistance for education at the pre-matric stage, improve participation
+    in education, minimise dropouts, particularly during transition stages, and enhance opportunities
+    for progression to post-matric education.'
+  source_url: https://www.myscheme.gov.in/schemes/pre-sc
+  ask: Are you studying beyond Class 10?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- If awarded another scholarship, the applicant may avail only one scholarship and should
+  inform the concerned authorities about the option chosen.
+- 'Not modeled: The applicant should be studying in a Government school or a recognized private
+  school having a valid UDISE code.'
+- 'Not modeled: The applicant should be studying in a Government school or a recognized private
+  school having a valid UDISE code.'
+- 'Not modeled: The applicant should not hold another educational scholarship for studying
+  in Classes I to X.'
+- 'Not modeled: The applicant should maintain satisfactory academic performance'
+- 'Not modeled: at least 75% attendance in every academic year for continuation of the scholarship.'
+- 'Not modeled: The applicant should be promoted to the next class for automatic renewal of
+  the scholarship.'
+- 'Not modeled: The applicant repeating the same class is not eligible to receive the scholarship
+  for that class for a second or subsequent year.'
+- 'Not modeled: consolidated academic allowances are provided to Scheduled Caste students
+  studying in Classes IX and X.'
+- 'Not modeled: award scholarships to eligible domiciled students.'
+- 'Not modeled: Divyang (Disabled) students are eligible for an additional allowance equal
+  to 10% of the applicable academic allowance.'
+- 'Framing note: the clause speaks of supporting PARENTS of Scheduled Caste children;
+  the rules test the wizard applicant''s own social_category and student status, so
+  a parent filling the wizard for their child answers as the child (2026-07-14
+  semantic audit, certified: kept — the report wording addresses the child).'

@@ -1,0 +1,31 @@
+scheme_id: pmjdy
+version: '2026-07-13'
+rules:
+- id: age-at-least-10
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 10
+    any: null
+    all: null
+  clause: If minors above ten years apply, they will require support from their legal guardians
+    for administering their PMJDY account.
+  source_url: https://www.myscheme.gov.in/schemes/pmjdy
+  ask: How old are you?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The scheme has been made more attractive with upward revision in (i) OD limit from Rs. 5,000/-
+  to Rs. 10,000/- and (ii) Accidental insurance cover on RuPay card holders from Rs.1 lakh
+  to Rs.2 lakhs.
+- PMJDY has been successful in increasing banking penetration and promoting financial inclusion
+  across the country.
+- The scheme has ensured access to various financial services like availability of basic savings
+  bank account, access to need based credit, remittances facility, insurance and pension to
+  the excluded sections i.e. weaker sections & low-income groups.
+- 'Not modeled: minors require legal guardians'
+- 'Not modeled: account administration'
+- Citizenship/nationality is not verified (no dedicated field) — PMJDY is assumed to serve
+  Indian residents, who are Adhikaar's intended users.

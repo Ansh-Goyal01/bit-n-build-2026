@@ -1,0 +1,70 @@
+scheme_id: upoaps
+version: '2026-09-26'
+rules:
+- id: uttar-pradesh-resident
+  kind: require
+  self_declared: true
+  verify_hint: Keep proof that you live in Uttar Pradesh ready (for example a domicile /
+    residence certificate from the tehsil) — the department verifies residence before
+    sanctioning the pension.
+  when:
+    field: state
+    op: eq
+    value: Uttar Pradesh
+  clause: The Government of Uttar Pradesh has introduced an old-age pension scheme for the
+    benefit of the senior citizens in the state.
+  source_url: https://www.myscheme.gov.in/schemes/upoaps
+  ask: Do you live in Uttar Pradesh?
+  review_status: verified
+  notes_for_reviewer: The eligibility section has no residency clause; this quotes the
+    official FAQ (and myScheme lists it as a State scheme for Uttar Pradesh). Residence
+    is self-declared (softens to likely_eligible), since the check cannot see a domicile
+    certificate.
+- id: age-at-least-60
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 60
+  clause: Age should be between 60 to 150.
+  source_url: https://www.myscheme.gov.in/schemes/upoaps
+  ask: What is your age?
+  review_status: verified
+  notes_for_reviewer: The 150-year upper bound is not encoded — it excludes no real applicant.
+- id: below-poverty-line-or-income-limit
+  kind: require
+  self_declared: true
+  verify_hint: Carry your BPL card, or an income certificate from the tehsil showing the
+    family income is within the limit for your area.
+  when:
+    any:
+    - field: has_bpl_card
+      op: eq
+      value: true
+    - all:
+      - field: area
+        op: eq
+        value: rural
+      - field: annual_family_income_inr
+        op: lte
+        value: 46080
+    - all:
+      - field: area
+        op: eq
+        value: urban
+      - field: annual_family_income_inr
+        op: lte
+        value: 56460
+  clause: Applicant should be below poverty line or his/her annual income should be upto
+    for Rural Areas Rs. 46,080/- and Urban Areas Rs. 56,460/-.
+  source_url: https://www.myscheme.gov.in/schemes/upoaps
+  ask: Is your household on the BPL list, or is your yearly income within ₹46,080 (village)
+    or ₹56,460 (city)?
+  review_status: verified
+  notes_for_reviewer: OR-group composed by hand from one clause (BPL card OR area-specific
+    income cap). "Upto" read as inclusive (≤). The clause says "his/her annual income";
+    encoded on annual_family_income_inr, the only income fact the profile holds.
+simplifications:
+- 'The official page has no application-steps or documents section; its FAQ names
+  photographs, an income certificate and an age certificate, which the application packet
+  does not list because they are not in the documents section.'

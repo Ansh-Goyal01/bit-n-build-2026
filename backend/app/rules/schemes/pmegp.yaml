@@ -1,0 +1,65 @@
+scheme_id: pmegp
+version: '2026-07-14'
+rules:
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+    any: null
+    all: null
+  clause: 1. Any individual, above 18 years of age.
+  source_url: https://www.myscheme.gov.in/schemes/pmegp
+  ask: How old are you?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: meat-industry-exclusion
+  kind: exclude
+  when:
+    field: occupation
+    op: eq
+    value: meat industry
+    any: null
+    all: null
+  clause: 1. Any Industry/ Business connected with Meat(slaughtered), i.e., processing, canning
+    and/or serving items made of it as food, production/Manufacturing or sale of intoxicant
+    items like Beedi/Pan/ Cigar/Cigarette etc., any Hotel or Dhaba or sales outlet serving
+    liquor, preparation/producing tobacco as raw materials, tapping of toddy for sale will
+    not be allowed.
+  source_url: https://www.myscheme.gov.in/schemes/pmegp
+  ask: Are you involved in the meat industry?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: crop-cultivation-exclusion
+  kind: exclude
+  when:
+    field: occupation
+    op: eq
+    value: crop cultivation
+    any: null
+    all: null
+  clause: 2. Any Industry/Business connected with cultivation of crops/plantation like Tea,
+    Coffee, Rubber etc. Sericulture (Cocoon rearing), Horticulture, Floriculture, Animal Husbandry
+    will not be allowed.
+  source_url: https://www.myscheme.gov.in/schemes/pmegp
+  ask: Are you involved in crop cultivation?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- State-specific notifications and enrollment windows
+- Document formalities for applying to PMEGP
+- 'Not modeled: VIII standard pass educational qualification (a mis-encoded rule for
+  this clause — project cost bound to family income, conditional flattened into an
+  income floor — was removed 2026-07-14; needs a project_cost_inr field to model
+  honestly)'
+- 'Not modeled: Existing subsidies or schemes'
+- 'Not modeled: Margin money adjustment status'
+- 'Not modeled: Loan repayment status'
+- 'Not modeled: Unit profitability and growth potential'
+- 'Not modeled: Natural calamity affected status'
+- 'Not modeled: Family members who have received assistance'
+- 'Not modeled: Environmental or socio-economic restrictions'

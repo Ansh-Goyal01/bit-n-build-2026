@@ -1,0 +1,51 @@
+scheme_id: tce-sc
+version: '2026-07-13'
+rules:
+- id: social-category-sc
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: sc
+  clause: The applicant should belong to the Scheduled Caste (SC) category.
+  source_url: https://www.myscheme.gov.in/schemes/tce-sc
+  ask: Do you belong to the Scheduled Caste (SC) category?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: annual-family-income-lte-800000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 800000
+  clause: The applicant's total annual family income from all sources should not exceed ₹8,00,000.
+  source_url: https://www.myscheme.gov.in/schemes/tce-sc
+  ask: What is your total annual family income from all sources?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The applicant should be admitted through the prescribed admission process and satisfy the
+  merit requirements applicable to the institution/course.
+- The scholarship shall be discontinued if the applicant changes the institution after selection
+  under the scheme.
+- The scholarship shall be stopped if the applicant fails to get promoted to the next academic
+  year and shall be restored only after promotion to the next class/year.
+- Unutilized slots reserved for girls may be transferred to eligible male students.
+- 'Not modeled: The applicant should have secured admission to a notified institution identified
+  under the scheme.'
+- 'Not modeled: The applicant should be pursuing a course beyond Class 12 in a notified institution.'
+- 'Not modeled: The applicant should be a first-year student of the approved course for consideration
+  under the fresh scholarship category.'
+- 'Not modeled: The applicant shall not be eligible for a fresh scholarship if he/she is already
+  studying in the 2nd year or a higher year of the course.'
+- 'Not modeled: The applicant shall not be eligible if he/she is not studying in a notified
+  institution covered under the scheme.'
+- 'Not modeled: The applicant shall not receive benefits under any other similar scholarship
+  scheme of the Central Government or a State Government for the same course of study.'
+- 'Not modeled: More than 2 siblings from the same family shall not be eligible to receive
+  benefits under the scheme.'
+- 'Not modeled: The applicant shall not be eligible if the annual family income exceeds ₹8,00,000.'
+- 'Not modeled: 30% of the scholarship slots are reserved for eligible Scheduled Caste girl
+  students.'

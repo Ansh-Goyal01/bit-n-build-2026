@@ -1,0 +1,50 @@
+scheme_id: igndps
+version: '2026-07-11'
+rules:
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: The applicant should be in the age group of 18-79 years.
+  source_url: https://www.myscheme.gov.in/schemes/igndps
+  ask: What is your age?
+  review_status: verified
+- id: age-at-most-79
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 79
+  clause: The applicant should be in the age group of 18-79 years.
+  source_url: https://www.myscheme.gov.in/schemes/igndps
+  ask: What is your age?
+  review_status: verified
+- id: disability-at-least-80
+  kind: require
+  when:
+    field: disability_percent
+    op: gte
+    value: 80
+  clause: The applicant's disability should be more than 80%.
+  source_url: https://www.myscheme.gov.in/schemes/igndps
+  ask: What disability percentage does your disability certificate show?
+  review_status: verified
+- id: bpl-household
+  kind: require
+  self_declared: true
+  verify_hint: Confirm your household is on the current BPL list at your Gram Panchayat office
+    (rural) or municipal ward office (urban) — carry your BPL/ration card.
+  when:
+    field: has_bpl_card
+    op: eq
+    value: true
+  clause: The applicant should belong to a household living below the poverty line according
+    to the criteria prescribed by the Govt. of India.
+  source_url: https://www.myscheme.gov.in/schemes/igndps
+  ask: Is your household on the Below Poverty Line (BPL) list?
+  review_status: verified
+simplifications:
+- myScheme text says disability "more than 80%" but the rule encodes ≥ 80% (NSAP guidelines
+  phrase it as "80% and above") — signer to confirm the boundary.

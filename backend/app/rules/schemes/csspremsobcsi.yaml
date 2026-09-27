@@ -1,0 +1,57 @@
+scheme_id: csspremsobcsi
+version: '2026-07-13'
+rules:
+- id: annual-family-income-at-most-250000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 250000
+    any: null
+    all: null
+  clause: The scholarship award will be sanctioned in the case of students whose parents/guardians'
+    income from all sources does not exceed ₹ 2,50,000/- per annum.
+  source_url: https://www.myscheme.gov.in/schemes/csspremsobcsi
+  ask: What is your family's annual income?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: social-category-obc
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: obc
+    any: null
+    all: null
+  clause: '"Centrally Sponsored Scheme of Pre-matric Scholarship to Other Backward Classes
+    (OBC) for Studies in India" is a Scholarship Scheme by the Department of Social Justice
+    and Empowerment, Ministry of Social Justice and Empowerment.'
+  source_url: https://www.myscheme.gov.in/schemes/csspremsobcsi
+  ask: What is your social category?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-student
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The scholarships may be given to the students enrolled in class 1st or any subsequent
+    class of the pre-matric stage in the case of day scholars, and class 3rd or any subsequent
+    class of the pre-matric stage in the case of hostlers.
+  source_url: https://www.myscheme.gov.in/schemes/csspremsobcsi
+  ask: Are you currently studying?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- State-specific notification and enrollment windows
+- Document formalities
+- 'Not modeled: attendance records of not less than 60% in the previous year'
+- 'Not modeled: not availing of benefits under any other pre-matric scholarship scheme'
+- 'Not modeled: 30% of the beneficiaries should be reserved for girl students.'
+- 'Not modeled: At least 5% of students with disabilities should be covered by grants or scholarships.'

@@ -1,0 +1,98 @@
+scheme_id: pmcup
+version: '2026-09-26'
+rules:
+- id: uttar-pradesh-resident
+  kind: require
+  self_declared: true
+  verify_hint: Keep proof of residence in Uttar Pradesh ready, with your caste certificate
+    and your family's income certificate — your school and the scholarship portal verify
+    them.
+  when:
+    field: state
+    op: eq
+    value: Uttar Pradesh
+  clause: Beneficiary must be a resident of Uttar Pradesh.
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: Do you live in Uttar Pradesh?
+  review_status: verified
+- id: scheduled-caste-or-tribe
+  kind: require
+  when:
+    any:
+    - field: social_category
+      op: eq
+      value: sc
+    - field: social_category
+      op: eq
+      value: st
+  clause: Beneficiary must belong to the Scheduled Caste (SC) or Scheduled Tribe(ST) category.
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: Do you belong to a Scheduled Caste (SC) or Scheduled Tribe (ST)?
+  review_status: verified
+- id: studying
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+  clause: Applicant must be studying in Class 9 or 10 in a recognized school.
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: Are you currently studying in school?
+  review_status: verified
+  notes_for_reviewer: Quoted from the official FAQ (educational eligibility). Encoded as
+    two rules — studying, and not yet post-matric — because the profile has no "class 9 or
+    10" fact; a student below class 9 would pass both. Confirm this proxy.
+- id: not-yet-post-matric
+  kind: require
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: false
+  clause: Applicant must be studying in Class 9 or 10 in a recognized school.
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: Are you studying in Class 9 or 10 (not yet after Class 10)?
+  review_status: verified
+- id: age-at-least-12
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 12
+  clause: Beneficiary's age limit is 12 to 20 years old (as of July 1st).
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: What is your age?
+  review_status: verified
+  notes_for_reviewer: The reference date (age as of 1 July) is not modelled — the stated
+    current age is used.
+- id: age-at-most-20
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 20
+  clause: Beneficiary's age limit is 12 to 20 years old (as of July 1st).
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: What is your age?
+  review_status: verified
+- id: parents-income-cap-250k
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 250000
+  clause: 'Component 1: Beneficiaries'' parents'' annual income should not be more than
+    ₹2,50,000/-.'
+  source_url: https://www.myscheme.gov.in/schemes/pmcup
+  ask: Is your parents' yearly income ₹2,50,000 or less?
+  review_status: verified
+  notes_for_reviewer: 'Encodes Component 1 only (also stated in the FAQ: "Applicant family''s
+    annual income must not exceed ₹2,50,000/-"). Component 2 ("No income criteria", for
+    dependents of people in occupations traditionally considered untouchable) is not
+    encoded — such a student with a higher family income gets a false not_eligible. See
+    simplifications.'
+simplifications:
+- 'Not encoded: Component 2 — no income limit for dependents of people in occupations
+  traditionally considered untouchable (no profile fact for it). Such students should
+  apply through their school regardless of the income shown here.'
+- 'Not encoded: "Students cannot receive other scholarships alongside this one (with some
+  exceptions)."'

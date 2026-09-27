@@ -1,0 +1,56 @@
+{
+  "note": "The rules engine is deterministic (no LLM in the verdict path): same input, same output. Reproduce the rules rows offline with `python -m evals.run_eval --phase rules`. Faithfulness (post_verifier) and the llm baseline require an LLM judge/runner and are reported as measured.",
+  "labeled_pairs": {
+    "main_set": {
+      "source_file": "rules-20260713-0602.json",
+      "cases": 41,
+      "eligibility": {
+        "pairs": 92,
+        "accuracy": 0.913,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "abstained": 8
+      },
+      "faithfulness": {
+        "pre_verifier": null,
+        "post_verifier": 0.8114,
+        "pre_claims": 0,
+        "post_claims": 456
+      }
+    },
+    "main_set_llm_baseline": {
+      "source_file": "llm-20260713-0725.json",
+      "cases": 41,
+      "eligibility": {
+        "pairs": 92,
+        "accuracy": 0.5435,
+        "false_positives": 14,
+        "false_negatives": 14,
+        "abstained": 14
+      },
+      "faithfulness": {
+        "pre_verifier": 0.3476,
+        "post_verifier": 0.3539,
+        "pre_claims": 420,
+        "post_claims": 373
+      }
+    },
+    "heldout_set": {
+      "source_file": "heldout-rules-20260712-1856.json",
+      "cases": 15,
+      "eligibility": {
+        "pairs": 15,
+        "accuracy": 0.8667,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "abstained": 1
+      },
+      "faithfulness": {
+        "pre_verifier": null,
+        "post_verifier": 0.6667,
+        "pre_claims": 0,
+        "post_claims": 99
+      }
+    }
+  }
+}

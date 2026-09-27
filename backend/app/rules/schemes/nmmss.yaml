@@ -1,0 +1,71 @@
+scheme_id: nmmss
+version: '2026-07-13'
+rules:
+- id: is-student
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant must be a student.
+  source_url: https://www.myscheme.gov.in/schemes/nmmss
+  ask: Are you currently studying?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: annual-family-income-inr-at-most-350000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 350000
+    any: null
+    all: null
+  clause: Students whose parental income from all sources is not more than ₹3,50,000/- per
+    annum are eligible to avail the scholarship.
+  source_url: https://www.myscheme.gov.in/schemes/nmmss
+  ask: What is your family's annual income?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: has-bank-account
+  kind: require
+  when:
+    field: has_bank_account
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The awardees will be required to open bank accounts preferably in SBI, any public
+    sector bank, or any scheduled bank which has a core banking facility.
+  source_url: https://www.myscheme.gov.in/schemes/nmmss
+  ask: Do you have a bank account?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- State-specific notification and enrollment windows
+- Document formalities for scholarship application
+- 'Not modeled: The students studying in "Kendriya Vidyalayas and Jawahar Navodaya Vidyalayas"
+  are not entitled to get scholarships under this scheme.'
+- 'Not modeled: Those students studying in Residential Schools run by the Centre/ State Government
+  Institutions, where facilities like boarding, lodging, and education are provided and students
+  studying in private schools are also not eligible for the scholarship under the scheme.'
+- 'Not modeled: No scholarship shall be available for studies abroad for any course.'
+- 'Not modeled: No scholarship at this stage is payable for studying diploma/certificate level
+  courses.'
+- 'Not modeled: The students should be studying as regular student in a Government, Government-aided
+  and local body school.'
+- 'Not modeled: The students must pass both the MAT and the SAT with at least 40 % marks in
+  aggregate taken together for these two tests. For the SC/ST students, this cut-off will
+  be 32% marks.'
+- 'Not modeled: At the time of selection for the award of scholarship, the student must have
+  scored at least 55% mark or equivalent grade in the Class 8th examination. There will be
+  5 % relaxation for SC/ST students.'
+- 'Not modeled: The awardees should get a minimum of 60% marks in Class 10th for the continuation
+  of the scholarship (relaxable by 5% for SC/ST candidates) in the next higher classes.'
+- 'Not modeled: For continuing the scholarship in class 10th and 12th, the awardees should
+  get clear promotion from class 9th to class 10th and from class 11th to class 12th in the
+  first attempt.'

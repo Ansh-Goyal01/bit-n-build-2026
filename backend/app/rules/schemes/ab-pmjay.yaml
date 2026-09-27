@@ -1,0 +1,63 @@
+scheme_id: ab-pmjay
+version: '2026-07-11'
+rules:
+- id: secc-priority-category
+  kind: require
+  self_declared: true
+  verify_hint: Check your household in the Ayushman Bharat beneficiary list at mera.pmjay.gov.in,
+    or call the PM-JAY helpline 14555, or ask an Ayushman Mitra at an empanelled hospital.
+  when:
+    any:
+    - field: is_pmjay_priority_category
+      op: eq
+      value: true
+    - field: has_bpl_card
+      op: eq
+      value: true
+  clause: Eligibility is based on the SECC 2011 deprivation and occupational criteria — e.g.
+    landless households deriving a major part of their income from manual casual labour, and
+    listed urban occupational categories (ragpicker, domestic worker, street vendor, construction
+    worker, sanitation worker and similar).
+  source_url: https://www.myscheme.gov.in/schemes/ab-pmjay
+  ask: Does your household match an SECC deprivation category (e.g. landless manual labour)
+    or a listed occupational category, or hold a BPL/priority ration card?
+  review_status: verified
+- id: exclude-monthly-income-over-10k
+  kind: exclude
+  when:
+    field: annual_family_income_inr
+    op: gt
+    value: 120000
+  clause: Households earning a monthly income above ₹10,000/- are excluded.
+  source_url: https://www.myscheme.gov.in/schemes/ab-pmjay
+  ask: Is your family's income above ₹10,000 per month?
+  review_status: verified
+- id: exclude-government-employee
+  kind: exclude
+  when:
+    field: family_member_in_govt_service
+    op: eq
+    value: true
+  clause: Households with any member employed in government are excluded.
+  source_url: https://www.myscheme.gov.in/schemes/ab-pmjay
+  ask: Is anyone in your household a government employee?
+  review_status: verified
+- id: exclude-motorized-vehicle
+  kind: exclude
+  when:
+    field: owns_motorized_vehicle
+    op: eq
+    value: true
+  clause: Households owning a motorised two/three/four wheeler or fishing boat are excluded
+    (SECC automatic exclusion).
+  source_url: https://www.myscheme.gov.in/schemes/ab-pmjay
+  ask: Does your household own a motorised vehicle or fishing boat?
+  review_status: verified
+simplifications:
+- The "monthly income above ₹10,000" exclusion is tested on yearly income (monthly incomes
+  are converted ×12 at extraction, so the ₹1,20,000/year threshold is the exact equivalent)
+  — households with strongly seasonal income may be classified differently than a literal
+  month-by-month test.
+- Full SECC 2011 deprivation/occupational criteria are approximated by a self-declared priority-category
+  / BPL proxy — final eligibility rests on the household's presence in the SECC/PMJAY beneficiary
+  list.

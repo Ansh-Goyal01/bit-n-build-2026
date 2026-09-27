@@ -1,0 +1,25 @@
+{
+ "scheme_id": "upoaps",
+ "short_name": "UP-OAPS",
+ "name": "Uttar Pradesh Old Age Pension Scheme",
+ "category": "pension",
+ "level": "State",
+ "ministry": "",
+ "page_url": "https://www.myscheme.gov.in/schemes/upoaps",
+ "references": [
+  {
+   "title": "Guidelines",
+   "url": "https://sspy-up.gov.in/docs/oap_yojna_vishya.pdf"
+  },
+  {
+   "title": "Application Form",
+   "url": "https://sspy-up.gov.in/docs/form_oap.pdf"
+  }
+ ],
+ "fetched_at": "2026-09-26",
+ "sections": {
+  "details": "**Features**\n\n1. The government will allow only the senior citizens from the economically weaker sections to avail the benefits under this scheme.\n1. Under this Uttar Pradesh old age pension scheme, the Government will transfer the pension amount to the beneficiaries through their bank account",
+  "eligibility": "**Eligibility**\n\n1. Age should be between 60 to 150.\n1. Applicant should be below poverty line or his/her annual income should be upto for Rural Areas Rs. 46,080/- and Urban Areas Rs. 56,460/-.",
+  "faq": "**Q: What is UP Old age pension Scheme ?**\n\nA: The Government of Uttar Pradesh has introduced an old-age pension scheme for the benefit of the senior citizens in the state. Under this scheme, eligible senior citizens will be provided with financial assistance in the form of a monthly pension.\n\n**Q: What are the benefits ?**\n\nA: Monthly pension Rs. 1000\n\n**Q: What is the eligibility ?**\n\nA: 1. Applicant's age should be between 60 to 150.\n2. Applicant should be below the poverty line or his/her annual income should be upto for Rural Areas Rs. 46,080/- and for Urban Areas Rs. 56,460/-.\n\n**Q: What is the process to apply online ?**\n\nA: 1. Applicants need to visit the official website.\n2. Select the option \"Old Age Pension\".\n3. Now choose \"Apply Online\".\n4. Now applicants need to fill out the form and provide the required information.\n5. Upload required documents (Photograph and Age certificate).\n6. And Submit.\n\n**Q: List of required document**\n\nA: 1. Photographs.\n2. Income certificate.\n3. Age Certificate."
+ }
+}

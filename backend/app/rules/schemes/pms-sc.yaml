@@ -1,0 +1,45 @@
+scheme_id: pms-sc
+version: '2026-07-11'
+rules:
+- id: scheduled-caste
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: sc
+  clause: Only those candidates who belong to Scheduled Castes so specified in relation to
+    the State/Union Territory to which the applicant actually belongs will be eligible (guidelines
+    §5.2).
+  source_url: https://socialjustice.gov.in/schemes/25
+  ask: Do you belong to a Scheduled Caste (SC)?
+  review_status: verified
+- id: post-matric-student
+  kind: require
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: true
+  clause: Candidates who have passed the Matriculation or Higher Secondary or any higher examination
+    of a recognized University or Board of Secondary Education will be eligible (guidelines
+    §5.2).
+  source_url: https://socialjustice.gov.in/schemes/25
+  ask: Are you studying at a post-matric level (class 11 or above, diploma, or degree) at
+    a recognized institution?
+  review_status: verified
+- id: family-income-cap-250k
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 250000
+  clause: Scholarships will be paid to the students whose parents'/guardians' income from
+    all sources does not exceed Rs. 2,50,000/- during the last Financial Year (guidelines
+    §5.3).
+  source_url: https://socialjustice.gov.in/schemes/25
+  ask: Was your parents'/guardians' total income last financial year ₹2,50,000 or less?
+  review_status: verified
+simplifications:
+- 'Proxy note: the guidelines require having PASSED matriculation/higher secondary
+  (§5.1); the is_post_matric_student field tests currently studying post-matric,
+  which is the wizard-checkable proxy — candidates between courses are asked to
+  confirm on the portal (2026-07-14 semantic audit, certified: kept).'

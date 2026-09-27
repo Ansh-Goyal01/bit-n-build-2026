@@ -1,0 +1,27 @@
+scheme_id: nsap-ignoaps
+version: '2026-07-11'
+rules:
+- id: age-60-or-above
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 60
+  clause: The applicant should be 60 years of age or above.
+  source_url: https://www.myscheme.gov.in/schemes/nsap-ignoaps
+  ask: What is your age?
+  review_status: verified
+- id: bpl-household
+  kind: require
+  self_declared: true
+  verify_hint: Confirm your household is on the current BPL list at your Gram Panchayat office
+    (rural) or municipal ward office (urban) — carry your BPL/ration card.
+  when:
+    field: has_bpl_card
+    op: eq
+    value: true
+  clause: The applicant must belong to a household living below the poverty line according
+    to the criteria prescribed by the Government of India.
+  source_url: https://www.myscheme.gov.in/schemes/nsap-ignoaps
+  ask: Is your household on the Below Poverty Line (BPL) list?
+  review_status: verified

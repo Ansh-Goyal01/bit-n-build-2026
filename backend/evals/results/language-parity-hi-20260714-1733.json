@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-07-14T17:41:45+00:00",
+  "lang": "hi",
+  "profiles": 5,
+  "verdict_parity": true,
+  "mismatches": [],
+  "samples": [
+    {
+      "profile_index": 0,
+      "verdicts_identical": true,
+      "n_results": 29,
+      "status": "ok",
+      "sample_scheme": "mssc",
+      "sample_summary_en": "You are eligible for MSSC because you are female.",
+      "sample_summary_hi": "आप MSSC के लिए पात्र हैं क्योंकि आप महिला हैं।"
+    },
+    {
+      "profile_index": 1,
+      "verdicts_identical": true,
+      "n_results": 23,
+      "status": "ok",
+      "sample_scheme": "apy",
+      "sample_summary_en": "You are eligible for APY because your age is within the 18-40 range, you have a savings bank account, and you do not pay income tax.",
+      "sample_summary_hi": "आप APY के लिए पात्र हैं क्योंकि आपकी आयु 18-40 वर्ष के बीच है, आपके पास एक बचत बैंक खाता है, और आप आयकर का भुगतान नहीं करते हैं।"
+    },
+    {
+      "profile_index": 2,
+      "verdicts_identical": true,
+      "n_results": 31,
+      "status": "ok",
+      "sample_scheme": "pmegp",
+      "sample_summary_en": "You are eligible for the Prime Minister's Employment Generation Programme because you are at least 18 years old and your occupation is not in the meat industry or crop cultivation.",
+      "sample_summary_hi": "आप Prime Minister's Employment Generation Programme के लिए पात्र हैं क्योंकि आपकी आयु कम से कम 18 वर्ष है और आपका व्यवसाय मांस उद्योग या फसल की खेती में नहीं है।"
+    },
+    {
+      "profile_index": 3,
+      "verdicts_identical": true,
+      "n_results": 19,
+      "status": "ok",
+      "sample_scheme": "pmegp",
+      "sample_summary_en": "You are eligible for PMEGP because you are at least 18 years old and your occupation does not involve the meat industry or crop cultivation.",
+      "sample_summary_hi": "आप पीएमईजीपी के लिए पात्र हैं क्योंकि आपकी आयु कम से कम 18 वर्ष है और आपका व्यवसाय मांस उद्योग या फसल की खेती से संबंधित नहीं है।"
+    },
+    {
+      "profile_index": 4,
+      "verdicts_identical": true,
+      "n_results": 12,
+      "status": "ok",
+      "sample_scheme": "pm-svanidhi",
+      "sample_summary_en": "You are eligible for this scheme because you are a street vendor and have a vending certificate or letter of recommendation.",
+      "sample_summary_hi": "आप इस योजना के लिए पात्र हैं क्योंकि आप एक स्ट्रीट वेंडर हैं और आपके पास वेंडिंग प्रमाण पत्र या सिफारिश पत्र है।"
+    }
+  ]
+}

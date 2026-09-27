@@ -1,0 +1,48 @@
+scheme_id: pmv
+version: '2026-07-11'
+rules:
+- id: vishwakarma-trade-artisan
+  kind: require
+  when:
+    field: is_vishwakarma_trade_artisan
+    op: eq
+    value: true
+  clause: The applicant should be an artisan or craftsperson working with hands and tools,
+    engaged in an unorganized sector on a self-employment basis, in one of the 18 family-based
+    traditional trades mentioned in the scheme (carpenter, boat maker, armourer, blacksmith,
+    hammer and tool kit maker, locksmith, goldsmith, potter, sculptor/stone carver, cobbler,
+    mason, basket/mat/broom maker, doll and toy maker, barber, garland maker, washerman, tailor,
+    fishing net maker).
+  source_url: https://www.myscheme.gov.in/schemes/pmv
+  ask: Is your work one of the 18 Vishwakarma trades, done by hand with tools, self-employed
+    in the unorganized sector?
+  review_status: verified
+- id: minimum-age-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: On the date of registration for the scheme, the minimum age of the applicant should
+    be 18 years.
+  source_url: https://www.myscheme.gov.in/schemes/pmv
+  ask: What is your age?
+  review_status: verified
+- id: exclude-government-service-family
+  kind: exclude
+  when:
+    field: family_member_in_govt_service
+    op: eq
+    value: true
+  clause: A person in government service and their family members shall not be eligible.
+  source_url: https://www.myscheme.gov.in/schemes/pmv
+  ask: Are you or any family member in government service?
+  review_status: verified
+simplifications:
+- 'Official exclusion not yet encoded: persons who availed credit-based self-employment schemes
+  (e.g. PMEGP, PM SVANidhi, Mudra) in the past 5 years.'
+- The one-registration-per-family restriction is not modeled.
+- 'The govt-service exclusion covers the applicant AND family: the wizard ask ("Are
+  you or any family member...") captures self despite the field name saying family
+  member (2026-07-14 semantic audit flag refuted at the wizard layer, certified;
+  vocabulary description aligned).'

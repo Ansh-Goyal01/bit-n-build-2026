@@ -1,0 +1,75 @@
+scheme_id: nswf
+version: '2026-07-13'
+extraction:
+  extracted_at: '2026-07-13'
+  status: awaiting-human-review
+  source_url: https://www.myscheme.gov.in/schemes/nswf
+rules: []
+blocked_rules:
+- criterion: Fishermen living in coastal areas
+  proposed_field:
+    name: lives_in_coastal_area
+    type: boolean
+    meaning: True if the applicant lives in a coastal area.
+  suggested_rule_id: inland-lives-in-coastal-area
+- criterion: Fishermen with whom the respective States and Union Territories have officially
+    licensed
+  proposed_field:
+    name: has_official_fishing_license
+    type: boolean
+    meaning: True if the applicant holds an official fishing license from their State/UT.
+  suggested_rule_id: inland-has-official-license
+- criterion: The age of fishermen must be below 60 years old. (This criterion applies specifically
+    to Inland Fishermen, but there is no field to identify an applicant as an 'inland fisherman'.)
+  proposed_field:
+    name: is_inland_fisherman
+    type: boolean
+    meaning: True if the applicant is an inland fisherman.
+  suggested_rule_id: inland-age-below-60
+- criterion: Applicant fishermen must belong to the BPL (Below Poverty Line) category. (This
+    criterion applies specifically to Inland Fishermen, but there is no field to identify
+    an applicant as an 'inland fisherman'.)
+  proposed_field:
+    name: is_inland_fisherman
+    type: boolean
+    meaning: True if the applicant is an inland fisherman.
+  suggested_rule_id: inland-has-bpl-card
+- criterion: They must be engaged in full-time activities inland.
+  proposed_field:
+    name: is_engaged_in_full_time_inland_fishing
+    type: boolean
+    meaning: True if the applicant is engaged in full-time inland fishing activities.
+  suggested_rule_id: inland-full-time-inland-activity
+- criterion: All marine fishermen who operate under State, Union Territories, and FISHCOPFED
+    are eligible for this government scheme for fishermen. (This criterion applies specifically
+    to Marine Fishermen, but there is no field to identify an applicant as a 'marine fisherman'.)
+  proposed_field:
+    name: is_marine_fisherman
+    type: boolean
+    meaning: True if the applicant is a marine fisherman.
+  suggested_rule_id: marine-operates-under-state-ut-fishcopfed
+- criterion: Their respective States and Union Territories must officially license marine
+    fishermen.
+  proposed_field:
+    name: has_official_fishing_license
+    type: boolean
+    meaning: True if the applicant holds an official fishing license from their State/UT.
+  suggested_rule_id: marine-has-official-license
+- criterion: They must involve themselves in full-time activities at sea.
+  proposed_field:
+    name: is_engaged_in_full_time_marine_fishing
+    type: boolean
+    meaning: True if the applicant is engaged in full-time marine fishing activities.
+  suggested_rule_id: marine-full-time-at-sea-activity
+- criterion: They must be a member of the Welfare Society or Federation or Cooperative Society.
+  proposed_field:
+    name: is_member_of_fishermen_society
+    type: boolean
+    meaning: True if the applicant is a member of a Welfare Society, Federation, or Cooperative
+      Society.
+  suggested_rule_id: marine-member-of-society
+rejected_drafts: []
+simplifications:
+- The scheme specifies that fishermen under FISHCOPFED can avail of funds available under
+  the insurance component only. This is a benefit limitation rather than an eligibility criterion
+  for the scheme itself.

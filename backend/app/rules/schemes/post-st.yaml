@@ -1,0 +1,60 @@
+scheme_id: post-st
+version: '2026-07-13'
+rules:
+- id: social-category-st
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: st
+    any: null
+    all: null
+  clause: Only those candidates who belong to Scheduled Tribes so specified in relation to
+    the State/Union Territory to which the applicant actually belongs (i.e. permanently settled)
+    and who have passed the Matriculation or Higher Secondary or any higher examination of
+    a recognized University or Board of Secondary Education, will be eligible.
+  source_url: https://www.myscheme.gov.in/schemes/post-st
+  ask: What is your social category?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: annual-family-income-inr
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 200000
+    any: null
+    all: null
+  clause: Scholarships will be paid to the students whose parents/guardians’ income from all
+    sources does not exceed ₹ 2,00,000/- per annum.
+  source_url: https://www.myscheme.gov.in/schemes/post-st
+  ask: What is your annual family income?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-post-matric-student
+  kind: require
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: These scholarships will be given for the study of all recognized post-matriculation
+    post-secondary courses pursued in recognized institutions.
+  source_url: https://www.myscheme.gov.in/schemes/post-st
+  ask: Are you a post-matric student?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The scheme is for pursuing higher education starting from class XI to Post Graduation courses
+  in India.
+- The student will be entitled to stipend as per rates listed in the scheme.
+- 'Not modeled: Recognized institution'
+- 'Not modeled: State/Union Territory to which the applicant actually belongs'
+- 'Not modeled: Candidates who complete a course in one stream will not be eligible to take
+  diploma/degree course of different stream. For example, student will not be eligible for
+  scholarship for pursuing B. Com after completing B.A or BSC or MBBS after doing B.Tech.'
+- 'Not modeled: A scholarship holder under this scheme will not hold any other scholarship/stipend.'

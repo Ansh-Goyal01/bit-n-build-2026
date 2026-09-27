@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 300,
+      "memory": 2048,
+      "excludeFiles": "{frontend/**,obsidian-vault/**,docs/**,scripts/**,backend/tests/**,backend/evals/**,data/raw/**,data/cache/**,data/feedback/**,**/__pycache__/**,**/*.pyc}"
+    }
+  }
+}

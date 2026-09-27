@@ -1,0 +1,31 @@
+scheme_id: vdcspds
+version: '2026-07-13'
+rules:
+- id: age-at-least-10
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 10
+  clause: Beneficiary should be of the age of 10 years or more.
+  source_url: https://www.myscheme.gov.in/schemes/vdcspds
+  ask: What is your age?
+  review_status: verified
+- id: national-trust-act-disability
+  kind: require
+  when:
+    any:
+    - { field: disability_type, op: eq, value: autism }
+    - { field: disability_type, op: eq, value: cerebral_palsy }
+    - { field: disability_type, op: eq, value: intellectual_disability }
+    - { field: disability_type, op: eq, value: multiple_disabilities }
+  clause: Beneficiary should have one of the disabilities under the National Trust Act,
+    1999, which are Autism, Cerebral Palsy, Mental Retardation (Intellectual Disability)
+    and Multiple Disabilities.
+  source_url: https://www.myscheme.gov.in/schemes/vdcspds
+  ask: Is the disability on the certificate Autism, Cerebral Palsy, Intellectual Disability,
+    or Multiple Disabilities?
+  review_status: verified
+simplifications:
+- 'Not modeled: Beneficiary should not be simultaneously enrolled under the Samarth or
+    Gharaunda scheme.'

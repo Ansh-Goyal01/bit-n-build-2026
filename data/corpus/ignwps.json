@@ -1,0 +1,32 @@
+{
+ "scheme_id": "ignwps",
+ "short_name": "IGNWPS",
+ "name": "Indira Gandhi National Widow Pension Scheme",
+ "category": "pension",
+ "level": "Central",
+ "ministry": "Ministry Of Rural Development",
+ "page_url": "https://www.myscheme.gov.in/schemes/ignwps",
+ "references": [
+  {
+   "title": "Guidelines",
+   "url": "https://nsap.dord.gov.in/Guidelines/wps.pdf"
+  },
+  {
+   "title": "NSAP FAQs",
+   "url": "https://nsap.dord.gov.in/circular.do?method=faq"
+  },
+  {
+   "title": "Official Website",
+   "url": "https://nsap.dord.gov.in/"
+  }
+ ],
+ "fetched_at": "2026-07-10",
+ "sections": {
+  "details": "Indira Gandhi National Widow Pension Scheme (IGNWPS) is implemented by Ministry of Rural Development, Government of India. It is a non-contributory pension scheme to provide social security to widows of poor family (BPL)  of the society.",
+  "benefits": "A pension of ₹ 300/- per month is provided to Widows between 40 years and 79 years.  For persons who are 80 years and above, the pension is ₹ 500/- per month.",
+  "eligibility": "The eligibility criteria under Indira Gandhi National Widow Pension Scheme (IGNWPS) is:\n\n- The applicant must be a widow in the age group of 40-79 years.\n- The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India",
+  "exclusions": "Pension will be discontinued\n\n- In case of remarriage of widow\n- Once the widow moves above poverty line",
+  "application": "### Application mode: Online\n\n- One can download UMANG App or visit website [https://web.umang.gov.in/web_new/home](https://web.umang.gov.in/web_new/home) - The citizen can login using mobile number and OTP.\n- Once logged In, citizen can search for NSAP.\n- Click on “Apply Online”\n- Fill the basic details, choose the mode of payment of pension, upload photo and click on “Submit”.\n\n### Application mode: Offline\n\n- Individuals can submit completely filled applications to the Gram Panchayat / Block Office in the rural area and the Municipality / Municipal Council in the urban area, as per eligibility.\n- A Verification Officer or Verification Team under an authorized officer verifies the applications with reference to facts related to eligibility\n- The Verification Officer make the necessary recommendation for sanction or rejection with reasons.\n- The list of applicants with the recommendations of the Verifying Authority is discussed in the Gram Sabha in rural areas or Ward Sabha / Area Sabha as designated by the State Government in urban areas and thereafter in the Gram Panchayats and Municipalities.\n- If the time limits are not adhered to by Gram Sabha / Ward Sabhas, Gram Panchayats / Municipalities the Verification Officer directly submits his recommendations to the Sanctioning Authority under intimation to the Gram Panchayat / Municipality.\n- After receipt of applications which are verified and recommended by the Gram Sabha / Ward Committee / Area Sabha, the Sanctioning Authority convey approval to the applicant in the form of a Sanction Order with a copy to Gram Panchayat / Municipality concerned.\n- The Sanctioning Authority issues Sanction Order under his seal\n- Every beneficiary who has been sanctioned pension under schemes of NSAP are issued a Pension Passbook. The Passbook contain details of the Sanction Order, particulars of the pensioner and disbursement details\n- The list of beneficiaries to whom sanctions are issued is displayed at the Gram Panchayat / Ward / Municipal Office and updated every three months.\n- The Pension amount is directly paid to the beneficiaries through the Direct Benefit Transfer (DBT) process to their post office or bank account.",
+  "faq": "**Q: What are different modes of receiving Pension?**\n\nA: One can receive pension amount in Bank Account, Post Office Account, Postal Money Order or in hand cash.\n\n**Q: Who will disburse in hand cash?**\n\nA: In hand cash will be disbursed by Pension Disbursement Authority of respective Sub District/Municipal Area. One can select the pension disbursement authority while filling online application form on UMANG.\n\n**Q: What pension amount is provided under the scheme?**\n\nA: Eligible beneficiaries receive Central Assistance of ₹300 per month. Beneficiaries aged 80 years and above receive ₹500 per month.\n\n**Q: Is there any income criterion for availing the scheme?**\n\nA: Yes. The applicant must belong to a household identified as living Below Poverty Line (BPL) as per the criteria prescribed by the Government of India.\n\n**Q: Can a widow above 80 years continue receiving benefits?**\n\nA: Yes. Upon attaining 80 years of age, the beneficiary becomes eligible for enhanced assistance of ₹500 per month.\n\n**Q: How can an eligible widow apply for the pension?**\n\nA: Applications can be submitted through the prescribed process followed by the concerned State Government, Gram Panchayat, Municipality, or designated welfare authority.\n\n**Q: How is the pension amount disbursed to beneficiaries?**\n\nA: The pension is generally transferred directly to the beneficiary's bank or post office account through Direct Benefit Transfer (DBT).\n\n**Q: Can a widow receive benefits from both Central and State pension schemes?**\n\nA: States may provide additional assistance over and above the Central contribution, subject to their respective rules and policies.\n\n**Q: What is the objective of the Indira Gandhi National Widow Pension Scheme?**\n\nA: The scheme aims to provide financial security and social assistance to destitute widows from economically vulnerable households, helping them meet their basic needs and live with dignity."
+ }
+}

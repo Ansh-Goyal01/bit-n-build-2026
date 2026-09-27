@@ -1,0 +1,18 @@
+scheme_id: kcc
+version: '2026-07-13'
+rules:
+- id: is-farmer-or-cultivator
+  kind: require
+  when:
+    field: cultivates_crops
+    op: eq
+    value: true
+  clause: Farmers - individual/joint borrowers who are owner cultivators; Tenant farmers,
+    oral lessees & share croppers;
+  source_url: https://www.myscheme.gov.in/schemes/kcc
+  ask: Do you actively cultivate crops, either as an owner, tenant, or sharecropper?
+  review_status: verified
+simplifications:
+- 'Not modeled: Self Help Groups (SHGs) or Joint Liability Groups (JLGs) of farmers
+  including tenant farmers, share croppers etc. are also eligible as groups — group
+  membership is not tracked, so this route is not checked.'

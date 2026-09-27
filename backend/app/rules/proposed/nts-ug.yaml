@@ -1,0 +1,133 @@
+scheme_id: nts-ug
+version: '2026-07-13'
+extraction:
+  extracted_at: '2026-07-13'
+  status: held-back-needs-rework
+  hold_reason: The defining criterion (pursuing a Bachelor's in Agriculture) was mapped onto
+    a free-text occupation exact-string match that can effectively never fire, and the AIEE-admission
+    criterion onto is_post_matric_student; multiple duplicate is_student rules remained. Needs
+    a course-of-study field and restructuring.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+rules:
+- id: pursuing-bachelor-degree-in-agriculture
+  kind: require
+  when:
+    field: occupation
+    op: eq
+    value: Agriculture or allied disciplines
+    any: null
+    all: null
+  clause: The applicant should be pursuing a Bachelor's degree programme in Agriculture or
+    allied disciplines.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: What is your current field of study?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: admission-through-aiee
+  kind: require
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant should have secured admission through the All India Entrance Examination
+    (AIEE) conducted for ICAR admissions.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: How did you secure admission to your current course?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: studying-in-icar-funded-university
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant should be studying in an Agricultural University funded under the
+    ICAR scheme "Strengthening and Development of Higher Agricultural Education in India".
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: Is your university funded by ICAR?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: maintain-merit-and-good-conduct
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The student must maintain merit and good conduct as certified by the Head of the
+    College/University/Institution.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: Do you maintain good conduct and merit in your studies?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: regular-attendance
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The student must attend classes regularly and not remain absent without prior permission.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: Do you attend classes regularly?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: no-participation-in-strikes
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The student must not participate in strikes, agitations, or activities that disrupt
+    academic studies.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: Do you participate in strikes or agitations?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: full-time-studies
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The student must pursue studies on a full-time basis and not undertake any part-time
+    or full-time employment.
+  source_url: https://www.myscheme.gov.in/schemes/nts-ug
+  ask: Are you pursuing studies full-time?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+blocked_rules: []
+rejected_drafts: []
+simplifications:
+- The scholarship is initially awarded for one year from the date of admission and is renewable
+  for the remaining duration of the degree programme, subject to satisfactory academic performance
+  and conduct as prescribed by the concerned university.
+- The student must clear all papers in every semester and appear in regular examinations.
+- 'Not modeled: The applicant should have secured admission through the All India Entrance
+  Examination (AIEE) conducted for ICAR admissions.'
+- 'Not modeled: The student must not leave the course within one month of admission.'
+- 'Not modeled: The student must not change the discipline/subject initially allotted for
+  which the scholarship was awarded.'
+- 'Not modeled: The student must not change the University during the tenure of the scholarship.'
+- Cannot verify the university is outside the applicant's home state — only current state
+  of residence is tracked, not a separate domicile state.
+- The no-other-scholarship exclusivity condition is not modeled (no field tracks other scholarships
+  held).
+- The minimum CGPA/OGPA renewal requirement (for continuing students) is not modeled.

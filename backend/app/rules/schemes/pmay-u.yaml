@@ -1,0 +1,59 @@
+scheme_id: pmay-u
+version: '2026-07-13'
+rules:
+- id: annual-family-income
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 1800000
+  clause: '1. The family identifies as one of the following - a) Economically Weaker Section
+    (EWS): households with annual income up to ₹3,00,000. b) Low Income Group (LIG): households
+    with annual income between ₹3,00,001 and ₹6,00,000. c) Middle Income Group-1 (MIG-1):
+    households with annual income between ₹6,00,001 and ₹12,00,000. d) Middle Income Group-2
+    (MIG-2): households with annual income between ₹12,00,001 and ₹18,00,000.'
+  source_url: https://www.myscheme.gov.in/schemes/pmay-u
+  ask: What is your annual family income?
+  review_status: verified
+- id: no-pucca-house
+  kind: exclude
+  when:
+    field: house_type
+    op: eq
+    value: pucca
+  clause: 2. The applicant or his/her family members must not own a pucca house in any part
+    of the country.
+  source_url: https://www.myscheme.gov.in/schemes/pmay-u
+  ask: Do you or your family members own a pucca house?
+  review_status: verified
+- id: family-structure
+  kind: require
+  when:
+    field: marital_status
+    op: eq
+    value: married
+  clause: 3. The family must comprise of husband/wife and unmarried children.
+  source_url: https://www.myscheme.gov.in/schemes/pmay-u
+  ask: What is your marital status?
+  review_status: verified
+- id: urban-residence
+  kind: require
+  when:
+    field: area
+    op: eq
+    value: urban
+  clause: 4. The town/city in which the family resides must be covered under the scheme.
+  source_url: https://www.myscheme.gov.in/schemes/pmay-u
+  ask: Do you reside in an urban area?
+  review_status: verified
+simplifications:
+- 'Not modeled: The family must not have previously availed benefits of any
+  housing-related scheme of the Government of India (no field tracks past housing
+  benefits; an earlier draft wrongly bound this to BPL-card status).'
+- 'Not modeled: The specific town/city must be covered under the scheme — city
+  coverage is not tracked; the check only verifies urban residence.'
+- The income bands (EWS up to ₹3,00,000; LIG to ₹6,00,000; MIG-1 to ₹12,00,000;
+  MIG-2 to ₹18,00,000) determine which vertical applies; the check only verifies
+  the family falls inside the overall ₹18,00,000 ceiling.
+- The mission covers all statutory towns and notified urban areas as per Census 2011.
+- Aadhaar is mandatory for all eligible beneficiaries under the scheme.

@@ -1,0 +1,94 @@
+scheme_id: pg-igssgc
+version: '2026-07-13'
+extraction:
+  extracted_at: '2026-07-13'
+  status: held-back-needs-rework
+  source_url: https://www.myscheme.gov.in/schemes/pg-igssgc
+  hold_reason: single_girl_child is now available and encodes the defining criterion, but
+    the scheme is POSTGRADUATE-specific (first-year master's course). The only existing study
+    proxy (is_post_matric_student) also covers class 11/12/diploma/UG, so requiring it would
+    show school-age single girl children as eligible for a PG scholarship — a broad false
+    entitlement. Needs a precise PG-course/level field before it can go live.
+rules:
+- id: age-max-30-at-admission
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 30
+  clause: The age of the applicant should not be more than 30 years at the time of admission
+    in the first year of PG course.
+  source_url: https://www.myscheme.gov.in/schemes/pg-igssgc
+  ask: What was your age at the time of admission to the first year of your PG course?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+blocked_rules:
+- criterion: The applicant must be a citizen of India.
+  proposed_field:
+    name: is_indian_citizen
+    type: boolean
+    meaning: True if the applicant is a citizen of India.
+  suggested_rule_id: require-indian-citizen
+- criterion: The applicant must be the only girl child in the family. Girl students without
+    having any brothers or the girl student who are twin daughters/ fraternal daughters may
+    also apply. In a family if one son and one daughter are available then the girl child
+    will not be considered for scholarship under the scheme.
+  proposed_field:
+    name: is_only_girl_child_in_family
+    type: boolean
+    meaning: True if the applicant is the only girl child in her family, considering twin/fraternal
+      daughters without brothers as eligible, and excluding families with both a son and a
+      daughter.
+  suggested_rule_id: require-only-girl-child
+- criterion: The applicant must have taken admission to regular, full-time first-year master's
+    degree courses in any designated university or a postgraduate college. This scholarship
+    is available to PG-I year students only.
+  proposed_field:
+    name: is_admitted_to_regular_full_time_pg_first_year
+    type: boolean
+    meaning: True if the applicant has taken admission to a regular, full-time first-year
+      master's degree course.
+  suggested_rule_id: require-pg-first-year-regular-full-time
+- criterion: The applicant must have taken admission to regular, full-time first-year master's
+    degree courses in any designated university or a postgraduate college.
+  proposed_field:
+    name: is_designated_university_or_pg_college
+    type: boolean
+    meaning: True if the educational institution is a designated university or a postgraduate
+      college.
+  suggested_rule_id: require-designated-institution
+- criterion: The candidate should be pursuing a non-professional course and be taking regular
+    classes from a recognized institution.
+  proposed_field:
+    name: is_non_professional_pg_course
+    type: boolean
+    meaning: True if the PG course is non-professional.
+  suggested_rule_id: require-non-professional-course
+- criterion: The candidate should be pursuing a non-professional course and be taking regular
+    classes from a recognized institution.
+  proposed_field:
+    name: is_taking_regular_classes_from_recognized_institution
+    type: boolean
+    meaning: True if the student is taking regular classes from a recognized institution.
+  suggested_rule_id: require-regular-classes-recognized-institution
+- criterion: The applicant must not be pursuing education through distance education mode.
+    Admission to PG Course in Distance education mode is not covered under the scheme.
+  proposed_field:
+    name: is_distance_education_mode
+    type: boolean
+    meaning: True if the PG course is pursued through distance education mode.
+  suggested_rule_id: exclude-distance-education
+- criterion: Those Deemed Universities which do not receive funds from the Central/ State
+    Government are not eligible institutions under the scheme.
+  proposed_field:
+    name: is_deemed_university_without_govt_funds
+    type: boolean
+    meaning: True if the educational institution is a Deemed University that does not receive
+      funds from the Central/State Government.
+  suggested_rule_id: exclude-unfunded-deemed-university
+rejected_drafts: []
+simplifications:
+- The candidates are required to apply online on National Scholarship Portal after initiation
+  of the application process and notice to be published on the UGC website.
+- 3,000 fresh scholarships will be awarded every year

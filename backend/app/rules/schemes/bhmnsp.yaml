@@ -1,0 +1,73 @@
+scheme_id: bhmnsp
+version: '2026-07-13'
+rules:
+- id: gender-female
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+    any: null
+    all: null
+  clause: Only girl students belonging to six notified Minority Communities i.e. Muslims,
+    Christians, Sikhs, Buddhists, Jains and Parsis are eligible.
+  source_url: https://www.myscheme.gov.in/schemes/bhmnsp
+  ask: Are you a girl student?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: social-category-minority
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: minority
+    any: null
+    all: null
+  clause: Only girl students belonging to six notified Minority Communities i.e. Muslims,
+    Christians, Sikhs, Buddhists, Jains and Parsis are eligible.
+  source_url: https://www.myscheme.gov.in/schemes/bhmnsp
+  ask: Do you belong to one of the six notified Minority Communities (Muslims, Christians,
+    Sikhs, Buddhists, Jains, Parsis)?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: annual-family-income-lte-200000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 200000
+    any: null
+    all: null
+  clause: The annual income of the student’s parent/guardian from all sources does not exceed
+    Rs.2.00 lakh.
+  source_url: https://www.myscheme.gov.in/schemes/bhmnsp
+  ask: What is the annual income of your parent/guardian from all sources?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- An Income certificate, issued by a Competent Authority in the State/UTs Governments is required
+  in respect of parent/guardian of the student.
+- A self-Certified Community Certificate is required from a student who has attained 18 years
+  of age. For others, the Community Certificate certified by the parent/guardian of the student
+  is required.
+- If a student violates school discipline or any other terms and conditions of the scholarship,
+  the scholarship may be suspended or cancelled. The State Government/Union Territory Administration
+  can also directly cancel the award if duly satisfied with the reasons of violation of these
+  regulations governing the scheme.
+- If a student is found to have obtained a scholarship by false statement, her scholarship
+  will be cancelled forthwith and the amount of the scholarship paid will be recovered by
+  the concerned State/UT Govt.
+- 'Not modeled: The scholarship will be awarded to minority girl students who are studying
+  in Class 9th to 12th'
+- 'Not modeled: have secured at least 50% marks or equivalent grades in aggregate in the previous
+  class/qualifying exam.'
+- 'Not modeled: The student obtaining benefits under this scheme shall not be allowed to avail
+  of benefits under any other scheme for this purpose.'
+- 'Not modeled: A student shall be eligible for only one scholarship out of all the available
+  Scholarships of the Central Government meant for SC/ST/OBC/minority.'
+- 'Not modeled: The scholarship will not be given to more than two students from a family
+  of the same class'
+- 'Not modeled: No scholarship shall be given for studies abroad for any course.'

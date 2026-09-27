@@ -1,0 +1,73 @@
+scheme_id: wpup
+version: '2026-09-26'
+rules:
+- id: uttar-pradesh-resident
+  kind: require
+  self_declared: true
+  verify_hint: Keep proof of permanent residence in Uttar Pradesh ready (for example a
+    domicile / residence certificate from the tehsil) — the department verifies it.
+  when:
+    field: state
+    op: eq
+    value: Uttar Pradesh
+  clause: The applicant should be a permanent resident of Uttar Pradesh state.
+  source_url: https://www.myscheme.gov.in/schemes/wpup
+  ask: Are you a permanent resident of Uttar Pradesh?
+  review_status: verified
+  notes_for_reviewer: '"Permanent resident" is checked against the state the person lives
+    in and marked self-declared, so the verdict is at most likely_eligible with a
+    residence-proof step.'
+- id: widowed
+  kind: require
+  when:
+    field: marital_status
+    op: eq
+    value: widowed
+  clause: The applicant's husband has died.
+  source_url: https://www.myscheme.gov.in/schemes/wpup
+  ask: Has your husband died?
+  review_status: verified
+- id: woman
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+  clause: The applicant's husband has died.
+  source_url: https://www.myscheme.gov.in/schemes/wpup
+  ask: Is the applicant a woman?
+  review_status: verified
+  notes_for_reviewer: Gender follows from the clause (a widow whose husband has died) —
+    the same encoding as the verified IGNWPS woman rule.
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: The age of the applicant should not be less than 18 years.
+  source_url: https://www.myscheme.gov.in/schemes/wpup
+  ask: What is your age?
+  review_status: verified
+- id: family-income-cap-200k
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 200000
+  clause: The annual income of the applicant and her family from all sources should not
+    exceed ₹ 2,00,000/-
+  source_url: https://www.myscheme.gov.in/schemes/wpup
+  ask: Is your family's total yearly income ₹2,00,000 or less?
+  review_status: verified
+- id: exclude-other-government-pension
+  kind: exclude
+  when:
+    field: receives_other_govt_pension
+    op: eq
+    value: true
+  clause: The applicant should not be receiving pension from any other scheme of the state
+    or central government.
+  source_url: https://www.myscheme.gov.in/schemes/wpup
+  ask: Do you already receive a pension under another state or central government scheme?
+  review_status: verified

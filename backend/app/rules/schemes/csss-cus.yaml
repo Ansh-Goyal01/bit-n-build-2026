@@ -1,0 +1,65 @@
+scheme_id: csss-cus
+version: '2026-07-13'
+rules:
+- id: annual-family-income-at-most-450000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 450000
+    any: null
+    all: null
+  clause: The gross parental/ family income of the applicant should not exceed ₹4,50,000/-
+    per annum.
+  source_url: https://www.myscheme.gov.in/schemes/csss-cus
+  ask: What is your family's annual income?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-student
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant must be pursuing regular degree courses.
+  source_url: https://www.myscheme.gov.in/schemes/csss-cus
+  ask: Are you currently studying?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: has-aadhaar-seeded-bank-account
+  kind: require
+  when:
+    field: has_bank_account
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The students are required to have Aadhaar seeded bank accounts opened in their name.
+  source_url: https://www.myscheme.gov.in/schemes/csss-cus
+  ask: Do you have an Aadhaar seeded bank account?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The students are required to have Aadhaar seeded bank accounts opened in their name.
+- The scholarship will be disbursed directly into the Aadhar seeded bank accounts of the beneficiaries
+  through Direct Benefit Transfer (DBT).
+- 'Not modeled: Applicant must be above the 80th percentile of successful candidates in the
+  relevant stream from the respective Board of Examination in Class 12th of 10+2 pattern or
+  equivalent.'
+- 'Not modeled: The applicant must be pursuing courses at colleges/ institutions recognized
+  by the All India Council for Technical Education and the respective Regulatory Bodies concerned.'
+- 'Not modeled: For renewal of scholarship in each year of study, besides getting at least
+  50% marks in the Annual Examination, maintenance of adequate attendance should be at least
+  75%.'
+- 'Not modeled: For renewal of scholarship in each year of study, besides getting at least
+  50% marks in the Annual Examination, maintenance of adequate attendance should be at least
+  75%.'
+- 'Not modeled: Students who are pursuing correspondence or distance mode or pursuing Diploma
+  courses are not eligible.'
+- 'Not modeled: Students who are already availing the benefit from any other scholarship schemes
+  including State-run scholarship schemes/ fee waiver & reimbursement schemes are not eligible.'

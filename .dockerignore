@@ -1,0 +1,10 @@
+.git
+.venv
+backend/.venv
+node_modules
+web
+obsidian-vault
+data/chroma
+data/cache
+.env
+api.txt

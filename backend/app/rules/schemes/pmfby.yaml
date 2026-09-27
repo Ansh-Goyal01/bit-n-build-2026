@@ -1,0 +1,29 @@
+scheme_id: pmfby
+version: '2026-07-11'
+rules:
+- id: cultivating-farmer
+  kind: require
+  when:
+    field: cultivates_crops
+    op: eq
+    value: true
+  clause: All farmers, including tenant farmers and sharecroppers growing notified crops in
+    notified areas ... The farmer must be a cultivator or sharecropper on the insured land.
+  source_url: https://www.myscheme.gov.in/schemes/pmfby
+  ask: Do you cultivate crops yourself (as owner, tenant, or sharecropper)?
+  review_status: verified
+- id: land-ownership-or-tenure-documents
+  kind: require
+  when:
+    field: has_land_ownership_or_tenure_docs
+    op: eq
+    value: true
+  clause: Farmers must possess a valid and authenticated land ownership certificate or a valid
+    land tenure agreement.
+  source_url: https://www.myscheme.gov.in/schemes/pmfby
+  ask: Do you have land ownership papers or a valid written tenancy agreement?
+  review_status: verified
+simplifications:
+- Notified-crop / notified-area requirements are not modeled (they vary by state, season,
+  and notification).
+- Seasonal enrollment cut-off dates are not modeled.

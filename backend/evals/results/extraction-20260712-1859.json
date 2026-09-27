@@ -1,0 +1,383 @@
+{
+ "summary": {
+  "run_at": "2026-07-12T18:59:13+00:00",
+  "schemes": [
+   "apy",
+   "ab-pmjay",
+   "pmuy"
+  ],
+  "micro_precision": 0.5263,
+  "micro_recall": 0.8333,
+  "matched_needing_edit": 0,
+  "total_matched": 10
+ },
+ "per_scheme": [
+  {
+   "scheme_id": "apy",
+   "gold_rules": 4,
+   "proposed_rules": 4,
+   "matched": 4,
+   "precision": 1.0,
+   "recall": 1.0,
+   "matched_needing_edit": 0,
+   "match_detail": [
+    {
+     "proposed_id": "age-at-least-18",
+     "gold_id": "age-at-least-18",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "age-at-most-40",
+     "gold_id": "age-at-most-40",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "has-savings-bank-account",
+     "gold_id": "savings-bank-account",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "exclude-income-tax-payer",
+     "gold_id": "exclude-income-tax-payer",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    }
+   ],
+   "unmatched_proposed": [],
+   "missed_gold": [],
+   "blocked_rules": [
+    {
+     "criterion": "The scheme is mainly targeted at the poor, the under-privileged and workers in the unorganized sector.",
+     "proposed_field": {
+      "name": "is_unorganized_sector_worker",
+      "type": "boolean",
+      "meaning": "Is the person employed in the unorganized sector?"
+     },
+     "suggested_rule_id": ""
+    }
+   ],
+   "rejected_drafts": [],
+   "proposed_simplifications": [
+    "The age of exit and start of pension is 60 years.",
+    "The subscribers are required to contribute the prescribed contribution amount from the age of joining APY till the age of 60 years.",
+    "APY Subscriber Contribution Chart - [ https://www.npscra.nsdl.co.in/nsdl/scheme-details/APY_Subscribers_Contribution_Chart_1.pdf]",
+    "The charges and fees and the overdue interest for non-payment or delayed payment of prescribed contribution amount shall be levied on the subscribers of APY. These charges and their method of application shall be prescribed by PFRDA from time to time, in consultation with the Central Government.",
+    "A subscriber can raise grievance anytime free of cost from anywhere by visiting: [www.npscra.nsdl.co.in] >>Home >> select: NPS-Lite or through CGMS Subscriber raising the grievance will be allotted a token number against the grievance raised. Subscriber may check the status of the grievance under \u201cCheck the status of Grievance / Enquiry already registered\u201d."
+   ]
+  },
+  {
+   "scheme_id": "ab-pmjay",
+   "gold_rules": 4,
+   "proposed_rules": 7,
+   "matched": 3,
+   "precision": 0.4286,
+   "recall": 0.75,
+   "matched_needing_edit": 0,
+   "match_detail": [
+    {
+     "proposed_id": "exclude-owns-motorized-vehicle",
+     "gold_id": "exclude-motorized-vehicle",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "exclude-govt-employee",
+     "gold_id": "exclude-government-employee",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "exclude-high-income",
+     "gold_id": "exclude-monthly-income-over-10k",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    }
+   ],
+   "unmatched_proposed": [
+    {
+     "id": "rural-eligibility",
+     "kind": "require",
+     "condition": {
+      "all": [
+       {
+        "field": "area",
+        "op": "eq",
+        "value": "rural"
+       },
+       {
+        "field": "is_pmjay_priority_category",
+        "op": "eq",
+        "value": true
+       }
+      ]
+     },
+     "clause": "Out of the total seven deprivation criteria for rural areas, PM-JAY covered all such families who fall into at least one of the following six deprivation criteria and automatic inclusion(Destitute/ living on alms, manual scavenger households, primitive tribal group, legally released bonded labour) criteria: 1. Only one room with kucha walls and kucha roof 2. No adult member between ages 16 to 59 3. Households with no adult male member between ages 16 to 59 4. Disabled member and no able-bodied adult member 5. SC/ST households 6. Landless households deriving a major part of their income from manual casual labour - Automatically included Households without shelter 1. Destitute/ living on alms, 2. Manual scavenger families, 3. Primitive tribal groups, 4. Legally released bonded labour."
+    },
+    {
+     "id": "urban-eligibility",
+     "kind": "require",
+     "condition": {
+      "all": [
+       {
+        "field": "area",
+        "op": "eq",
+        "value": "urban"
+       },
+       {
+        "field": "is_pmjay_priority_category",
+        "op": "eq",
+        "value": true
+       }
+      ]
+     },
+     "clause": "For urban areas, the following 11 occupational categories of workers are eligible for the scheme: 1. Ragpicker 2. Beggar 3. Domestic worker 4. Street vendor/ Cobbler/hawker / other service provider working on streets 5. Construction worker/ Plumber/ Mason/ Labour/ Painter/ Welder/ Security guard/ Coolie and other head-load worker 6. Sweeper/ Sanitation worker/ Mali 7. Home-based worker/ Artisan/ Handicrafts worker/ Tailor 8. Transport worker/ Driver/ Conductor/ Helper to drivers and conductors/ Cart puller/ Rickshaw puller 9. Shop worker/ Assistant/ Peon in small establishment/ Helper/Delivery assistant / Attendant/ Waiter 10. Electrician/ Mechanic/ Assembler/ Repair worker 11. Washer-man/ Chowkidar"
+    },
+    {
+     "id": "exclude-govt-non-agri-enterprise",
+     "kind": "exclude",
+     "condition": {
+      "field": "family_member_in_govt_service",
+      "op": "eq",
+      "value": true
+     },
+     "clause": "Those who work in government-managed non-agricultural enterprises."
+    },
+    {
+     "id": "exclude-pucca-house",
+     "kind": "exclude",
+     "condition": {
+      "field": "house_type",
+      "op": "eq",
+      "value": "pucca"
+     },
+     "clause": "Those with decent, solidly built houses."
+    }
+   ],
+   "missed_gold": [
+    {
+     "id": "secc-priority-category",
+     "kind": "require",
+     "condition": {
+      "any": [
+       {
+        "field": "is_pmjay_priority_category",
+        "op": "eq",
+        "value": true
+       },
+       {
+        "field": "has_bpl_card",
+        "op": "eq",
+        "value": true
+       }
+      ]
+     }
+    }
+   ],
+   "blocked_rules": [
+    {
+     "criterion": "Those who own mechanized farming equipment.",
+     "proposed_field": {
+      "name": "owns_mechanized_farming_equipment",
+      "type": "boolean",
+      "meaning": "True if the household owns mechanized farming equipment (e.g., tractor, power tiller)."
+     },
+     "suggested_rule_id": ""
+    },
+    {
+     "criterion": "Those who have Kisan cards with a credit limit of \u20b950,000/-.",
+     "proposed_field": {
+      "name": "has_kisan_card_credit_limit_over_50k",
+      "type": "boolean",
+      "meaning": "True if the household has a Kisan card with a credit limit of \u20b950,000 or more."
+     },
+     "suggested_rule_id": ""
+    },
+    {
+     "criterion": "Those owning refrigerators and landlines.",
+     "proposed_field": {
+      "name": "owns_refrigerator",
+      "type": "boolean",
+      "meaning": "True if the household owns a refrigerator."
+     },
+     "suggested_rule_id": ""
+    },
+    {
+     "criterion": "Those owning refrigerators and landlines.",
+     "proposed_field": {
+      "name": "owns_landline",
+      "type": "boolean",
+      "meaning": "True if the household owns a landline telephone."
+     },
+     "suggested_rule_id": ""
+    },
+    {
+     "criterion": "Those owning 5 acres or more of agricultural land.",
+     "proposed_field": {
+      "name": "agricultural_land_acres",
+      "type": "integer",
+      "meaning": "Total acres of agricultural land owned by the household."
+     },
+     "suggested_rule_id": ""
+    }
+   ],
+   "rejected_drafts": [],
+   "proposed_simplifications": []
+  },
+  {
+   "scheme_id": "pmuy",
+   "gold_rules": 4,
+   "proposed_rules": 8,
+   "matched": 3,
+   "precision": 0.375,
+   "recall": 0.75,
+   "matched_needing_edit": 0,
+   "match_detail": [
+    {
+     "proposed_id": "age-at-least-18",
+     "gold_id": "adult",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "gender-is-female",
+     "gold_id": "woman-applicant",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    },
+    {
+     "proposed_id": "no-lpg-connection",
+     "gold_id": "no-existing-lpg-connection",
+     "self_declared_agrees": true,
+     "clause_verbatim_in_source": true
+    }
+   ],
+   "unmatched_proposed": [
+    {
+     "id": "eligible-as-per-secc-2011",
+     "kind": "require",
+     "condition": {
+      "field": "is_pmjay_priority_category",
+      "op": "eq",
+      "value": true
+     },
+     "clause": "Eligible as per SECC 2011 list"
+    },
+    {
+     "id": "social-category-sc",
+     "kind": "require",
+     "condition": {
+      "field": "social_category",
+      "op": "eq",
+      "value": "sc"
+     },
+     "clause": "Belongs to SC/ST households, be a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), Forest dwellers, Most Backward Classes (MBC), Tea and Ex-Tea Garden Tribes, People residing in river islands (Beneficiary will submit supporting document)"
+    },
+    {
+     "id": "social-category-st",
+     "kind": "require",
+     "condition": {
+      "field": "social_category",
+      "op": "eq",
+      "value": "st"
+     },
+     "clause": "Belongs to SC/ST households, be a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), Forest dwellers, Most Backward Classes (MBC), Tea and Ex-Tea Garden Tribes, People residing in river islands (Beneficiary will submit supporting document)"
+    },
+    {
+     "id": "social-category-obc",
+     "kind": "require",
+     "condition": {
+      "field": "social_category",
+      "op": "eq",
+      "value": "obc"
+     },
+     "clause": "Belongs to SC/ST households, be a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), Forest dwellers, Most Backward Classes (MBC), Tea and Ex-Tea Garden Tribes, People residing in river islands (Beneficiary will submit supporting document)"
+    },
+    {
+     "id": "exclude-male-member",
+     "kind": "exclude",
+     "condition": {
+      "field": "gender",
+      "op": "eq",
+      "value": "male"
+     },
+     "clause": "Male Member from a household cannot apply for the scheme."
+    }
+   ],
+   "missed_gold": [
+    {
+     "id": "poor-household",
+     "kind": "require",
+     "condition": {
+      "any": [
+       {
+        "field": "has_bpl_card",
+        "op": "eq",
+        "value": true
+       },
+       {
+        "field": "is_pmjay_priority_category",
+        "op": "eq",
+        "value": true
+       }
+      ]
+     }
+    }
+   ],
+   "blocked_rules": [
+    {
+     "criterion": "be a beneficiary of Pradhan Mantri Awas Yojana (PMAY)",
+     "proposed_field": {
+      "name": "is_pmay_beneficiary",
+      "type": "boolean",
+      "meaning": "Is the household a beneficiary of Pradhan Mantri Awas Yojana (PMAY)?"
+     },
+     "suggested_rule_id": "beneficiary-pmay"
+    },
+    {
+     "criterion": "Antyodaya Anna Yojana (AAY)",
+     "proposed_field": {
+      "name": "is_aay_beneficiary",
+      "type": "boolean",
+      "meaning": "Is the household a beneficiary of Antyodaya Anna Yojana (AAY)?"
+     },
+     "suggested_rule_id": "beneficiary-aay"
+    },
+    {
+     "criterion": "Forest dwellers",
+     "proposed_field": {
+      "name": "is_forest_dweller",
+      "type": "boolean",
+      "meaning": "Does the household belong to the category of Forest dwellers?"
+     },
+     "suggested_rule_id": "is-forest-dweller"
+    },
+    {
+     "criterion": "Tea and Ex-Tea Garden Tribes",
+     "proposed_field": {
+      "name": "is_tea_garden_tribe",
+      "type": "boolean",
+      "meaning": "Does the household belong to Tea and Ex-Tea Garden Tribes?"
+     },
+     "suggested_rule_id": "is-tea-garden-tribe"
+    },
+    {
+     "criterion": "People residing in river islands",
+     "proposed_field": {
+      "name": "resides_in_river_island",
+      "type": "boolean",
+      "meaning": "Does the household reside in a river island?"
+     },
+     "suggested_rule_id": "resides-in-river-island"
+    }
+   ],
+   "rejected_drafts": [],
+   "proposed_simplifications": [
+    "Eligibility via 14-point declaration (as per prescribed format) is an operational detail.",
+    "Priority given to states with lower LPG coverage is an operational detail."
+   ]
+  }
+ ]
+}

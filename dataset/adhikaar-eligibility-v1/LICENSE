@@ -1,0 +1,24 @@
+Adhikaar Eligibility Dataset
+Copyright (c) 2026 Adhikaar contributors
+
+This dataset (the rule encodings, labeled personas, schema, and reports in this
+directory) is licensed under the Creative Commons Attribution 4.0 International
+License (CC BY 4.0).
+
+You are free to share and adapt the material for any purpose, including
+commercially, provided you give appropriate credit, link to the license, and
+indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+Suggested attribution:
+  "Adhikaar Eligibility Dataset v1 (CC BY 4.0), Adhikaar contributors."
+
+PROVENANCE NOTE
+The `clause` and `source_url` fields quote or reference official Government of
+India scheme text (primarily myscheme.gov.in and linked circulars). That
+underlying government text is a public work and is not itself owned by the
+Adhikaar contributors; the CC BY 4.0 license here covers the *encoding,
+structuring, labeling, and curation* of that material into this dataset. Users
+relying on eligibility outcomes should verify against the cited official source.

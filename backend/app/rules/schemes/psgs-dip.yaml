@@ -1,0 +1,101 @@
+scheme_id: psgs-dip
+version: '2026-07-13'
+rules:
+- id: is-girl-student
+  kind: require
+  when:
+    all:
+    - field: gender
+      op: eq
+      value: female
+    - field: is_student
+      op: eq
+      value: true
+  clause: The applicant must be a Girl Student.
+  source_url: https://www.myscheme.gov.in/schemes/psgs-dip
+  ask: Are you a girl student?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: family-income-less-than-8-lakh
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 800000
+  clause: The annual income of the family (from all sources) must not be more than ₹ 8,00,000
+    per annum during the current financial year.
+  source_url: https://www.myscheme.gov.in/schemes/psgs-dip
+  ask: What is your family's annual income from all sources?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: residence-in-specified-states-uts
+  kind: require
+  when:
+    any:
+    - field: state
+      op: eq
+      value: Andaman and Nicobar Islands
+    - field: state
+      op: eq
+      value: Jammu and Kashmir
+    - field: state
+      op: eq
+      value: Ladakh
+    - field: state
+      op: eq
+      value: Dadra and Nagar Haveli and Daman and Diu
+    - field: state
+      op: eq
+      value: Lakshadweep
+    - field: state
+      op: eq
+      value: Arunachal Pradesh
+    - field: state
+      op: eq
+      value: Assam
+    - field: state
+      op: eq
+      value: Manipur
+    - field: state
+      op: eq
+      value: Meghalaya
+    - field: state
+      op: eq
+      value: Mizoram
+    - field: state
+      op: eq
+      value: Nagaland
+    - field: state
+      op: eq
+      value: Sikkim
+    - field: state
+      op: eq
+      value: Tripura
+  clause: All eligible girls (who submit an online scholarship form) from the following 13
+    Union Territories and North Eastern States i.e., Andaman and Nicobar Islands (UT), Jammu
+    and Kashmir (UT), Ladakh (UT), Dadra and Nagar Haveli & Daman and Diu (UT), Lakshadweep
+    (UT), Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, & Tripura
+    will be given a scholarship by AICTE.
+  source_url: https://www.myscheme.gov.in/schemes/psgs-dip
+  ask: 'Do you reside in one of the following Union Territories or North Eastern States: Andaman
+    and Nicobar Islands, Jammu and Kashmir, Ladakh, Dadra and Nagar Haveli & Daman and Diu,
+    Lakshadweep, Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim,
+    or Tripura?'
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- Applicant must be admitted to an AICTE approved institution.
+- Applicant must submit an online scholarship form.
+- 'Not modeled: Applicant must be pursuing either the First year of the Diploma course OR
+  the Second year of the Diploma course through lateral entry.'
+- 'Not modeled: Candidate failed/drops out in a subsequent year.'
+- 'Not modeled: Student is in receipt of financial assistance in the shape of scholarship/any
+  emoluments, salary, stipend, etc. from any other source during her course of study in the
+  institute.'
+- 'Not modeled: Gap period between the year of passing the qualifying examination and the
+  admission session in a degree course is more than two years.'
+- 'Not modeled: The scholarship is only applicable to a maximum of two girl children of a
+  family.'

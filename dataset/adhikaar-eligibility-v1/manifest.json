@@ -1,0 +1,48 @@
+{
+  "dataset": "adhikaar-eligibility",
+  "version": "v1",
+  "license": "CC-BY-4.0",
+  "generated_at": "2026-07-19T21:31:18+00:00",
+  "source_commit": "1f440d1613a4f69521c7788d4a3188f807e07cab",
+  "counts": {
+    "schemes": 43,
+    "rules": 126,
+    "personas": 56,
+    "personas_train": 41,
+    "personas_heldout": 15
+  },
+  "files": {
+    "rules.jsonl": {
+      "sha256": "2f4db1545570bb1e3f33dc64a81b1a20cb6eab286ba0725e18ce523f213991a2",
+      "bytes": 65031
+    },
+    "schemes.jsonl": {
+      "sha256": "922f89304dc40edc6effdfe35dad2a8707770bc014c639518da6c1adc11436bf",
+      "bytes": 36911
+    },
+    "personas.jsonl": {
+      "sha256": "0b262035eb80b26709f6b83dc97d6a928df79d798541234a690b9fd71ec0425f",
+      "bytes": 15661
+    },
+    "eval_report.json": {
+      "sha256": "88f70678910d6016b5f0c967228756b6e98405117bb7e9f8085ca0f3a069f672",
+      "bytes": 1611
+    },
+    "schema.json": {
+      "sha256": "061b51e974f621a817025abbe99cb6db56f7223d16bcc7c3723a513c2132f020",
+      "bytes": 1490
+    },
+    "DATASHEET.md": {
+      "sha256": "6888b4341498aac936f6010358146817182b69e2d9b2921178d08503d2a4c61e",
+      "bytes": 6017
+    },
+    "README.md": {
+      "sha256": "d9ada9cc3ce534aa014bf14d4bbdb6f4bb579583b8571430c9fc96beddd0a8bc",
+      "bytes": 2492
+    },
+    "LICENSE": {
+      "sha256": "fbd78d624c3fc382720e726bb3aa993770bbce0313f6c9eb9fad7057d42d0db8",
+      "bytes": 1148
+    }
+  }
+}

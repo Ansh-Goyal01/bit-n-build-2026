@@ -1,0 +1,45 @@
+scheme_id: apy
+version: '2026-07-11'
+rules:
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: The minimum age of joining APY is 18 years and maximum is 40 years.
+  source_url: https://www.myscheme.gov.in/schemes/apy
+  ask: What is your age?
+  review_status: verified
+- id: age-at-most-40
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 40
+  clause: The minimum age of joining APY is 18 years and maximum is 40 years.
+  source_url: https://www.myscheme.gov.in/schemes/apy
+  ask: What is your age?
+  review_status: verified
+- id: savings-bank-account
+  kind: require
+  when:
+    field: has_bank_account
+    op: eq
+    value: true
+  clause: Subscriber contribution to APY shall be made through the facility of 'auto-debit'
+    of the prescribed contribution amount from the savings bank account of the subscriber.
+  source_url: https://www.myscheme.gov.in/schemes/apy
+  ask: Do you have a savings bank account?
+  review_status: verified
+- id: exclude-income-tax-payer
+  kind: exclude
+  when:
+    field: pays_income_tax
+    op: eq
+    value: true
+  clause: From 1st October, 2022, any citizen who is or has been an income tax payer, shall
+    not be eligible to join APY.
+  source_url: https://www.myscheme.gov.in/schemes/apy
+  ask: Are you, or have you ever been, an income tax payer?
+  review_status: verified

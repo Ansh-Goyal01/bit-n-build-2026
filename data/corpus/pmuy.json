@@ -1,0 +1,32 @@
+{
+ "scheme_id": "pmuy",
+ "short_name": "PMUY",
+ "name": "Pradhan Mantri Ujjwala Yojana",
+ "category": "household",
+ "level": "Central",
+ "ministry": "Ministry Of Petroleum and Natural Gas",
+ "page_url": "https://www.myscheme.gov.in/schemes/pmuy",
+ "references": [
+  {
+   "title": "Scheme Guidelines",
+   "url": "http://nadia.gov.in/DISHA/DISHASchemeGuidelines/Pradhan%20Mantri%20UJJWALA%20Yojna%20Guideline.pdf"
+  },
+  {
+   "title": "Additional Guidelines",
+   "url": "https://www.pmuy.gov.in/index.aspx"
+  },
+  {
+   "title": "Additional Guidelines",
+   "url": "https://mopng.gov.in/en/marketing/pmuy"
+  }
+ ],
+ "fetched_at": "2026-07-10",
+ "sections": {
+  "details": "In May 2016, the Ministry of Petroleum and Natural Gas (MOPNG), introduced the ‘Pradhan Mantri Ujjwala Yojana’ (PMUY) as a flagship scheme with an objective to make clean cooking fuel such as LPG available to the rural and deprived households which were otherwise using traditional cooking fuels such as firewood, coal, cow-dung cakes etc. Usage of traditional cooking fuels had detrimental impacts on the health of rural women as well as on the environment.\nThe scheme was launched on 1st May 2016 in Ballia, Uttar Pradesh by Hon’ble Prime Minister of India, Shri. Narendra Modi\n\n- The target under the scheme was to release 8 Crore LPG Connections to the deprived households by March 2020.\n- On 7th September 2019, Hon’ble Prime Minister of India handed over the 8th Crore LPG connection in Aurangabad, Maharashtra.\n- The release of 8 Crore LPG connections under the scheme has also helped in increasing the LPG coverage from 62% on 1st May 2016 to 99.8% as on 1st April 2021.\n- Under the Union Budget for FY 21-22, provision for release of additional 1 Crore LPG connections under the PMUY scheme has been made. In this phase, special facility has been given to migrant families.",
+  "benefits": "1. Rs. 1600 for a connection 14.2kg cylinder or Rs. 1150 for a 5 kg cylinder.\n1. Additionally, All PMUY beneficiaries will be provided with first LPG refill and Stove (hot plate) both free of cost along with their deposit free connection.\n\n#### Note:\nPriority would be given to the states which have lower LPG coverage (Compared to the national average) as on 1st Jan 2016.",
+  "eligibility": "An adult woman belonging to a poor household and not having an LPG connection in her household will be eligible under UJJWALA 2.0. The beneficiaries should belong to any of the following categories:\n\n1. Eligible as per SECC 2011 list\n1. Belongs to SC/ST households, be a beneficiary of Pradhan Mantri Awas Yojana (PMAY), Antyodaya Anna Yojana (AAY), Forest dwellers, Most Backward Classes (MBC), Tea and Ex-Tea Garden Tribes, People residing in river islands (Beneficiary will submit supporting document)\n1. If she is not falling in the above 2 categories, then she can stake her claim to be a beneficiary under Poor household by submitting 14-point declaration (as per prescribed format)",
+  "exclusions": "Male Member from a household cannot apply for the scheme.",
+  "application": "### Application mode: Online\n\n1. Following are the prerequisites for the enrollment process:\n\n   1. Aadhar Card\n   1. Ration card\n   1. Address Proof\n   1. Passport size photograph\n   1. Bank Details\n\n1. Apply the application form through online [official website](www.pmuy.gov.in). 1. Select the oil company name example Indane / Bharatgas / HP Gas\n1. Select Type of Connection like Ujjwala 2.0 New Connection\n1. Choose State, District and Name of Distributor.\n1. Enter Mobile Number, Captcha and OTP.\n1. Select Migrant Family status in YES or NO\n1. For family Identifier in NO fill Annexure 1\n1. For  family Identifier in Yes fill Ration Card\n1. Select Category.\n1. Fill all Family Details, Personal details, address details, bank details, Choose Cylinder Types, Select rural or urban and select declaration and submit.\n1. Generate Reference number and visit Gas agency.",
+  "faq": "**Q: My family has a PMUY connection at home in the name of my mother-in-law and she move with me and my family to the city where we work. Can a new PMUY connection be taken in the name of mother in Law?**\n\nA: Yes, the connection can be transferred and the facility of change of address will be made available soon.\n\n**Q: Can I Avail LPG Stove and First refill, Free of Cost?**\n\nA: Yes.\n\n**Q: Can I take 5 Kg Cylinder for PMUY Scheme?**\n\nA: Yes\n\n**Q: I am a male from BPL Household, Can I apply for the scheme?**\n\nA: No, This scheme is only for Women from BPL / Poor Households.\n\n**Q: Who is the eligible beneficiary under Ujjwala 2.0 ?**\n\nA: An adult women belong to a poor household and not having LPG connection.\n\n**Q: I belong to poor household there is  no adult women in my Household, is my household eligible for PMUY?**\n\nA: No, you are not eligible for the scheme.\n\n**Q: I am Adult women belong to ST cast, Am I eligible to PMUY scheme?**\n\nA: Yes, you are eligible for the scheme.\n\n**Q: I am Adult women belong to Forest Dweller. Am I eligible to PMUY scheme?**\n\nA: Yes, you are eligible for the scheme.\n\n**Q: If my D.O.B is not mention at ration card then how can prove that I am adult women?**\n\nA: You can use Aadhaar Card to validate your age.\n\n**Q: If my Mobile number is not linked with Aadhaar card, Can I apply for PMUY?**\n\nA: Yes, you shall be eligible for application process.\n\n**Q: What if someone doesn't have an email?**\n\nA: You can also apply without email.\n\n**Q: If I am a migrant family, can I apply for the scheme?**\n\nA: Yes, But You fill the Annexure 1 and upload during application process.\n\n**Q: I do not have any bank account number in my name can I give my husband's bank account number?**\n\nA: No, There should be a bank account in the name of the applicant."
+ }
+}

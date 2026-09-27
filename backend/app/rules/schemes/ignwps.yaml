@@ -1,0 +1,58 @@
+scheme_id: ignwps
+version: '2026-07-11'
+rules:
+- id: widowed
+  kind: require
+  when:
+    field: marital_status
+    op: eq
+    value: widowed
+  clause: The applicant must be a widow.
+  source_url: https://www.myscheme.gov.in/schemes/ignwps
+  ask: Are you a widow?
+  review_status: verified
+- id: woman
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+  clause: The applicant must be a widow (the pension is for women who lost their husband).
+  source_url: https://www.myscheme.gov.in/schemes/ignwps
+  ask: Is the applicant a woman?
+  review_status: verified
+- id: age-at-least-40
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 40
+  clause: The applicant must be a widow in the age group of 40-79 years.
+  source_url: https://www.myscheme.gov.in/schemes/ignwps
+  ask: What is your age?
+  review_status: verified
+- id: age-at-most-79
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 79
+  clause: The applicant must be a widow in the age group of 40-79 years. (From 80 years the
+    Indira Gandhi National Old Age Pension Scheme applies.)
+  source_url: https://www.myscheme.gov.in/schemes/ignwps
+  ask: What is your age?
+  review_status: verified
+- id: bpl-household
+  kind: require
+  self_declared: true
+  verify_hint: Confirm your household is on the current BPL list at your Gram Panchayat office
+    (rural) or municipal ward office (urban) — carry your BPL/ration card.
+  when:
+    field: has_bpl_card
+    op: eq
+    value: true
+  clause: The applicant should belong to a household living below the poverty line according
+    to the criteria prescribed by the Govt. of India.
+  source_url: https://www.myscheme.gov.in/schemes/ignwps
+  ask: Is your household on the Below Poverty Line (BPL) list?
+  review_status: verified

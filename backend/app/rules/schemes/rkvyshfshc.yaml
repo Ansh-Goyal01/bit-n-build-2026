@@ -1,0 +1,17 @@
+scheme_id: rkvyshfshc
+version: '2026-07-13'
+rules:
+- id: is-farmer
+  kind: require
+  when:
+    field: cultivates_crops
+    op: eq
+    value: true
+  clause: The applicant must be a farmer.
+  source_url: https://www.myscheme.gov.in/schemes/rkvyshfshc
+  ask: Do you actively cultivate crops?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- 'Not modeled: The applicant must be residing in India.'

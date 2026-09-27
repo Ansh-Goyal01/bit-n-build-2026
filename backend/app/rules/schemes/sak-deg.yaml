@@ -1,0 +1,48 @@
+scheme_id: sak-deg
+version: '2026-07-13'
+rules:
+- id: disability-at-least-40-percent
+  kind: require
+  when:
+    field: disability_percent
+    op: gte
+    value: 40
+  clause: Specially-abled students have a disability of not less than 40%.
+  source_url: https://www.myscheme.gov.in/schemes/sak-deg
+  ask: What is your certified disability percentage?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: family-income-not-more-than-8-lakh
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 800000
+  clause: Family income from all sources should not be more than ₹8,00,000/- per annum during
+    the current financial year.
+  source_url: https://www.myscheme.gov.in/schemes/sak-deg
+  ask: What is your family's annual income from all sources?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- A valid income certificate issued by the state/UT government needs to be enclosed.
+- Students failing to get promoted to the next class/ level would forfeit the scholarship.
+- If a candidate failed/drops out in a subsequent year, she/ he will not be eligible for further
+  scholarship.
+- In case of receipt of any financial assistance from any other sources, the scholarship shall
+  be discontinued and the entire amount of the scholarship will have to be refunded to AICTE
+  by D/Draft drawn in favor of “Member Secretary, AICTE” payable at New Delhi.
+- After selection, the awardee will be paid a scholarship through DBT mode on annual basis.
+- The scholarship will be renewed for the next year of study on receipt of renewal through
+  National Scholarship Portal by submitting a passing certificate/ mark sheet along with letter
+  from the Head of the Institution on the online portal
+- 'Not modeled: The candidate should be admitted to the first year of the degree-level course
+  or the second year of the degree-level course through lateral entry in any of the AICTE-approved
+  institutions of the respective year.'
+- 'Not modeled: The gap period between the year of passing the qualifying examination and
+  the session of admission in the degree course should not be more than two years.'
+- 'Not modeled: The grant of scholarship is subject to the condition that the student does
+  not receive any financial assistance in the shape of scholarship/any emoluments, salary,
+  stipend, etc. from any other source during her/ his course of study in the Institute.'

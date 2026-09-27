@@ -1,0 +1,23 @@
+scheme_id: mssc
+version: '2026-07-13'
+rules:
+- id: female-gender
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+    any: null
+    all: null
+  clause: This scheme is only for women and girl children.
+  source_url: https://www.myscheme.gov.in/schemes/mssc
+  ask: What is your gender?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The scheme is available through Post Offices and eligible Public and Private Sector Banks.
+- The scheme offers a 2-year tenure with an interest rate of 7.5% per annum (compounded quarterly)
+  on deposits ranging from ₹1,000 to ₹2,00,000.
+- 'Not modeled: account can be opened by guardian for minor girl'
+- 'Not modeled: interest rate of 7.5% per annum'

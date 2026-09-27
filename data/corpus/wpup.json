@@ -1,0 +1,33 @@
+{
+ "scheme_id": "wpup",
+ "short_name": "UP-WIDOW",
+ "name": "Widow Pension - Uttar Pradesh",
+ "category": "pension",
+ "level": "State/ UT",
+ "ministry": "",
+ "page_url": "https://www.myscheme.gov.in/schemes/wpup",
+ "references": [
+  {
+   "title": "Guidelines",
+   "url": "https://sspy-up.gov.in/docs/widow_Guidlines_2021.pdf"
+  },
+  {
+   "title": "Department Website",
+   "url": "https://mahilakalyan.up.nic.in/OurProgram.aspx"
+  },
+  {
+   "title": "Apply Online",
+   "url": "https://sspy-up.gov.in/"
+  }
+ ],
+ "fetched_at": "2026-09-26",
+ "sections": {
+  "details": "The Uttar Pradesh government, recognizing the unique challenges faced by widows living within the state, has implemented the Widow Pension Scheme. This compassionate initiative, administered by the Women Welfare Department, offers a vital form of financial assistance to these vulnerable women.\n\nThe scheme provides a monthly pension, acknowledging the significant impact of losing a spouse on household income and stability. This crucial support empowers widows to navigate the hardships of their situations, rebuild their lives with dignity, and secure a measure of financial security. The Widow Pension Scheme stands as a testament to the government's commitment to the well-being of its widowed citizens, fostering hope and fostering a path towards a brighter future",
+  "benefits": "Financial Assistance : ₹1,000/- per month",
+  "eligibility": "1. The applicant should be a permanent resident of Uttar Pradesh state.\n1. The applicant's husband has died.\n1. The age of the applicant should not be less than 18 years.\n1. The annual income of the applicant and her family from all sources should not exceed  ₹ 2,00,000/-",
+  "exclusions": "> The applicant should not be receiving pension from any other scheme of the state or central government.",
+  "application": "### Application mode: Online\n\n1. Applicant must visit the [official website](https://sspy-up.gov.in/).1. Click on \"Apply Online\" .\n1. Provide the below required details:\n\n  - Personal Details.\n  - Bank detail.\n  - Income Details.\n\n1. Upload below document:\n\n  - Passport size color photograph.\n  - Birth/Age certificate.\n  - Husband Death certificate.\n\n1. Declaration.\n1. Click on submit.",
+  "documents": "1. Colored passport size photo\n1. Age related certificate (educational records/provided by medical officer).\n1. Income Certificate (provided by Tehsil).\n1. Death certificate of husband (local body/gram panchayat).\n1. Aadhaar Card/Aadhaar Registration Number (No need to submit separate certificate for age and residence).\n1. Photocopy of bank account with IFS code.\n1. Mobile number.\n1. Not receiving pension from any other scheme of the state or central government related affidavit",
+  "faq": "**Q: What is this \"Widow Pension\" Scheme?**\n\nA: Widow pension in Uttar Pradesh is a social welfare scheme by the Government of Uttar Pradesh to provide financial assistance to widows residing in the state. The scheme is administered by the Women Welfare Department of the state government.\n\n**Q: What are the benefits?**\n\nA: Financial assistance will provided.\n\n**Q: How much financial assistance will be provided ?**\n\nA: [?]1,000/- per month will be provided.\n\n**Q: What is the minimum eligibile age to get the scheme benefits?**\n\nA: The age of the applicant should not be less than 18 years.\n\n**Q: What is the annual income criteria ?**\n\nA: The annual income of the applicant and her family from all sources should not exceed  [?] 2,00,000/-\n\n**Q: May other state widow applicant also get the scheme benefits?**\n\nA: No, the applicant should be a permanent resident of Uttar Pradesh state only.\n\n**Q: How to apply for the scheme?**\n\nA: 1. Applicant must visit the official website.\n2. Click on widow pension.\n3. Click on \"apply online\".\n4. Provide required details.\n5. Provide required documents.\n6. Submit\n\n**Q: What is the official website to apply ?**\n\nA: URL : https://sspy-up.gov.in/EnglishPages/index_en.aspx\n\n**Q: What document need to be submit?**\n\nA: Required documents:\n1. Passport size color photograph.\n2. Birth/Age certificate.\n3. Husband Death certificate.\n\n**Q: May the applicant also get the other pension scheme benefits?**\n\nA: No."
+ }
+}

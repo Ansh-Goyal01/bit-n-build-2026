@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Adhikaar design tokens — light theme only, by design.
+
+   Warm ivory ground, near-black ink, one dignified terracotta
+   accent used sparingly. Verdicts: sage = eligible, warm amber =
+   needs info, neutral slate = not eligible (informative, never
+   alarming). Red is reserved for genuine system errors.
+
+   Every text/surface pair below is WCAG-AA validated (≥4.5:1;
+   input borders & focus ring ≥3:1 non-text contrast).
+   ============================================================ */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
+  /* Ground */
+  --color-background: #faf7f1;
+  --color-foreground: #201b14;
+  --color-card: #fffdf8;
+  --color-card-foreground: #201b14;
+  --color-muted: #f1ece1;
+  --color-muted-foreground: #6b6355;
+  --color-border: #e7e0d2;
+  --color-input: #998c74;
+
+  /* Accent — dignified terracotta/clay */
+  --color-primary: #9c4a2f;
+  --color-primary-hover: #833e27;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #96431f;
+  --color-accent-soft: #f7ebe3;
+  --color-accent-soft-foreground: #7d3a20;
+  --color-ring: #9c4a2f;
+
+  /* Verdict semantics */
+  --color-verdict-yes: #2c5a40;
+  --color-verdict-yes-soft: #e9f1ea;
+  --color-verdict-yes-border: #c7dbcd;
+  --color-verdict-info: #7a5300;
+  --color-verdict-info-soft: #f9efd8;
+  --color-verdict-info-border: #ead9ab;
+  --color-verdict-no: #4d5866;
+  --color-verdict-no-soft: #edeff2;
+  --color-verdict-no-border: #d4dae1;
+
+  /* Genuine errors only */
+  --color-destructive: #9c3225;
+  --color-destructive-soft: #f9e8e5;
+  --color-destructive-border: #ecc8c1;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  /* Soft, low elevation — never heavy */
+  --shadow-card: 0 1px 2px rgb(32 27 20 / 0.04), 0 2px 8px rgb(32 27 20 / 0.04);
+  --shadow-raised: 0 2px 4px rgb(32 27 20 / 0.05), 0 8px 24px rgb(32 27 20 / 0.07);
+
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Anchored targets must clear the sticky 4rem header when scrolled to */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+::selection {
+  background-color: var(--color-accent-soft);
+}
+
+/* One consistent, always-visible keyboard focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Calm motion; none at all for those who ask */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* One scheme's application packet, printed on its own (see PacketSheet). */
+.packet-sheet {
+  display: none;
+}
+
+/* The eligibility report doubles as a keepable printed document */
+@media print {
+  html[data-print="packet"] .report-root,
+  html[data-print="packet"] .print-hidden-in-packet {
+    display: none !important;
+  }
+  html[data-print="packet"] .packet-sheet[data-active="true"] {
+    display: block !important;
+  }
+  /* Compact print scale: the whole layout is rem-based, so shrinking the
+     root font condenses cards, gaps, and type together (~25 → ~5 pages). */
+  html {
+    font-size: 10px;
+  }
+  body {
+    background: #ffffff;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  .print-block {
+    display: block !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  /* Keep each verdict card and the checklist intact across page breaks. */
+  .print-avoid-break {
+    break-inside: avoid;
+  }
+  @page {
+    margin: 12mm 12mm;
+  }
+}

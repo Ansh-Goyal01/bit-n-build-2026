@@ -1,0 +1,126 @@
+scheme_id: lws-h
+version: '2026-07-13'
+extraction:
+  extracted_at: '2026-07-13'
+  status: held-back-needs-rework
+  source_url: https://www.myscheme.gov.in/schemes/lws-h
+  hold_reason: Extractor merged two distinct benefit components (general health treatment
+    for registered workers vs. a specific two-child family-planning-operation benefit) into
+    one required set, wrongly excluding workers seeking the general benefit. Needs the components
+    split.
+rules:
+- id: occupation-is-beedi-cine-or-mine-worker
+  kind: require
+  when:
+    field: occupation
+    op: eq
+    value: beedi worker, cine worker, or an iron, manganese, chrome, limestone, dolomite,
+      or mica mine worker
+    any: null
+    all: null
+  clause: The applicant must be a registered beedi worker, cine worker, or an iron, manganese,
+    chrome, limestone, dolomite, or mica mine worker.
+  source_url: https://www.myscheme.gov.in/schemes/lws-h
+  ask: What is your occupation?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+- id: female-worker-first-or-second-delivery
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+    any: null
+    all: null
+  clause: The applicant must be a female worker undergoing her first or second delivery to
+    avail the maternity benefit.
+  source_url: https://www.myscheme.gov.in/schemes/lws-h
+  ask: Are you a female worker undergoing your first or second delivery?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+blocked_rules:
+- criterion: The applicant must be a registered beedi worker, cine worker, or an iron, manganese,
+    chrome, limestone, dolomite, or mica mine worker.
+  proposed_field:
+    name: registered_worker_type
+    type: string
+    meaning: The type of registered worker (beedi, cine, mine)
+  suggested_rule_id: occupation-is-registered-worker-type
+- criterion: The applicant must possess a valid identity card indicating their status as a
+    recognized unorganised worker.
+  proposed_field:
+    name: has_valid_identity_card
+    type: bool
+    meaning: Whether the applicant has a valid identity card
+  suggested_rule_id: has-valid-identity-card
+- criterion: The applicant must have exactly two children to avail the family planning operation
+    scheme benefit.
+  proposed_field:
+    name: number_of_children
+    type: int
+    meaning: The number of children the applicant has
+  suggested_rule_id: exactly-two-children
+- criterion: Prior approval of the concerned Welfare Commissioner is necessary before beginning
+    treatments for heart ailments, kidney treatment, and cancer.
+  proposed_field:
+    name: prior_approval
+    type: bool
+    meaning: Whether the applicant has obtained prior approval
+  suggested_rule_id: prior-approval-for-treatment
+rejected_drafts:
+- draft:
+    id: has-valid-identity-card
+    kind: require
+    when:
+      field: has_valid_identity_card
+      op: eq
+      value: true
+    clause: The applicant must possess a valid identity card indicating their status as a
+      recognized unorganised worker.
+    ask: Do you have a valid identity card indicating your status as a recognized unorganised
+      worker?
+    self_declared: false
+    notes_for_reviewer: 'Proposed field: has_valid_identity_card (bool) - whether the applicant
+      has a valid identity card'
+  error: "1 validation error for Rule\nwhen\n  Value error, unknown profile field 'has_valid_identity_card'\
+    \ [type=value_error, input_value={'field': 'has_valid_iden...p': 'eq', 'value': True},\
+    \ input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+- draft:
+    id: exactly-two-children
+    kind: require
+    when:
+      field: number_of_children
+      op: eq
+      value: 2
+    clause: The applicant must have exactly two children to avail the family planning operation
+      scheme benefit.
+    ask: Do you have exactly two children?
+    self_declared: false
+    notes_for_reviewer: 'Proposed field: number_of_children (int) - the number of children
+      the applicant has'
+  error: "1 validation error for Rule\nwhen\n  Value error, unknown profile field 'number_of_children'\
+    \ [type=value_error, input_value={'field': 'number_of_chil... 'op': 'eq', 'value': 2},\
+    \ input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+- draft:
+    id: prior-approval-for-treatment
+    kind: require
+    when:
+      field: prior_approval
+      op: eq
+      value: true
+    clause: Prior approval of the concerned Welfare Commissioner is necessary before beginning
+      treatments for heart ailments, kidney treatment, and cancer.
+    ask: Have you obtained prior approval from the Welfare Commissioner for your treatment?
+    self_declared: false
+    notes_for_reviewer: 'Proposed field: prior_approval (bool) - whether the applicant has
+      obtained prior approval'
+  error: "1 validation error for Rule\nwhen\n  Value error, unknown profile field 'prior_approval'\
+    \ [type=value_error, input_value={'field': 'prior_approval...p': 'eq', 'value': True},\
+    \ input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error"
+simplifications:
+- The scheme provides outpatient dispensary services, hospital care, and monetary reimbursements
+  up to ₹7,50,000/- for critical illnesses.
+- The applicant must be a registered beedi, cine, or specified non-coal mine worker or their
+  dependant.

@@ -1,0 +1,67 @@
+scheme_id: ksy
+version: '2026-09-26'
+rules:
+- id: uttar-pradesh-resident
+  kind: require
+  self_declared: true
+  verify_hint: Keep proof of permanent residence in Uttar Pradesh ready — the scheme accepts
+    a Ration Card, Aadhaar Card, Voter ID Card, or an electricity or telephone bill.
+  when:
+    field: state
+    op: eq
+    value: Uttar Pradesh
+  clause: The beneficiary's family should be a resident of Uttar Pradesh and have a permanent
+    residence certificate, in which Ration Card / Aadhaar Card / Voter ID Card / Electricity
+    / Telephone bill will be valid.
+  source_url: https://www.myscheme.gov.in/schemes/ksy
+  ask: Does your family live in Uttar Pradesh?
+  review_status: verified
+  notes_for_reviewer: Residence is self-declared; the verify hint lists the proofs the
+    clause itself names.
+- id: has-a-daughter
+  kind: require
+  when:
+    field: daughter_age
+    op: gte
+    value: 0
+  clause: 'Kanya Sumangala Yojana will be applicable in six categories. … First Phase: At
+    the birth of a girl child.'
+  source_url: https://www.myscheme.gov.in/schemes/ksy
+  ask: Do you have a daughter? How old is she?
+  review_status: verified
+  notes_for_reviewer: 'Judgement call: the check models a parent or guardian applying for
+    a daughter, so "has a daughter" is encoded as daughter_age being known (≥ 0). Which of
+    the six phases applies depends on her stage (birth, vaccination, class 1, 6 or 9,
+    graduation admission) — not encoded; see simplifications.'
+- id: family-income-cap-300k
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 300000
+  clause: The maximum annual family income of the beneficiary should be ₹3,00,000/-.
+  source_url: https://www.myscheme.gov.in/schemes/ksy
+  ask: Is your family's yearly income ₹3,00,000 or less?
+  review_status: verified
+- id: at-most-two-children
+  kind: require
+  when:
+    field: number_of_children
+    op: lte
+    value: 2
+  clause: There should be a maximum of two children in the family.
+  source_url: https://www.myscheme.gov.in/schemes/ksy
+  ask: How many children are in your family?
+  review_status: verified
+  notes_for_reviewer: The twins exception (a girl child admissible as the third child when
+    the second delivery is twins) is not encoded — a family with three children through
+    twins would get a false not_eligible here. Listed under simplifications.
+simplifications:
+- 'Not encoded: the twins exception to the two-children limit ("If a woman has twins from
+  the second delivery, the benefit will also be admissible to the girl child as the third
+  child"). A family in that situation should confirm at the office.'
+- 'Not encoded: "Maximum of two girls in a family will be able to get the benefit" and
+  which of the six phases the daughter currently qualifies for (depends on her birth,
+  vaccination and school stage).'
+- 'The check models a parent or guardian applying for a daughter; a girl applying herself
+  at graduation/diploma admission (sixth phase) is not modelled.'

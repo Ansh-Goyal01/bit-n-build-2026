@@ -1,0 +1,56 @@
+scheme_id: pmuy
+version: '2026-07-11'
+rules:
+- id: woman-applicant
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+  clause: An adult woman belonging to a poor household and not having an LPG connection in
+    her household is eligible. Male members from a household cannot apply.
+  source_url: https://www.myscheme.gov.in/schemes/pmuy
+  ask: Is the applicant a woman? (Ujjwala connections are issued in a woman's name.)
+  review_status: verified
+- id: adult
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: An adult woman belonging to a poor household is eligible.
+  source_url: https://www.myscheme.gov.in/schemes/pmuy
+  ask: What is your age?
+  review_status: verified
+- id: poor-household
+  kind: require
+  self_declared: true
+  verify_hint: Ask any LPG distributor to check your household in the SECC-2011/Ujjwala beneficiary
+    lists, or apply with the 14-point declaration form they provide.
+  when:
+    any:
+    - field: has_bpl_card
+      op: eq
+      value: true
+    - field: is_pmjay_priority_category
+      op: eq
+      value: true
+  clause: The applicant should belong to a poor household (SECC 2011 list, or a listed category
+    such as SC/ST, PMAY-G, AAY, forest dweller, tea-garden worker, or per a 14-point declaration).
+  source_url: https://www.myscheme.gov.in/schemes/pmuy
+  ask: Is your household on the BPL/SECC list or in one of the Ujjwala priority categories?
+  review_status: verified
+- id: no-existing-lpg-connection
+  kind: require
+  when:
+    field: has_lpg_connection
+    op: eq
+    value: false
+  clause: The woman should not be having an LPG connection in her household (no LPG connection
+    in the name of any family member).
+  source_url: https://www.myscheme.gov.in/schemes/pmuy
+  ask: Does anyone in your household already have an LPG connection?
+  review_status: verified
+simplifications:
+- The 14-point-declaration route for poor households outside the SECC/priority lists is folded
+  into the self-declared poor-household proxy.

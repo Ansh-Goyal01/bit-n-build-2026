@@ -1,0 +1,61 @@
+scheme_id: mpss
+version: '2026-09-26'
+rules:
+- id: uttar-pradesh-native
+  kind: require
+  self_declared: true
+  verify_hint: Keep a domicile / residence certificate for Uttar Pradesh ready, along with
+    your OBC caste certificate and your parents' income certificate — the scholarship
+    portal verifies them.
+  when:
+    field: state
+    op: eq
+    value: Uttar Pradesh
+  clause: Native and under study in Uttar Pradesh.
+  source_url: https://www.myscheme.gov.in/schemes/mpss
+  ask: Are you a native of Uttar Pradesh studying in Uttar Pradesh?
+  review_status: verified
+  notes_for_reviewer: '"Native and under study in Uttar Pradesh" is checked against the
+    state the person lives in and marked self-declared; where they study is not separately
+    asked.'
+- id: other-backward-class
+  kind: require
+  when:
+    field: social_category
+    op: eq
+    value: obc
+  clause: Students from Other Backwards Classes study in all government-aided and recognized
+    state educational institutes (subject to budget availability).
+  source_url: https://www.myscheme.gov.in/schemes/mpss
+  ask: Do you belong to an Other Backward Class (OBC)?
+  review_status: verified
+- id: post-matric-student
+  kind: require
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: true
+  clause: At present, post matric scholarship scheme is being operated in online mode by
+    the Department of Backward Classes Welfare with the objective of developing backward
+    classes and uplifting their educational status.
+  source_url: https://www.myscheme.gov.in/schemes/mpss
+  ask: Are you studying after Class 10 (Class 11 or above, diploma, or degree)?
+  review_status: verified
+  notes_for_reviewer: The eligibility list does not restate the post-matric level; it is
+    the scheme's name and purpose (quoted from its details). The course groups in the FAQ
+    all start after High School.
+- id: parents-income-cap-200k
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 200000
+  clause: The annual income of parents/guardian of the student is upto Rs. 2 Lakh.
+  source_url: https://www.myscheme.gov.in/schemes/mpss
+  ask: Is your parents' or guardian's yearly income ₹2,00,000 or less?
+  review_status: verified
+  notes_for_reviewer: '"Upto" read as inclusive (≤). Parents''/guardian''s income is encoded
+    on annual_family_income_inr, as in the verified central PMS-SC rule.'
+simplifications:
+- 'Not encoded: study at a government, aided or recognized state institution, and
+  "subject to budget availability" — the portal verifies the institution.'

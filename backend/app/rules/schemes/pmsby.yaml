@@ -1,0 +1,36 @@
+scheme_id: pmsby
+version: '2026-07-11'
+rules:
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: Individual bank account holders aged between 18 years (completed) and 70 years are
+    eligible to be enrolled into the scheme.
+  source_url: https://www.myscheme.gov.in/schemes/pmsby
+  ask: What is your age?
+  review_status: verified
+- id: age-at-most-70
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 70
+  clause: Individual bank account holders aged between 18 years (completed) and 70 years (age
+    nearer birthday) are eligible.
+  source_url: https://www.myscheme.gov.in/schemes/pmsby
+  ask: What is your age?
+  review_status: verified
+- id: bank-account
+  kind: require
+  when:
+    field: has_bank_account
+    op: eq
+    value: true
+  clause: Individual bank account holders of participating banks ... who give their consent
+    to join / enable auto-debit will be enrolled into the scheme.
+  source_url: https://www.myscheme.gov.in/schemes/pmsby
+  ask: Do you have a savings bank account?
+  review_status: verified

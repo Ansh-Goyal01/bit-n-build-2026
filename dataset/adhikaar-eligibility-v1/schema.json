@@ -1,0 +1,28 @@
+{
+  "rules.jsonl": {
+    "scheme_id": "stable scheme identifier",
+    "scheme_version": "date-versioned rule file this rule came from",
+    "rule_id": "unique within the scheme",
+    "kind": "'require' (must hold) or 'exclude' (must not hold)",
+    "when": "machine-readable condition tree over typed profile fields (leaf: field/op/value; combinators: any/all)",
+    "clause": "verbatim or tightly-quoted official scheme text this rule encodes",
+    "source_url": "exact government source the clause was read from",
+    "ask": "plain-language question that resolves the fact when unknown",
+    "self_declared": "true if the state verifies this fact (softens 'eligible' to 'likely_eligible')",
+    "review_status": "'encoded' (machine-encoded + unit-tested) or 'verified' (human-certified against source)"
+  },
+  "schemes.jsonl": {
+    "scheme_id": "stable scheme identifier",
+    "short_name": "abbreviation (e.g. PM-JAY)",
+    "name": "full scheme name",
+    "version": "date-versioned rule file",
+    "n_rules / n_require / n_exclude": "rule counts",
+    "simplifications": "honest omissions — criteria in the official text not yet encoded"
+  },
+  "personas.jsonl": {
+    "case_id": "unique persona id",
+    "split": "'train' or 'heldout' (heldout withheld during rule development)",
+    "message": "free-text household description, as a user would phrase it",
+    "gold": "hand-labeled verdicts: {eligible, not_eligible, need_info} -> [scheme_id, ...]"
+  }
+}

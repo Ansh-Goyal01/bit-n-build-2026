@@ -1,0 +1,70 @@
+scheme_id: post-dis
+version: '2026-07-13'
+rules:
+- id: is-student
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant must be a student.
+  source_url: https://www.myscheme.gov.in/schemes/post-dis
+  ask: Are you currently studying?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-post-matric-student
+  kind: require
+  when:
+    field: is_post_matric_student
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant must be pursuing a post-matric qualification, i.e. Class 11th, Class
+    12th, including Polytechnics, Post-Matriculation Diploma/Certificates and Bachelor’s Degree/Diploma
+    in India and Master’s Degree/Diploma.
+  source_url: https://www.myscheme.gov.in/schemes/post-dis
+  ask: Are you studying beyond class 10 at a recognized institution?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: disability-percent-at-least-40
+  kind: require
+  when:
+    field: disability_percent
+    op: gte
+    value: 40
+    any: null
+    all: null
+  clause: The applicant must be disabled, with disability percentage of 40% or above.
+  source_url: https://www.myscheme.gov.in/schemes/post-dis
+  ask: What is your certified disability percentage?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: annual-family-income-inr-lte-250000
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 250000
+    any: null
+    all: null
+  clause: The Total Annual income of parents/guardians of the applicant (from all sources)
+    must not exceed ₹ 2.50 Lakh per Annum.
+  source_url: https://www.myscheme.gov.in/schemes/post-dis
+  ask: What is your family's yearly income in rupees?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- State-specific notification and enrollment windows
+- Document formalities
+- 'Not modeled: Scholarship will not be given to more than two students from a family.'
+- 'Not modeled: If a student has to repeat a class, he/she would not get any scholarship for
+  that class for a second (or subsequent) year.'
+- 'Not modeled: A scholarship holder under this scheme cannot hold any other scholarship or
+  stipend.'

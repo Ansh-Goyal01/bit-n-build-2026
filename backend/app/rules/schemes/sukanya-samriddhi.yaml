@@ -1,0 +1,19 @@
+scheme_id: sukanya-samriddhi
+version: '2026-07-11'
+rules:
+- id: girl-child-under-10
+  kind: require
+  when:
+    field: daughter_age
+    op: lt
+    value: 10
+  clause: The account may be opened by one of the guardians in the name of a girl child who
+    has not attained the age of ten years as on the date of opening of the account (Sukanya
+    Samriddhi Account Scheme, 2019, clause 3(1)).
+  source_url: https://www.indiapost.gov.in/documents/offerings/schemesandservices/posb/SukanyaSamriddhiAccountScheme2019English.pdf
+  ask: How old is your daughter? (The account must be opened before she turns 10.)
+  review_status: verified
+simplifications:
+- The two-accounts-per-family cap (clause 3(2), with its twin/triplet affidavit exception)
+  is not modeled.
+- Guardian and residency formalities at account opening are not modeled.

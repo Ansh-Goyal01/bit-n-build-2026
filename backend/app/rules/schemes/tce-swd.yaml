@@ -1,0 +1,49 @@
+scheme_id: tce-swd
+version: '2026-07-13'
+rules:
+- id: disability-percent-gte-40
+  kind: require
+  when:
+    field: disability_percent
+    op: gte
+    value: 40
+  clause: The Percentage of Disability should be 40% or above.
+  source_url: https://www.myscheme.gov.in/schemes/tce-swd
+  ask: What is your certified disability percentage?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: annual-family-income-lte-6-lakh
+  kind: require
+  when:
+    field: annual_family_income_inr
+    op: lte
+    value: 600000
+  clause: The Total Annual Income of the Parent / Guardian should be less than or equal to
+    ₹ 6.00 Lakh per Annum.
+  source_url: https://www.myscheme.gov.in/schemes/tce-swd
+  ask: What is the total annual income of your parent or guardian?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+simplifications:
+- The requirement for the institution to be one of the 'notified institutions' is an operational
+  detail that cannot be modeled with available fields.
+- 'Exclusion: ''If a student is found to have obtained a scholarship by false statements,
+  his/her scholarship will be cancelled forthwith and the amount of the scholarship will be
+  recovered, at the discretion of DEPwD, GoI. The student concerned will be blacklisted and
+  debarred for scholarship in any scheme forever.'' This is a consequence for fraudulent claims,
+  not an initial eligibility criterion.'
+- 'Exclusion: ''If the scholar changes the subject of the course of study for which the scholarship
+  was originally awarded unless such change in course has been approved by DEPwD.'' This is
+  a condition for continued scholarship, not initial eligibility.'
+- 'Exclusion: ''If a student has to repeat a class, he/she would not get any scholarship for
+  that class for a second (or subsequent) year.'' This is a condition for continued scholarship,
+  not initial eligibility.'
+- 'Not modeled: The applicant should be a Student admitted in a full-time course in one of
+  the "notified institutions".'
+- 'Not modeled: The applicant should be Pursuing a Graduate or Post Graduate Degree or Diploma.'
+- 'Not modeled: The applicant MUST NOT be the third sibling in his/her family who is availing
+  of this scholarship. Not more than two children with disabilities of the same parents will
+  be entitled to receive the benefits of the scheme. Provided in case the second child is
+  a twin, the scholarship will be admissible to both.'

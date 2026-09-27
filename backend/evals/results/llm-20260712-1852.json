@@ -1,0 +1,1293 @@
+{
+ "summary": {
+  "phase": "llm",
+  "dataset": "dataset.jsonl",
+  "run_at": "2026-07-12T18:52:06+00:00",
+  "cases": 41,
+  "errored_cases": [],
+  "judge_unavailable_cases": [],
+  "eligibility": {
+   "pairs": 92,
+   "accuracy": 0.5652,
+   "false_positives": 16,
+   "false_negatives": 15,
+   "abstained": 9
+  },
+  "retrieval": {
+   "precision": 0.2568,
+   "recall": 0.9248
+  },
+  "faithfulness": {
+   "pre_verifier": 0.2464,
+   "post_verifier": 0.2441,
+   "pre_claims": 422,
+   "post_claims": 381
+  }
+ },
+ "per_case": [
+  {
+   "case_id": "widow-45-bpl-farm-labourer",
+   "status": "ok",
+   "predicted": {
+    "ignwps": "eligible",
+    "nsap-ignoaps": "eligible",
+    "pmuy": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "igndps": "likely_eligible",
+    "pmv": "likely_eligible",
+    "apy": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "widow-45-bpl-farm-labourer",
+     "scheme_id": "ignwps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "widow-45-bpl-farm-labourer",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "absent",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "widow-45-bpl-farm-labourer",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "absent",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "widow-45-bpl-farm-labourer",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    },
+    {
+     "case_id": "widow-45-bpl-farm-labourer",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "farmer-62-odisha-bpl-land",
+   "status": "ok",
+   "predicted": {
+    "nsap-ignoaps": "eligible",
+    "pm-kisan": "eligible",
+    "igndps": "likely_eligible",
+    "pmfby": "likely_eligible",
+    "ab-pmjay": "not_eligible",
+    "ignwps": "not_eligible",
+    "pmuy": "not_eligible",
+    "pmv": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "farmer-62-odisha-bpl-land",
+     "scheme_id": "pm-kisan",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "farmer-62-odisha-bpl-land",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "farmer-62-odisha-bpl-land",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "absent",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "farmer-62-odisha-bpl-land",
+     "scheme_id": "pmfby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "farmer-62-odisha-bpl-land",
+     "scheme_id": "pmjjby",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "farmer-62-odisha-bpl-land",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "vendor-30-delhi-cov",
+   "status": "ok",
+   "predicted": {
+    "pmsby": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "pmv": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "apy": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "vendor-30-delhi-cov",
+     "scheme_id": "pm-svanidhi",
+     "gold": "eligible",
+     "pred": "absent",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "vendor-30-delhi-cov",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "vendor-30-delhi-cov",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "absent",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "vendor-30-delhi-cov",
+     "scheme_id": "apy",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "vendor-30-delhi-cov",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "sc-student-income-2l",
+   "status": "ok",
+   "predicted": {
+    "pmuy": "eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pms-sc": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "nsap-ignoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "sc-student-income-2l",
+     "scheme_id": "pms-sc",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    },
+    {
+     "case_id": "sc-student-income-2l",
+     "scheme_id": "sukanya-samriddhi",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "sc-student-income-3l",
+   "status": "ok",
+   "predicted": {
+    "pms-sc": "eligible",
+    "pmay-g": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "sc-student-income-3l",
+     "scheme_id": "pms-sc",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "tailor-35-family-trade",
+   "status": "ok",
+   "predicted": {
+    "pmjjby": "eligible",
+    "pmsby": "eligible",
+    "pmv": "eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "tailor-35-family-trade",
+     "scheme_id": "pmv",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "tailor-35-family-trade",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "tailor-35-family-trade",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "tailor-35-family-trade",
+     "scheme_id": "apy",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "tailor-35-family-trade",
+     "scheme_id": "pm-svanidhi",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "tailor-40-govt-spouse",
+   "status": "ok",
+   "predicted": {
+    "pmv": "likely_eligible",
+    "apy": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmsby": "need_more_info",
+    "ab-pmjay": "not_eligible",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "tailor-40-govt-spouse",
+     "scheme_id": "pmv",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "disabled-25-bpl-85pct",
+   "status": "ok",
+   "predicted": {
+    "igndps": "eligible",
+    "apy": "likely_eligible",
+    "pmay-g": "likely_eligible",
+    "ignwps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmv": "need_more_info",
+    "ab-pmjay": "not_eligible",
+    "nsap-ignoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "disabled-25-bpl-85pct",
+     "scheme_id": "igndps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "disabled-25-bpl-85pct",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "disabled-30-bpl-60pct",
+   "status": "ok",
+   "predicted": {
+    "igndps": "eligible",
+    "apy": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "pmay-g": "likely_eligible",
+    "ignwps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmv": "need_more_info",
+    "ab-pmjay": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "disabled-30-bpl-60pct",
+     "scheme_id": "igndps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "widow-39-bpl-boundary",
+   "status": "ok",
+   "predicted": {
+    "pmuy": "eligible",
+    "ignwps": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "pmay-g": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "widow-39-bpl-boundary",
+     "scheme_id": "ignwps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    },
+    {
+     "case_id": "widow-39-bpl-boundary",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "widow-40-bpl-boundary",
+   "status": "ok",
+   "predicted": {
+    "apy": "eligible",
+    "ignwps": "eligible",
+    "nsap-ignoaps": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "igndps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info"
+   },
+   "outcomes": [
+    {
+     "case_id": "widow-40-bpl-boundary",
+     "scheme_id": "ignwps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "widow-40-bpl-boundary",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "widow-79-bpl-boundary",
+   "status": "ok",
+   "predicted": {
+    "ignwps": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pmsby": "not_eligible",
+    "pmuy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "widow-79-bpl-boundary",
+     "scheme_id": "ignwps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "widow-79-bpl-boundary",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "widow-82-bpl",
+   "status": "ok",
+   "predicted": {
+    "nsap-ignoaps": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "ignwps": "likely_eligible",
+    "igndps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pmsby": "not_eligible",
+    "pmuy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "widow-82-bpl",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "widow-82-bpl",
+     "scheme_id": "ignwps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    },
+    {
+     "case_id": "widow-82-bpl",
+     "scheme_id": "pmsby",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "widow-82-bpl",
+     "scheme_id": "pmjjby",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "woman-28-bpl-no-lpg",
+   "status": "ok",
+   "predicted": {
+    "pmuy": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "igndps": "likely_eligible",
+    "apy": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "nsap-ignoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "woman-28-bpl-no-lpg",
+     "scheme_id": "pmuy",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "man-30-bpl-no-lpg",
+   "status": "ok",
+   "predicted": {
+    "igndps": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "apy": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "pmuy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "man-30-bpl-no-lpg",
+     "scheme_id": "pmuy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "father-daughter-7",
+   "status": "ok",
+   "predicted": {
+    "pmjjby": "likely_eligible",
+    "pmsby": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmv": "need_more_info",
+    "sukanya-samriddhi": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "father-daughter-7",
+     "scheme_id": "sukanya-samriddhi",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    },
+    {
+     "case_id": "father-daughter-7",
+     "scheme_id": "apy",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "father-daughter-7",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "father-daughter-7",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "father-daughter-12",
+   "status": "ok",
+   "predicted": {
+    "pmsby": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmv": "need_more_info",
+    "sukanya-samriddhi": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "father-daughter-12",
+     "scheme_id": "sukanya-samriddhi",
+     "gold": "not_eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "daughter-9-boundary",
+   "status": "ok",
+   "predicted": {
+    "apy": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "sukanya-samriddhi": "need_more_info"
+   },
+   "outcomes": [
+    {
+     "case_id": "daughter-9-boundary",
+     "scheme_id": "sukanya-samriddhi",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "daughter-just-10-boundary",
+   "status": "need_info",
+   "predicted": {},
+   "outcomes": [
+    {
+     "case_id": "daughter-just-10-boundary",
+     "scheme_id": "sukanya-samriddhi",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "farmer-45-taxpayer",
+   "status": "ok",
+   "predicted": {
+    "pm-kisan": "likely_eligible",
+    "pmfby": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "not_eligible",
+    "pmsby": "not_eligible",
+    "pmv": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "farmer-45-taxpayer",
+     "scheme_id": "pmfby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "farmer-45-taxpayer",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    },
+    {
+     "case_id": "farmer-45-taxpayer",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "farmer-38-govt-clerk",
+   "status": "ok",
+   "predicted": {
+    "pmfby": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pm-kisan": "not_eligible",
+    "pmv": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "farmer-38-govt-clerk",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "tenant-farmer-28",
+   "status": "ok",
+   "predicted": {
+    "pm-kisan": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "tenant-farmer-28",
+     "scheme_id": "pmfby",
+     "gold": "eligible",
+     "pred": "absent",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "tenant-farmer-28",
+     "scheme_id": "apy",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "tenant-farmer-28",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    },
+    {
+     "case_id": "tenant-farmer-28",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    },
+    {
+     "case_id": "tenant-farmer-28",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "need-info-widow",
+   "status": "need_info",
+   "predicted": {},
+   "outcomes": [
+    {
+     "case_id": "need-info-widow",
+     "scheme_id": "ignwps",
+     "gold": "need_info",
+     "pred": "absent",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "need-info-farmer",
+   "status": "ok",
+   "predicted": {
+    "pm-kisan": "likely_eligible",
+    "pmfby": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmuy": "need_more_info",
+    "pmv": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "need-info-farmer",
+     "scheme_id": "pm-kisan",
+     "gold": "need_info",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "mason-59-bpl-boundary",
+   "status": "ok",
+   "predicted": {
+    "nsap-ignoaps": "eligible",
+    "ab-pmjay": "likely_eligible",
+    "pmv": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "apy": "not_eligible",
+    "pmjjby": "not_eligible",
+    "pmsby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "mason-59-bpl-boundary",
+     "scheme_id": "pmv",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "mason-59-bpl-boundary",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "senior-60-bpl-boundary",
+   "status": "ok",
+   "predicted": {
+    "nsap-ignoaps": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmay-g": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "senior-60-bpl-boundary",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "pmay-kutcha-motorcycle",
+   "status": "ok",
+   "predicted": {
+    "igndps": "likely_eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "pmay-g": "likely_eligible",
+    "pmuy": "likely_eligible",
+    "ignwps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmv": "need_more_info",
+    "ab-pmjay": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "pmay-kutcha-motorcycle",
+     "scheme_id": "pmay-g",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "pmay-kutcha-eligible",
+   "status": "ok",
+   "predicted": {
+    "ab-pmjay": "likely_eligible",
+    "pmay-g": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmfby": "need_more_info",
+    "pmv": "need_more_info"
+   },
+   "outcomes": [
+    {
+     "case_id": "pmay-kutcha-eligible",
+     "scheme_id": "pmay-g",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "senior-69-bank",
+   "status": "ok",
+   "predicted": {
+    "nsap-ignoaps": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pmjjby": "not_eligible",
+    "pmsby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "senior-69-bank",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "senior-69-bank",
+     "scheme_id": "pmjjby",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "senior-69-bank",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "vendor-new-no-lor",
+   "status": "ok",
+   "predicted": {
+    "pm-svanidhi": "eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmay-g": "need_more_info",
+    "pmuy": "need_more_info",
+    "pmv": "need_more_info",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "vendor-new-no-lor",
+     "scheme_id": "pm-svanidhi",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "apy-41-boundary",
+   "status": "ok",
+   "predicted": {
+    "pmjjby": "eligible",
+    "pmsby": "eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "apy-41-boundary",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "apy-41-boundary",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "apy-41-boundary",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "apy-40-boundary",
+   "status": "ok",
+   "predicted": {
+    "apy": "eligible",
+    "pmsby": "eligible",
+    "pmv": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "apy-40-boundary",
+     "scheme_id": "apy",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "apy-40-boundary",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "apy-40-boundary",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "pmjjby-50-boundary",
+   "status": "ok",
+   "predicted": {
+    "pmsby": "eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "pmjjby-50-boundary",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "pmjjby-50-boundary",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "pmjjby-50-boundary",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "pmjjby-51-boundary",
+   "status": "ok",
+   "predicted": {
+    "pmsby": "eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "pmjjby-51-boundary",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "pmjjby-51-boundary",
+     "scheme_id": "pmjjby",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "pmjjby-51-boundary",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "obc-student-income-2l",
+   "status": "ok",
+   "predicted": {
+    "pms-sc": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmsby": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible",
+    "pm-kisan": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "obc-student-income-2l",
+     "scheme_id": "pms-sc",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  },
+  {
+   "case_id": "apy-30-taxpayer",
+   "status": "ok",
+   "predicted": {
+    "pmjjby": "likely_eligible",
+    "pmsby": "likely_eligible",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pmv": "need_more_info",
+    "apy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "apy-30-taxpayer",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "apy-30-taxpayer",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "apy-30-taxpayer",
+     "scheme_id": "apy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "ignoaps-75-not-bpl",
+   "status": "need_info",
+   "predicted": {},
+   "outcomes": [
+    {
+     "case_id": "ignoaps-75-not-bpl",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "barber-24-family-trade",
+   "status": "ok",
+   "predicted": {
+    "pmsby": "eligible",
+    "pmv": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "apy": "not_eligible",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "barber-24-family-trade",
+     "scheme_id": "pmv",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "barber-24-family-trade",
+     "scheme_id": "apy",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "barber-24-family-trade",
+     "scheme_id": "pmjjby",
+     "gold": "eligible",
+     "pred": "negative",
+     "outcome": "fn"
+    },
+    {
+     "case_id": "barber-24-family-trade",
+     "scheme_id": "pmsby",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "powerloom-weaver-32",
+   "status": "need_info",
+   "predicted": {},
+   "outcomes": [
+    {
+     "case_id": "powerloom-weaver-32",
+     "scheme_id": "pmv",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "domestic-worker-mumbai",
+   "status": "ok",
+   "predicted": {
+    "ab-pmjay": "need_more_info",
+    "igndps": "need_more_info",
+    "ignwps": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmjjby": "need_more_info",
+    "pmsby": "need_more_info",
+    "pm-kisan": "not_eligible",
+    "pmv": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "domestic-worker-mumbai",
+     "scheme_id": "ab-pmjay",
+     "gold": "eligible",
+     "pred": "abstain",
+     "outcome": "abstain"
+    }
+   ]
+  },
+  {
+   "case_id": "govt-pensioner-65",
+   "status": "ok",
+   "predicted": {
+    "nsap-ignoaps": "likely_eligible",
+    "pmfby": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "ignwps": "need_more_info",
+    "pmv": "need_more_info",
+    "igndps": "not_eligible",
+    "pm-kisan": "not_eligible",
+    "pmjjby": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "govt-pensioner-65",
+     "scheme_id": "pm-kisan",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "govt-pensioner-65",
+     "scheme_id": "nsap-ignoaps",
+     "gold": "not_eligible",
+     "pred": "positive",
+     "outcome": "fp"
+    }
+   ]
+  }
+ ]
+}

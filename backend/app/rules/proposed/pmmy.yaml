@@ -1,0 +1,38 @@
+scheme_id: pmmy
+version: '2026-07-13'
+extraction:
+  extracted_at: '2026-07-13'
+  status: held-back-needs-rework
+  hold_reason: The sole valid rule mapped 'must not be a bank defaulter / satisfactory credit
+    record' onto has_bank_account=True — a false entitlement (owning a bank account is unrelated
+    to loan-default history). No field captures the real criterion; scheme has no correctly-encodable
+    eligibility rule yet.
+  source_url: https://www.myscheme.gov.in/schemes/pmmy
+rules:
+- id: not-defaulting-any-bank
+  kind: require
+  when:
+    field: has_bank_account
+    op: eq
+    value: true
+    any: null
+    all: null
+  clause: The applicant should not be a defaulter to any bank or financial institution and
+    should have a satisfactory credit track record.
+  source_url: https://www.myscheme.gov.in/schemes/pmmy
+  ask: Have you ever defaulted on a loan from any bank or financial institution?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+blocked_rules: []
+rejected_drafts: []
+simplifications:
+- The interest rates are declared by Member Lending Institutions from time to time as per
+  Reserve Bank of India guidelines.
+- The upfront fee/processing charges for Shishu loans are waived by most Banks.
+- There are no agents or middleman engaged by MUDRA for availing of Mudra Loans.
+- 'Not modeled: The applicant should have a satisfactory credit track record.'
+- 'Not modeled: The individual borrowers may be required to possess the necessary skills/experience/
+  knowledge to undertake the proposed activity.'
+- 'Not modeled: The need for educational qualification, if any, is assessed based on the nature
+  of the proposed activity and its requirement.'

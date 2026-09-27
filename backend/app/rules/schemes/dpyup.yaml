@@ -1,0 +1,80 @@
+scheme_id: dpyup
+version: '2026-09-26'
+rules:
+- id: uttar-pradesh-resident
+  kind: require
+  self_declared: true
+  verify_hint: Keep proof of permanent residence in Uttar Pradesh ready (for example a
+    domicile / residence certificate from the tehsil) — the department verifies it.
+  when:
+    field: state
+    op: eq
+    value: Uttar Pradesh
+  clause: Applicant must be a permanent resident of Uttar Pradesh.
+  source_url: https://www.myscheme.gov.in/schemes/dpyup
+  ask: Are you a permanent resident of Uttar Pradesh?
+  review_status: verified
+  notes_for_reviewer: '"Permanent resident" is checked against the state the person lives
+    in and marked self-declared.'
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: The age of the applicant should be 18 years or more.
+  source_url: https://www.myscheme.gov.in/schemes/dpyup
+  ask: What is your age?
+  review_status: verified
+- id: disability-at-least-40
+  kind: require
+  when:
+    field: disability_percent
+    op: gte
+    value: 40
+  clause: Should have a minimum of 40 percent disability.
+  source_url: https://www.myscheme.gov.in/schemes/dpyup
+  ask: What disability percentage is on your certificate?
+  review_status: verified
+- id: poverty-line-income
+  kind: require
+  when:
+    any:
+    - all:
+      - field: area
+        op: eq
+        value: rural
+      - field: annual_family_income_inr
+        op: lte
+        value: 46080
+    - all:
+      - field: area
+        op: eq
+        value: urban
+      - field: annual_family_income_inr
+        op: lte
+        value: 56460
+  clause: The annual income of the applicant or his family is within the definition of
+    the poverty line (currently fixed at Rs. 46,080/- in rural areas and Rs. 56,460/- per
+    family per year in urban areas) will be eligible for the grant.
+  source_url: https://www.myscheme.gov.in/schemes/dpyup
+  ask: Is your family's yearly income within ₹46,080 (village) or ₹56,460 (city)?
+  review_status: verified
+  notes_for_reviewer: OR-group by area, composed by hand. Limits read as inclusive (≤);
+    the FAQ says "under Rs. 56,460" — confirm the boundary. Unlike the UP old-age pension,
+    the clause gives no BPL-card alternative, so none is encoded.
+- id: exclude-other-government-pension
+  kind: exclude
+  when:
+    field: receives_other_govt_pension
+    op: eq
+    value: true
+  clause: The person getting pension/grant/assistance under the applicant's old age
+    pension, widow pension, socialist pension or any other similar scheme and the person
+    receiving free maintenance in government institutions/homes should not be eligible.
+  source_url: https://www.myscheme.gov.in/schemes/dpyup
+  ask: Do you already receive a pension under another state or central government scheme?
+  review_status: verified
+simplifications:
+- 'Not encoded: the exclusion for people receiving free maintenance in government
+  institutions/homes (no profile fact for it) — the office verifies it.'

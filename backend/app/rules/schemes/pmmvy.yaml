@@ -1,0 +1,66 @@
+scheme_id: pmmvy
+version: '2026-07-13'
+rules:
+- id: age-at-least-19
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 19
+  clause: The applicant should be of at least 19 years old and a pregnant women.
+  source_url: https://www.myscheme.gov.in/schemes/pmmvy
+  ask: Are you at least 19 years old?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-female
+  kind: require
+  when:
+    field: gender
+    op: eq
+    value: female
+  clause: The applicant should be of at least 19 years old and a pregnant women.
+  source_url: https://www.myscheme.gov.in/schemes/pmmvy
+  ask: Are you female?
+  self_declared: false
+  verify_hint: ''
+  review_status: verified
+- id: is-pregnant
+  kind: require
+  when:
+    field: is_pregnant
+    op: eq
+    value: true
+  clause: The applicant should be of at least 19 years old and a pregnant women.
+  source_url: https://www.myscheme.gov.in/schemes/pmmvy
+  ask: Are you currently pregnant?
+  self_declared: false
+  review_status: verified
+simplifications:
+- Application must be submitted within 270 days from child birth.
+- Husband's Aadhaar is not mandatory for availing the benefits under the Scheme.
+- Cases of miscarriage/still births are to be treated as fresh cases for providing maternity
+  benefit under the scheme.
+- Registration of pregnancy and at least one Antenatal checkup within six months from last
+  menstrual period date at the Anganwadi Centre or approved Health facilities is required
+  for the first instalment.
+- Childbirth registration and the child receiving all due vaccines till the age of 14 weeks
+  are required for the second instalment (first child).
+- For the second girl child, registration of pregnancy, at least one Ante-Natal Check-up (ANC)
+  within six months from LMP, girl child birth registration, and the girl child receiving
+  all due vaccines till the age of fourteen weeks are required for the single instalment.
+- 'Not modeled: The applicant should be a pregnant women.'
+- 'Not modeled: The applicant should be employed.'
+- 'Not modeled: The applicant should be experiencing wage-loss due to the pregnancy.'
+- 'Not modeled: The scheme is applicable only for the first live birth.'
+- 'Not modeled: Women holding e-Shram card'
+- 'Not modeled: Women farmers who are beneficiaries under Kisan Samman Nidhi'
+- 'Not modeled: Women holding MGNREGA Job Card'
+- 'Not modeled: Pregnant and Lactating AWWs/ AWHs/ ASHAs'
+- 'Not modeled: Women holding Ration Card under NFSA Act 2013.'
+- 'Not modeled: All pregnant women and lactating mothers in regular employment with the Central
+  Government or State Government or Public Sector Undertaking'
+- 'Not modeled: those who are in receipt of similar benefits under any law for the time being
+  in force'
+- 'Not modeled: The maternity benefit is to be provided to a woman for the first two living
+  children provided the second child is a girl.'

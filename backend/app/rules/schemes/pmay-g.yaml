@@ -1,0 +1,63 @@
+scheme_id: pmay-g
+version: '2026-07-11'
+rules:
+- id: rural-household
+  kind: require
+  when:
+    field: area
+    op: eq
+    value: rural
+  clause: The universe of eligible beneficiaries under PMAY-G includes all the houseless households
+    and households living in kutcha houses in rural areas.
+  source_url: https://www.myscheme.gov.in/schemes/pmay-g
+  ask: Do you live in a rural area (village)?
+  review_status: verified
+- id: kutcha-house
+  kind: require
+  when:
+    field: house_type
+    op: eq
+    value: kutcha
+  clause: All households living in houses with pucca roofs and/or pucca walls and households
+    living in houses with more than 2 rooms are filtered out.
+  source_url: https://www.myscheme.gov.in/schemes/pmay-g
+  ask: Is your current house kutcha (mud/thatch/temporary, up to 2 rooms)?
+  review_status: verified
+- id: exclude-motorized-vehicle
+  kind: exclude
+  when:
+    field: owns_motorized_vehicle
+    op: eq
+    value: true
+  clause: 'Automatic exclusion: households owning a motorised two/three/four wheeler or fishing
+    boat.'
+  source_url: https://www.myscheme.gov.in/schemes/pmay-g
+  ask: Does your household own a motorised two/three/four-wheeler or fishing boat?
+  review_status: verified
+- id: exclude-income-tax-payer
+  kind: exclude
+  when:
+    field: pays_income_tax
+    op: eq
+    value: true
+  clause: 'Automatic exclusion: any household member paying income tax.'
+  source_url: https://www.myscheme.gov.in/schemes/pmay-g
+  ask: Does anyone in your household pay income tax?
+  review_status: verified
+- id: exclude-government-employee
+  kind: exclude
+  when:
+    field: family_member_in_govt_service
+    op: eq
+    value: true
+  clause: 'Automatic exclusion: households with any member as a government employee.'
+  source_url: https://www.myscheme.gov.in/schemes/pmay-g
+  ask: Is any member of your household a government employee?
+  review_status: verified
+simplifications:
+- 'Not modeled: houseless households are in the eligible universe regardless of
+  area, but the rural-household rule denies urban houseless applicants (2026-07-14
+  semantic audit, certified: kept — needs a houseless profile field to model).'
+- 'Not modeled: the more-than-2-rooms filter — kutcha-house rule tests wall/roof
+  type only; the wizard ask mentions "up to 2 rooms" but the engine cannot test
+  room count (2026-07-14 semantic audit, certified: kept).'

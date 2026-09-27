@@ -1,0 +1,56 @@
+# Secrets â€” never commit
+.env
+api.txt
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Caches (rebuildable artifacts)
+data/cache/
+.cache/
+# NOTE: data/chroma/ is intentionally tracked — the Vercel function bundle
+# has no build step that can rebuild the index, so it ships committed.
+
+# User feedback reports (PII-free, but still user content â€” not for the public repo)
+data/feedback/
+
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/next-env.d.ts
+
+# ML model caches
+.sentence_transformers/
+
+# Obsidian vault â€” personal thinking space, kept out of git for now (user decision 2026-07-10)
+obsidian-vault/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Local AI assistant session config
+.claude/
+
+# Personal working notes & task tracking - not for the public repo
+TASKS.md
+NOTES.md
+plan.txt
+command.txt
+
+# AI assistant skills lockfile - local tooling, not project code
+skills-lock.json
+
+# AI-assistant briefs and agent instructions (local only)
+claude-code-prompt-*.md
+codex-handoff-*.md
+frontend/AGENTS.md
+CLAUDE.md
+.claude/

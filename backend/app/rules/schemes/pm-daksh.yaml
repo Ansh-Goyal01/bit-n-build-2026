@@ -1,0 +1,95 @@
+scheme_id: pm-daksh
+version: '2026-07-13'
+rules:
+- id: age-at-least-18
+  kind: require
+  when:
+    field: age
+    op: gte
+    value: 18
+  clause: '- Applicant must be aged between 18 and 45 years.'
+  source_url: https://www.myscheme.gov.in/schemes/pm-daksh
+  ask: What is your age?
+  review_status: verified
+- id: age-at-most-45
+  kind: require
+  when:
+    field: age
+    op: lte
+    value: 45
+  clause: '- Applicant must be aged between 18 and 45 years.'
+  source_url: https://www.myscheme.gov.in/schemes/pm-daksh
+  ask: What is your age?
+  review_status: verified
+- id: social-category
+  kind: require
+  when:
+    any:
+    - field: social_category
+      op: eq
+      value: sc
+    - field: social_category
+      op: eq
+      value: obc
+    - field: social_category
+      op: eq
+      value: ews
+    - field: social_category
+      op: eq
+      value: dnt
+    - field: social_category
+      op: eq
+      value: safai_mitra
+  clause: '- Applicant must belong to one of the following groups: 1. Scheduled Castes (SC);
+    1. Other Backward Classes (OBC); 1. Economically Weaker Sections (EWS); 1. Denotified
+    & Nomadic Tribes (DNT0, or 1. Safai Mitras (including Waste Pickers).'
+  source_url: https://www.myscheme.gov.in/schemes/pm-daksh
+  ask: What is your social category?
+  review_status: verified
+- id: annual-family-income
+  kind: require
+  when:
+    any:
+    - all:
+      - field: social_category
+        op: eq
+        value: obc
+      - field: annual_family_income_inr
+        op: lt
+        value: 300000
+    - all:
+      - field: social_category
+        op: eq
+        value: ews
+      - field: annual_family_income_inr
+        op: lt
+        value: 300000
+    - any:
+      - field: social_category
+        op: eq
+        value: sc
+      - field: social_category
+        op: eq
+        value: dnt
+      - field: social_category
+        op: eq
+        value: safai_mitra
+  clause: '- Applicant from OBC or EWS must have an annual family income below ₹3,00,000/-
+    . - Applicant from SC, DNT, or Safai Mitras (including Waste Pickers) has no income limit.'
+  source_url: https://www.myscheme.gov.in/schemes/pm-daksh
+  ask: What is your annual family income?
+  review_status: verified
+simplifications:
+- 'Not modeled: Applicant must possess a valid Aadhaar card and an Aadhaar-linked
+  bank account (having a bank account is not proof of Aadhaar linkage, so this is
+  not checked).'
+- 'Not modeled: Applicant must be an Indian national with valid proof of nationality
+  — nationality is not tracked.'
+- 'Not modeled: Registration on the Skill India Digital Hub (SIDH), 70% biometric
+  attendance during training, and the On-the-Job-Training certificate are
+  programme-participation conditions, not pre-application eligibility — they are
+  not checked.'
+- The scheme aims to empower these groups by boosting their skills to improve their employability
+  and income prospects.
+- Training is aligned with the National Skill Qualification Framework (NSQF), and post-training
+  support is provided for employment or self-employment opportunities.

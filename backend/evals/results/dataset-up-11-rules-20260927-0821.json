@@ -1,0 +1,444 @@
+{
+ "summary": {
+  "phase": "rules",
+  "dataset": "dataset-up-11.jsonl",
+  "run_at": "2026-09-27T08:21:14+00:00",
+  "cases": 11,
+  "errored_cases": [],
+  "judge_unavailable_cases": [],
+  "eligibility": {
+   "pairs": 19,
+   "accuracy": 1.0,
+   "false_positives": 0,
+   "false_negatives": 0,
+   "abstained": 0
+  },
+  "retrieval": {
+   "precision": 0.1629,
+   "recall": 0.803
+  },
+  "faithfulness": {
+   "pre_verifier": null,
+   "post_verifier": 0.7328,
+   "pre_claims": 0,
+   "post_claims": 262
+  }
+ },
+ "per_case": [
+  {
+   "case_id": "up-widow-58-village",
+   "status": "ok",
+   "predicted": {
+    "mssc": "eligible",
+    "pmjdy": "eligible",
+    "wpup": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "dpyup": "need_more_info",
+    "ignwps": "need_more_info",
+    "nfbs": "need_more_info",
+    "pmmvy": "need_more_info",
+    "apy": "not_eligible",
+    "cmhtp-crwtp-smile": "not_eligible",
+    "nsap-ignoaps": "not_eligible",
+    "pm-daksh": "not_eligible",
+    "pm-sym": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmay-u": "not_eligible",
+    "pmcup": "not_eligible",
+    "pmjjby": "not_eligible",
+    "sag": "not_eligible",
+    "upoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-widow-58-village",
+     "scheme_id": "wpup",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-widow-58-village",
+     "scheme_id": "upoaps",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-man-67-lucknow-bpl",
+   "status": "ok",
+   "predicted": {
+    "pmjdy": "eligible",
+    "nsap-ignoaps": "likely_eligible",
+    "upoaps": "likely_eligible",
+    "dpyup": "need_more_info",
+    "igndps": "need_more_info",
+    "ksy": "need_more_info",
+    "nfbs": "need_more_info",
+    "apy": "not_eligible",
+    "bhmnsp": "not_eligible",
+    "cmhtp-crwtp-smile": "not_eligible",
+    "gispw": "not_eligible",
+    "ignwps": "not_eligible",
+    "mssc": "not_eligible",
+    "pm-daksh": "not_eligible",
+    "pm-sym": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmcup": "not_eligible",
+    "pmjjby": "not_eligible",
+    "pmmvy": "not_eligible",
+    "pmuy": "not_eligible",
+    "sag": "not_eligible",
+    "wpup": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-man-67-lucknow-bpl",
+     "scheme_id": "upoaps",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-man-67-lucknow-bpl",
+     "scheme_id": "wpup",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-divyang-35-45pct",
+   "status": "ok",
+   "predicted": {
+    "pmjdy": "eligible",
+    "sak-deg": "eligible",
+    "tce-swd": "eligible",
+    "dpyup": "likely_eligible",
+    "ab-pmjay": "need_more_info",
+    "nfbs": "need_more_info",
+    "igndps": "not_eligible",
+    "ignwps": "not_eligible",
+    "nsap-ignoaps": "not_eligible",
+    "pmay-u": "not_eligible",
+    "pmcup": "not_eligible",
+    "sag": "not_eligible",
+    "upoaps": "not_eligible",
+    "vdcspds": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-divyang-35-45pct",
+     "scheme_id": "dpyup",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-divyang-35-45pct",
+     "scheme_id": "igndps",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-divyang-40-30pct",
+   "status": "ok",
+   "predicted": {
+    "pmjdy": "eligible",
+    "ignwps": "need_more_info",
+    "nfbs": "need_more_info",
+    "pm-sym": "need_more_info",
+    "pmay-u": "need_more_info",
+    "pmmvy": "need_more_info",
+    "dpyup": "not_eligible",
+    "igndps": "not_eligible",
+    "nsap-ignoaps": "not_eligible",
+    "pmay-g": "not_eligible",
+    "pmcup": "not_eligible",
+    "post-dis": "not_eligible",
+    "pre-dis": "not_eligible",
+    "sag": "not_eligible",
+    "sak-deg": "not_eligible",
+    "tce-swd": "not_eligible",
+    "upoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-divyang-40-30pct",
+     "scheme_id": "dpyup",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-newborn-daughter-kanpur",
+   "status": "ok",
+   "predicted": {
+    "sukanya-samriddhi": "eligible",
+    "ksy": "likely_eligible",
+    "nfbs": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pm-sym": "need_more_info",
+    "pmay-u": "need_more_info",
+    "pmmvy": "need_more_info",
+    "upoaps": "need_more_info",
+    "ab-pmjay": "not_eligible",
+    "dpyup": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-newborn-daughter-kanpur",
+     "scheme_id": "ksy",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-three-children-prayagraj",
+   "status": "ok",
+   "predicted": {
+    "sukanya-samriddhi": "eligible",
+    "nfbs": "need_more_info",
+    "pm-kisan": "need_more_info",
+    "pm-sym": "need_more_info",
+    "pmay-u": "need_more_info",
+    "pmmvy": "need_more_info",
+    "upoaps": "need_more_info",
+    "dpyup": "not_eligible",
+    "ksy": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-three-children-prayagraj",
+     "scheme_id": "ksy",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-obc-bcom-lucknow",
+   "status": "ok",
+   "predicted": {
+    "csspremsobcsi": "eligible",
+    "dacssiselosobcebc": "eligible",
+    "pm-daksh": "eligible",
+    "pmegp": "eligible",
+    "pmjdy": "eligible",
+    "mpss": "likely_eligible",
+    "nfbs": "need_more_info",
+    "pre-dis": "need_more_info",
+    "ab-pmjay": "not_eligible",
+    "bhmnsp": "not_eligible",
+    "dpyup": "not_eligible",
+    "gispw": "not_eligible",
+    "ignwps": "not_eligible",
+    "nsap-ignoaps": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmcup": "not_eligible",
+    "pms-sc": "not_eligible",
+    "post-st": "not_eligible",
+    "pre-sc": "not_eligible",
+    "sag": "not_eligible",
+    "tce-sc": "not_eligible",
+    "upoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-obc-bcom-lucknow",
+     "scheme_id": "mpss",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-obc-bcom-lucknow",
+     "scheme_id": "pms-sc",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-obc-bcom-lucknow",
+     "scheme_id": "pmcup",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-sc-class9-agra",
+   "status": "ok",
+   "predicted": {
+    "pmjdy": "eligible",
+    "pre-sc": "eligible",
+    "tce-sc": "eligible",
+    "pmcup": "likely_eligible",
+    "nmmss": "need_more_info",
+    "sag": "need_more_info",
+    "sak-deg": "need_more_info",
+    "apy": "not_eligible",
+    "bhmnsp": "not_eligible",
+    "csspremsobcsi": "not_eligible",
+    "dacssiselosobcebc": "not_eligible",
+    "dpyup": "not_eligible",
+    "gispw": "not_eligible",
+    "igndps": "not_eligible",
+    "ignwps": "not_eligible",
+    "mpss": "not_eligible",
+    "nsap-ignoaps": "not_eligible",
+    "pm-daksh": "not_eligible",
+    "pm-sym": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmegp": "not_eligible",
+    "pmjjby": "not_eligible",
+    "pmmvy": "not_eligible",
+    "pms-sc": "not_eligible",
+    "pmsby": "not_eligible",
+    "pmuy": "not_eligible",
+    "pmv": "not_eligible",
+    "post-dis": "not_eligible",
+    "post-st": "not_eligible",
+    "upoaps": "not_eligible",
+    "wpup": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-sc-class9-agra",
+     "scheme_id": "pmcup",
+     "gold": "eligible",
+     "pred": "positive",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-sc-class9-agra",
+     "scheme_id": "mpss",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-widow-50-income-unknown",
+   "status": "ok",
+   "predicted": {
+    "mssc": "eligible",
+    "pmjdy": "eligible",
+    "ab-pmjay": "need_more_info",
+    "dpyup": "need_more_info",
+    "ignwps": "need_more_info",
+    "nfbs": "need_more_info",
+    "pmjjby": "need_more_info",
+    "wpup": "need_more_info",
+    "apy": "not_eligible",
+    "cmhtp-crwtp-smile": "not_eligible",
+    "nsap-ignoaps": "not_eligible",
+    "pm-daksh": "not_eligible",
+    "pm-sym": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmay-u": "not_eligible",
+    "pmcup": "not_eligible",
+    "sag": "not_eligible",
+    "upoaps": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-widow-50-income-unknown",
+     "scheme_id": "upoaps",
+     "gold": "not_eligible",
+     "pred": "negative",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "up-widow-50-income-unknown",
+     "scheme_id": "wpup",
+     "gold": "need_info",
+     "pred": "abstain",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "up-senior-70-city-unsure",
+   "status": "ok",
+   "predicted": {
+    "pmjdy": "eligible",
+    "dpyup": "need_more_info",
+    "igndps": "need_more_info",
+    "nfbs": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmsby": "need_more_info",
+    "upoaps": "need_more_info",
+    "apy": "not_eligible",
+    "gispw": "not_eligible",
+    "pm-daksh": "not_eligible",
+    "pm-sym": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmay-g": "not_eligible",
+    "pmcup": "not_eligible",
+    "pmjjby": "not_eligible",
+    "sag": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "up-senior-70-city-unsure",
+     "scheme_id": "upoaps",
+     "gold": "need_info",
+     "pred": "abstain",
+     "outcome": "correct"
+    }
+   ]
+  },
+  {
+   "case_id": "bihar-widow-62-up-control",
+   "status": "ok",
+   "predicted": {
+    "mssc": "eligible",
+    "pmjdy": "eligible",
+    "ab-pmjay": "need_more_info",
+    "ignwps": "need_more_info",
+    "nfbs": "need_more_info",
+    "nsap-ignoaps": "need_more_info",
+    "pmmvy": "need_more_info",
+    "apy": "not_eligible",
+    "cmhtp-crwtp-smile": "not_eligible",
+    "gispw": "not_eligible",
+    "pm-daksh": "not_eligible",
+    "pm-sym": "not_eligible",
+    "pm-vikas": "not_eligible",
+    "pmay-u": "not_eligible",
+    "pmjjby": "not_eligible",
+    "sag": "not_eligible"
+   },
+   "outcomes": [
+    {
+     "case_id": "bihar-widow-62-up-control",
+     "scheme_id": "wpup",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    },
+    {
+     "case_id": "bihar-widow-62-up-control",
+     "scheme_id": "upoaps",
+     "gold": "not_eligible",
+     "pred": "absent",
+     "outcome": "correct"
+    }
+   ]
+  }
+ ]
+}

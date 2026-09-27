@@ -1,0 +1,108 @@
+scheme_id: inspire-she
+version: '2026-07-13'
+extraction:
+  extracted_at: '2026-07-13'
+  status: awaiting-human-review
+  source_url: https://www.myscheme.gov.in/schemes/inspire-she
+rules:
+- id: is-student
+  kind: require
+  when:
+    field: is_student
+    op: eq
+    value: true
+  clause: Meritorious Students with aggregate marks within the top 1% of their Class XII examination
+    of any State/ Central Education Board in India are eligible.
+  source_url: https://www.myscheme.gov.in/schemes/inspire-she
+  ask: Are you currently a student?
+  self_declared: false
+  verify_hint: ''
+  review_status: proposed
+  notes_for_reviewer: ''
+blocked_rules:
+- criterion: Meritorious Students with aggregate marks within the top 1% of their Class XII
+    examination of any State/ Central Education Board in India are eligible.
+  proposed_field:
+    name: class_xii_top_1_percent
+    type: boolean
+    meaning: Whether the student's aggregate marks are within the top 1% of their Class XII
+      examination of any State/Central Education Board in India.
+  suggested_rule_id: class-xii-top-1-percent
+- criterion: Those students who have secured ranks in the JEE of IIT, AIPMT (within the top
+    10000 ranks)
+  proposed_field:
+    name: has_eligible_jee_aipmt_rank
+    type: boolean
+    meaning: Whether the student has secured a rank in JEE of IIT or an AIPMT rank within
+      the top 10000.
+  suggested_rule_id: has-eligible-jee-aipmt-rank
+- criterion: Students who have been selected under Kishore Vaigyanik Protsahan Yojana (KVPY)
+  proposed_field:
+    name: is_kvpy_scholar
+    type: boolean
+    meaning: Whether the student has been selected under Kishore Vaigyanik Protsahan Yojana
+      (KVPY).
+  suggested_rule_id: is-kvpy-scholar
+- criterion: National Talent Search Examination (NTSE) scholars, Jagadish Bose National Science
+    Talent Search (JBNSTS) scholars and International Olympiad medallists
+  proposed_field:
+    name: is_ntse_jbnsts_or_olympiad_scholar
+    type: boolean
+    meaning: Whether the student is an NTSE scholar, JBNSTS scholar, or International Olympiad
+      medallist.
+  suggested_rule_id: is-ntse-jbnsts-or-olympiad-scholar
+- criterion: the student must be pursuing courses in Natural and Basic Sciences at the B.Sc.,
+    B.S., and Int.M.Sc./M.S. level. Courses other than these subjects such as Engineering,
+    Medicine, Military Science, Defence Studies, Agriculture, Psychology, Seed Technology,
+    Home Science, Geography, Economics, Education (including B.Sc.-B.Ed. dual degree course),
+    Biotechnology, Computer Science, Computer Applications, Bioinformatics, Instrumentation,
+    Information Technology, Physical Education, courses in Distance Education mode at Open
+    Universities and other professional courses etc. are NOT supported.
+  proposed_field:
+    name: is_pursuing_eligible_natural_science_course
+    type: boolean
+    meaning: Whether the student is pursuing Bachelor/Master level courses in eligible Natural
+      and Basic Sciences subjects as defined by the scheme, excluding non-supported courses.
+  suggested_rule_id: pursuing-eligible-natural-science-course
+- criterion: pursuing Integrated M.S. courses in Natural and Basic Sciences at IISERs, NISER
+    and Department of Atomic Energy Centre for the Basic Sciences University of Mumbai and
+    Visva-Bharati, Shanti Niketan.
+  proposed_field:
+    name: is_enrolled_in_specific_int_ms_institutions
+    type: boolean
+    meaning: Whether the student is pursuing Integrated M.S. courses in Natural and Basic
+      Sciences at IISERs, NISER, Department of Atomic Energy Centre for the Basic Sciences
+      University of Mumbai, or Visva-Bharati, Shanti Niketan.
+  suggested_rule_id: enrolled-in-specific-int-ms-institutions
+- criterion: Meritorious Students with aggregate marks within the top 1% of their Class XII
+    examination of any State/ Central Education Board in India are eligible. In addition,
+    the student must be pursuing courses in Natural and Basic Sciences at the B.Sc., B.S.,
+    and Int.M.Sc./M.S. level. OR Those students who have secured ranks in the JEE of IIT,
+    AIPMT (within the top 10000 ranks), and are presently pursuing Natural and Basic Science
+    courses in India at the B.Sc., B.S., Int. M.Sc./M.S. level. OR Students with aggregate
+    marks within the top 1% of their Class XII examination of any State/ Central Education
+    Board in India and pursuing Integrated M.S. courses in Natural and Basic Sciences at IISERs,
+    NISER and Department of Atomic Energy Centre for the Basic Sciences University of Mumbai
+    and Visva-Bharati, Shanti Niketan. OR Students who have been selected under Kishore Vaigyanik
+    Protsahan Yojana (KVPY) and pursuing Bachelor/Master level courses in Natural Sciences.
+    OR National Talent Search Examination (NTSE) scholars, Jagadish Bose National Science
+    Talent Search (JBNSTS) scholars and International Olympiad medallists pursuing Bachelor/
+    Master level courses in Natural Sciences are also eligible.
+  proposed_field:
+    name: meets_inspire_she_eligibility
+    type: boolean
+    meaning: Whether the student meets any of the five specified eligibility criteria (a)
+      through (e) for the INSPIRE SHE scheme, including academic performance, competitive
+      exam ranks, or specific scholarship/medallist status, while pursuing eligible natural
+      and basic science courses at the specified levels and institutions.
+  suggested_rule_id: meets-inspire-she-eligibility
+rejected_drafts: []
+simplifications:
+- Selected candidates will be supported for a maximum period of five years, starting from
+  the 1st year B.Sc., B.S., Int. M.Sc./Int.M.S. or until the completion of the course, whichever
+  is earlier.
+- Continuation of the scholarship for the selected candidates is based on good academic performance
+  in the examinations conducted by the University and upon the recommendation by the Head
+  of the Institution.
+- The scholarship will be transferred to the scholar’s State Bank of India (SBI) bank account
+  directly through Direct Benefit Transfer (DBT) mode.
